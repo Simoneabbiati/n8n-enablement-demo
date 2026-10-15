@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTM Sales Academy</title>
+<meta name="description" content="Learning paths and modules for go-to-market teams selling workflow automation.">
+<style>
+  :root {
+    --bg: #0f0f14; --panel: #1a1a24; --panel-2: #232332; --text: #f2f2f7; --muted: #a3a3b8;
+    --accent: #ea4b71; --accent-2: #ff8a5c; --border: #2e2e42; --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; }
+  a { color: var(--accent); }
+  header.nav { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; background: rgba(15,15,20,.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; }
+  .logo { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: grid; place-items: center; font-size: 15px; color: #fff; }
+  .nav a { color: var(--muted); text-decoration: none; margin-left: 22px; font-size: 14px; }
+  .nav a:hover { color: var(--text); }
+  .hero { padding: 72px 32px 48px; max-width: 1120px; margin: 0 auto; }
+  .eyebrow { color: var(--accent); font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 1.5px; }
+  h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.1; margin: 12px 0 16px; }
+  h1 span { background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero p { color: var(--muted); max-width: 640px; font-size: 18px; }
+  .stats { display: flex; gap: 28px; margin-top: 28px; flex-wrap: wrap; }
+  .stat b { display: block; font-size: 28px; }
+  .stat small { color: var(--muted); }
+  main { max-width: 1120px; margin: 0 auto; padding: 0 32px 80px; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 8px 0 28px; }
+  .chip { border: 1px solid var(--border); background: var(--panel); color: var(--text); padding: 8px 14px; border-radius: 999px; cursor: pointer; font-size: 14px; }
+  .chip:hover { border-color: var(--accent); }
+  .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .search { margin-left: auto; background: var(--panel); border: 1px solid var(--border); color: var(--text); padding: 9px 14px; border-radius: 10px; min-width: 240px; font-size: 14px; }
+  .persona-card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 28px; display: none; }
+  .persona-card.show { display: block; }
+  .persona-card h3 { margin: 0 0 6px; }
+  .persona-card dl { display: grid; grid-template-columns: 170px 1fr; gap: 6px 16px; margin: 12px 0 0; font-size: 14px; }
+  .persona-card dt { color: var(--muted); }
+  .persona-card dd { margin: 0; }
+  .paths { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+  .path { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform .15s, border-color .15s; }
+  .path:hover { transform: translateY(-2px); border-color: #45455e; }
+  .path-head { padding: 20px 22px 14px; background: linear-gradient(135deg, rgba(234,75,113,.18), rgba(255,138,92,.06)); }
+  .path-id { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; }
+  .path h2 { margin: 4px 0 10px; font-size: 20px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: 11px; padding: 3px 8px; border-radius: 6px; background: var(--panel-2); color: var(--muted); border: 1px solid var(--border); }
+  .modules { list-style: none; margin: 0; padding: 8px 12px 16px; }
+  .module { padding: 12px 10px; border-radius: 10px; display: flex; gap: 12px; }
+  .module:hover { background: var(--panel-2); }
+  .num { flex: 0 0 auto; width: 54px; height: 26px; border-radius: 7px; background: var(--panel-2); border: 1px solid var(--border); display: grid; place-items: center; font-size: 11px; color: var(--muted); font-weight: 600; }
+  .module b { display: block; font-size: 15px; }
+  .module span { color: var(--muted); font-size: 13.5px; }
+  .meta { padding: 0 22px 18px; color: var(--muted); font-size: 13px; margin-top: auto; }
+  .release { background: linear-gradient(135deg, rgba(234,75,113,.16), rgba(255,138,92,.08)); border: 1px solid rgba(234,75,113,.45); border-radius: var(--radius); padding: 16px 20px; margin: 0 0 24px; }
+  .release .label { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; color: var(--accent); text-transform: uppercase; }
+  .release h3 { margin: 4px 0 6px; font-size: 18px; }
+  .release p { margin: 0; color: var(--muted); font-size: 14px; }
+  .empty { color: var(--muted); text-align: center; padding: 40px; display: none; }
+  .concept { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; text-align: center; font-size: 13.5px; font-weight: 600; padding: 9px 18px; }
+  footer { border-top: 1px solid var(--border); padding: 26px 32px; color: var(--muted); font-size: 13px; text-align: center; }
+  @media (max-width: 640px) { .search { margin-left: 0; width: 100%; } .persona-card dl { grid-template-columns: 1fr; } header.nav { padding: 12px 18px; } .hero, main { padding-left: 18px; padding-right: 18px; } }
+</style>
+</head>
+<body>
+<div class="concept" role="note">Concept built by Simone Abbiati for the n8n Sales Enablement Manager application — sample data, not affiliated with n8n GmbH.</div>
+<header class="nav">
+  <div class="brand"><div class="logo">&#9889;</div>GTM Sales Academy</div>
+  <nav><a href="#paths">Learning paths</a><a href="#personas">Personas</a><a href="https://github.com/Simoneabbiati" target="_blank" rel="noopener">GitHub</a></nav>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">Sales enablement</div>
+  <h1>Learn to sell <span>workflow automation</span></h1>
+  <p>Role-based learning paths for account executives, solutions engineers, customer success and partners. Pick your role to see the modules that matter to you.</p>
+  <div class="stats" id="stats"></div>
+</section>
+
+<main>
+  <section class="release" id="release" aria-live="polite"></section>
+  <div class="toolbar" id="personas" role="toolbar" aria-label="Filter by persona"></div>
+  <div class="persona-card" id="personaCard"></div>
+  <section class="paths" id="paths"></section>
+  <p class="empty" id="empty">No modules match your filters.</p>
+</main>
+
+<footer>Last updated 2026-10-15.</footer>
+
+<script>
+const DATA = {"personas":[{"persona_id":"AE_MM","persona":"Account Executive (mid-market)","level":"new_hire","goals":"Close deals faster; run confident discovery","pain_points":"Ramp time; struggles to explain technical value to engineering managers; unsure which features matter for which use case","what_they_need_from_a_new_feature":"One-sentence value story; the customer problem it solves; one discovery question; when NOT to pitch it"},{"persona_id":"AE_ENT","persona":"Account Executive (enterprise)","level":"experienced","goals":"Win 6-to-7-figure deals with security and IT approval","pain_points":"Long buying committees; security and compliance objections; competing against build-it-yourself","what_they_need_from_a_new_feature":"Business case; impact on security/compliance/governance; objection handling; proof points for the CTO"},{"persona_id":"SE","persona":"Solutions Engineer","level":"experienced","goals":"Run convincing demos and proofs of concept","pain_points":"New features land before demo assets exist; edge cases surface live in front of customers","what_they_need_from_a_new_feature":"How it works; limits and prerequisites; a demo flow; a ready-to-import example workflow"},{"persona_id":"CSM","persona":"Customer Success Manager","level":"new_hire","goals":"Drive adoption and expansion","pain_points":"Hard to know which accounts benefit from a release; customers miss new capabilities","what_they_need_from_a_new_feature":"Which customer segments benefit; adoption play; a short email to customers; expansion signals"},{"persona_id":"PARTNER","persona":"Partner / implementation consultant","level":"new_hire","goals":"Deliver client projects faster and resell","pain_points":"Learns about features late; lacks certified best practices","what_they_need_from_a_new_feature":"Implementation guidance; best practices; certification impact; what to tell clients"}],"modules":[{"path_id":"P1","learning_path":"GTM Onboarding","personas":"AE_MM;AE_ENT;CSM;SE","module_id":"P1-M1","module":"n8n in 30 minutes","summary":"What n8n is; code freedom vs no-code speed; the community and open-source story"},{"path_id":"P1","learning_path":"GTM Onboarding","personas":"AE_MM;AE_ENT;CSM;SE","module_id":"P1-M2","module":"ICP and personas","summary":"Who buys n8n; technical vs business buyers; key pain points"},{"path_id":"P1","learning_path":"GTM Onboarding","personas":"AE_MM;AE_ENT;CSM;SE","module_id":"P1-M3","module":"Your first workflow","summary":"Build and explain a simple workflow end to end"},{"path_id":"P2","learning_path":"Technical Proficiency","personas":"SE;AE_ENT;PARTNER","module_id":"P2-M1","module":"Nodes triggers and integrations","summary":"How workflows are built; 500+ integrations; credentials"},{"path_id":"P2","learning_path":"Technical Proficiency","personas":"SE;AE_ENT;PARTNER","module_id":"P2-M2","module":"AI agents in n8n","summary":"Agent and LLM nodes; tools; memory; when to use agents vs deterministic flows"},{"path_id":"P2","learning_path":"Technical Proficiency","personas":"SE;AE_ENT;PARTNER","module_id":"P2-M3","module":"Cloud vs self-hosted","summary":"Deployment options; scaling; what changes for the customer"},{"path_id":"P3","learning_path":"Discovery and Demo Certification","personas":"AE_MM;AE_ENT;SE","module_id":"P3-M1","module":"Discovery that finds automation value","summary":"Questions that surface use cases and ROI"},{"path_id":"P3","learning_path":"Discovery and Demo Certification","personas":"AE_MM;AE_ENT;SE","module_id":"P3-M2","module":"The standard demo","summary":"A repeatable demo flow and how to adapt it per persona"},{"path_id":"P4","learning_path":"Enterprise Selling","personas":"AE_ENT;SE","module_id":"P4-M1","module":"Security compliance and governance","summary":"SSO; RBAC; audit; environments; answering security questionnaires"},{"path_id":"P4","learning_path":"Enterprise Selling","personas":"AE_ENT;SE","module_id":"P4-M2","module":"Workflows as software","summary":"Source control; environments; promotion from dev to prod"},{"path_id":"P5","learning_path":"Customer Adoption and Expansion","personas":"CSM;PARTNER","module_id":"P5-M1","module":"Adoption plays","summary":"Spot accounts that would benefit from new capabilities"},{"path_id":"P5","learning_path":"Customer Adoption and Expansion","personas":"CSM;PARTNER","module_id":"P5-M2","module":"Expansion signals","summary":"Usage patterns that indicate expansion"}],"releases":[{"title":"n8n@2.43.5","link":"https://github.com/n8n-io/n8n/releases/tag/n8n%402.43.5","date":"2026-10-14","snippet":"Gemini model picker now  how  model name  and li t  prioritized model  fir t."}]};
+const state = { persona: 'ALL', q: '' };
+const personaById = Object.fromEntries(DATA.personas.map(p => [p.persona_id, p]));
+
+function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+
+function groupPaths() {
+  const map = new Map();
+  DATA.modules.forEach(m => {
+    if (!map.has(m.path_id)) map.set(m.path_id, { id: m.path_id, name: m.learning_path, personas: m.personas.split(';'), modules: [] });
+    map.get(m.path_id).modules.push(m);
+  });
+  return [...map.values()];
+}
+const PATHS = groupPaths();
+
+function renderStats() {
+  document.getElementById('stats').innerHTML =
+    '<div class="stat"><b>' + PATHS.length + '</b><small>Learning paths</small></div>' +
+    '<div class="stat"><b>' + DATA.modules.length + '</b><small>Modules</small></div>' +
+    '<div class="stat"><b>' + DATA.personas.length + '</b><small>Roles</small></div>';
+}
+
+function renderChips() {
+  const bar = document.getElementById('personas');
+  const chips = [{ id: 'ALL', label: 'All roles' }].concat(DATA.personas.map(p => ({ id: p.persona_id, label: p.persona })));
+  bar.innerHTML = chips.map(c => '<button class="chip' + (state.persona === c.id ? ' active' : '') + '" data-id="' + c.id + '">' + esc(c.label) + '</button>').join('') +
+    '<input class="search" id="search" type="search" placeholder="Search modules..." value="' + esc(state.q) + '">';
+  bar.querySelectorAll('.chip').forEach(b => b.onclick = () => { state.persona = b.dataset.id; renderChips(); render(); });
+  const s = document.getElementById('search');
+  s.oninput = e => { state.q = e.target.value.toLowerCase(); render(); };
+}
+
+function renderPersona() {
+  const card = document.getElementById('personaCard');
+  const p = personaById[state.persona];
+  if (!p) { card.classList.remove('show'); return; }
+  card.classList.add('show');
+  card.innerHTML = '<h3>' + esc(p.persona) + '</h3><span class="tag">' + esc(p.level.replace('_', ' ')) + '</span>' +
+    '<dl><dt>Goals</dt><dd>' + esc(p.goals) + '</dd><dt>Pain points</dt><dd>' + esc(p.pain_points) + '</dd>' +
+    '<dt>Needs from new features</dt><dd>' + esc(p.what_they_need_from_a_new_feature) + '</dd></dl>';
+}
+
+function render() {
+  renderPersona();
+  let shown = 0;
+  const html = PATHS.filter(p => state.persona === 'ALL' || p.personas.includes(state.persona)).map(p => {
+    const mods = p.modules.filter(m => !state.q || (m.module + ' ' + m.summary + ' ' + m.module_id).toLowerCase().includes(state.q));
+    if (!mods.length) return '';
+    shown += mods.length;
+    return '<article class="path"><div class="path-head"><div class="path-id">PATH ' + esc(p.id) + '</div><h2>' + esc(p.name) + '</h2><div class="tags">' +
+      p.personas.map(id => '<span class="tag">' + esc(personaById[id] ? personaById[id].persona : id) + '</span>').join('') + '</div></div>' +
+      '<ul class="modules">' + mods.map(m => '<li class="module"><div class="num">' + esc(m.module_id) + '</div><div><b>' + esc(m.module) + '</b><span>' + esc(m.summary) + '</span></div></li>').join('') + '</ul>' +
+      '<div class="meta">' + p.modules.length + ' modules</div></article>';
+  }).join('');
+  document.getElementById('paths').innerHTML = html;
+  document.getElementById('empty').style.display = shown ? 'none' : 'block';
+}
+
+function renderRelease() {
+  const el = document.getElementById('release');
+  const r = DATA.releases || [];
+  if (!r.length) { el.style.display = 'none'; return; }
+  el.innerHTML = '<div class="label">What\'s new</div>' + r.map(x =>
+    '<h3><a href="' + esc(x.link) + '" target="_blank" rel="noopener">' + esc(x.title) + '</a></h3>' +
+    '<p>' + esc(x.date) + (x.snippet ? ' &middot; ' + esc(x.snippet) : '') + '</p>').join('') +
+    '<p style="margin-top:8px">Course updates for this release are being drafted and reviewed.</p>';
+}
+
+renderRelease(); renderStats(); renderChips(); render();
+</script>
+</body>
+</html>
