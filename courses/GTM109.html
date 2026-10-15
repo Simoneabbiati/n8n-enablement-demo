@@ -30,7 +30,154 @@
   </div>
 </main>
 <footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
-<script id="course-data" type="application/json">{"id": "GTM109", "title": "Security compliance and governance", "path": "Enterprise Selling", "level": "Expert", "levelId": "L3", "minutes": 45, "roles": ["AE_ENT", "SE"], "competencies": ["Objection handling"], "moments": ["Ramp (days 31-90)", "Launch readiness"], "assessment": ["Certification"], "status": "Example draft, for review", "updated": "2026-10-15", "objective": "Handle enterprise security, compliance and governance questions with a clear point of view, honest limits and a technical next step.", "who_its_for": "Enterprise account executives and solutions engineers preparing for regulated and security-sensitive deals. It assumes basic product knowledge and discovery skills; deep legal review and detailed implementation design are out of scope.", "scenario": {"name": "Aurora Bank", "problem": "A regulated enterprise wants workflow automation and AI agents, but its security team requires strict review, strong governance and self-hosting before any pilot can move forward."}, "prerequisites": [], "concept": "Security, compliance and governance questions are usually not about features alone. They are about whether a platform can fit the customer's risk model, operating model and approval process. In practice, this means understanding where workflows run, how access is controlled, how changes are managed, what data touches the system and which claims must be confirmed by specialists. Your job is to reduce risk in the buying process, not to guess at details.", "lessons": [{"title": "What enterprise buyers are really asking", "minutes": 10, "summary": "Separate security, compliance and governance concerns so you answer the real risk behind each question."}, {"title": "How to talk about deployment and control", "minutes": 12, "summary": "Frame cloud versus self-hosted, access, data handling and operational ownership without over-claiming."}, {"title": "Handling the CTO and security review", "minutes": 11, "summary": "Use a business and risk narrative that addresses architecture, approval steps and honest limits."}, {"title": "Demoing governance credibly", "minutes": 6, "summary": "Show only the controls you can explain clearly, and connect each one to a review question."}, {"title": "Certification role-play", "minutes": 6, "summary": "Practise a live enterprise objection round with follow-up questions from security and architecture."}], "by_role": {"AE_ENT": {"say": {"format": "Talk track", "text": "For teams like Aurora Bank, the first question is not whether automation is useful. It is whether the platform can be operated in a way that fits your security review, governance model and infrastructure choices. We should confirm your control points early, then map n8n to them with the right technical team, especially if self-hosting is required [CHECK WITH PRODUCT]."}, "show": {"format": "Demo steps", "steps": ["Start with the customer's review process and restate the controls they care about most.", "Open a simple workflow and explain where it runs in the chosen deployment model [CHECK WITH PRODUCT].", "Show the product areas tied to access, credentials or operational control that you can explain accurately [CHECK WITH PRODUCT].", "End by listing the questions that need formal confirmation from security or product specialists."]}}, "SE": {"say": {"format": "Talk track", "text": "I would treat this as an architecture and operating model discussion, not a feature tour. I will show how workflows are built and run, where controls apply and which details need validation, so the customer's security team can assess fit without us making unsupported claims."}, "show": {"format": "Demo steps", "steps": ["Open a prepared workflow that handles non-sensitive sample data only.", "Walk through the trigger, credentials and execution path, and explain which parts the customer will ask to govern.", "Point out the admin or configuration areas relevant to user access, secrets or deployment operations [CHECK WITH PRODUCT].", "Show how you would document open questions for the security review instead of answering from memory.", "Export the example workflow and explain how a proof of concept would be scoped for the customer's environment."]}}}, "objections": [{"q": "We cannot use a platform unless it is self-hosted in our environment.", "a": "If self-hosting is a hard requirement, confirm that path early and bring in the right technical owner to validate fit and scope [CHECK WITH PRODUCT]. Do not keep the deal in a generic cloud discussion if the buyer has already ruled that out."}, {"q": "Our security team will reject anything that introduces governance gaps.", "a": "Acknowledge that risk directly. Then map the review to concrete areas such as access, credentials, change control and operational ownership, and note which answers need formal confirmation."}, {"q": "We can build this ourselves and keep full control.", "a": "That may be true. The trade-off is the time to build, operate and govern an internal platform over time. The discussion should compare ongoing ownership, visibility and change management, not just first delivery."}], "gotchas": ["Do not answer certification, compliance or security questionnaire items from memory if you are not certain.", "Do not treat governance as a product checkbox list; tie it to who can build, approve, run and audit workflows.", "Never demo with real sensitive data in a security-focused meeting."], "practice": {"type": "Role-play", "brief": "Run a 12-minute meeting with Aurora Bank. One learner plays the AE or SE, and one plays a CTO joined by a security architect. The customer wants AI agents but says only a self-hosted approach will be considered, and asks how governance would work in practice.", "rubric": [{"criterion": "Starts from risk and operating model", "good": "Clarifies the customer's review process, deployment requirement and control priorities before pitching features."}, {"criterion": "Handles objections honestly", "good": "Answers clearly, avoids unsupported claims and flags items that require confirmation."}, {"criterion": "Connects product discussion to governance", "good": "Explains access, credential handling, change control or operational ownership in plain language tied to the buyer's concerns."}, {"criterion": "Advances the deal", "good": "Ends with a specific next step such as a scoped technical review, document request or follow-up with specialists."}]}, "check": [{"q": "Why is it a mistake to answer enterprise security questions as a feature list only?", "answer": "Because the buyer is usually assessing risk, control and operating fit, not just whether a feature exists. You need to connect the product to their review process and governance model."}, {"q": "How should you respond when a customer requires self-hosting?", "answer": "Confirm that requirement early and treat it as a core qualification point. Then validate the fit, scope and next technical review with the right internal experts [CHECK WITH PRODUCT]."}, {"q": "What makes a strong answer to a governance objection?", "answer": "It explains who can build, approve, run and monitor workflows, and it avoids claims you cannot support. A strong answer also ends with a clear next step for formal review."}]}</script>
+<script id="course-data" type="application/json">{
+ "id": "GTM109",
+ "title": "Security compliance and governance",
+ "path": "Enterprise Selling",
+ "level": "Expert",
+ "levelId": "L3",
+ "minutes": 45,
+ "roles": [
+  "AE_ENT",
+  "SE"
+ ],
+ "competencies": [
+  "Objection handling"
+ ],
+ "moments": [
+  "Ramp (days 31-90)",
+  "Launch readiness"
+ ],
+ "assessment": [
+  "Certification"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Handle enterprise security, compliance and governance questions with clear, accurate answers and a focused demo path.",
+ "who_its_for": "Enterprise account executives and solutions engineers preparing for regulated or security-heavy deals. It assumes basic product familiarity and is not a deep implementation course for security administrators.",
+ "scenario": {
+  "name": "Aurora Bank",
+  "problem": "A regulated enterprise wants to automate internal processes and test AI agents, but the security team requires a strict review, strong governance and a self-hosted deployment before any pilot can begin."
+ },
+ "prerequisites": [],
+ "concept": "Security, compliance and governance are the questions enterprise buyers ask before they agree to evaluate or deploy an automation platform. In practice, they want to know where the platform runs, how access is controlled, how workflows are reviewed and monitored, and whether their teams can manage risk as usage grows. Your job is not to recite a feature list. It is to connect the buyer's control requirements to the right deployment model, operating model and proof points, and to flag any uncertain claim for confirmation [CHECK WITH PRODUCT].",
+ "lessons": [
+  {
+   "title": "What enterprise buyers are really asking",
+   "minutes": 10,
+   "summary": "Translate security, compliance and governance questions into a few core concerns: control, visibility, access and risk."
+  },
+  {
+   "title": "How to frame deployment and data control",
+   "minutes": 11,
+   "summary": "Explain when self-hosting enters the conversation and how to discuss infrastructure and data handling without overclaiming."
+  },
+  {
+   "title": "Governance in day-to-day operations",
+   "minutes": 10,
+   "summary": "Cover access, workflow ownership, change control and operational guardrails in plain language."
+  },
+  {
+   "title": "Handling objections from security and IT",
+   "minutes": 8,
+   "summary": "Practise short, honest answers to common review questions and know when to bring in specialist support."
+  },
+  {
+   "title": "Demo and certification prep",
+   "minutes": 6,
+   "summary": "Use a simple technical flow to show control points without turning the meeting into a product tour."
+  }
+ ],
+ "by_role": {
+  "AE_ENT": {
+   "say": {
+    "format": "Talk track",
+    "text": "For teams like yours, the question is not only what can be automated. It is whether your platform team can control where it runs, who can build, and how usage is governed over time. If self-hosting and strict review are part of the path, we should test that fit early and bring in the right technical stakeholders rather than treating security as a late-stage checkbox."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Start with the target operating model: who builds workflows, who approves them and where the platform would run.",
+     "Open one simple workflow and show that the logic is visible step by step rather than hidden in scripts.",
+     "Point out the places the customer will want to govern, such as credentials, access, change review and runtime operations [CHECK WITH PRODUCT].",
+     "Tie the workflow back to the bank's review process and note which detailed questions should move to a security session.",
+     "End by confirming whether self-hosting and governance requirements are mandatory for the pilot."
+    ]
+   }
+  },
+  "SE": {
+   "say": {
+    "format": "Talk track",
+    "text": "Security reviews usually need a clear map of deployment, access, secrets handling, workflow visibility and operational ownership. I keep the discussion concrete: what runs where, what the customer team controls, what must be configured well, and which answers need product or security validation [CHECK WITH PRODUCT]."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Use a prebuilt workflow with a simple trigger, one system action and one approval or notification step.",
+     "Show the workflow structure so the evaluator can see what happens at each step and where credentials are used.",
+     "Explain the deployment context for the demo and whether the customer's target state is cloud or self-hosted [CHECK WITH PRODUCT].",
+     "Call out governance points such as role boundaries, workflow ownership, review process and monitoring approach [CHECK WITH PRODUCT].",
+     "Pause on any question that needs exact product confirmation and note the follow-up action instead of guessing."
+    ]
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "We cannot use a platform unless it is self-hosted.",
+   "a": "Treat that as a qualification point, not a debate. Confirm the deployment requirement early and align the next conversation to self-hosted architecture and review criteria [CHECK WITH PRODUCT]."
+  },
+  {
+   "q": "Our security team will block anything that lets many users create automations.",
+   "a": "That is usually a governance question, not an automatic no. Discuss who would build, who would approve, and what controls the customer expects around access, review and operations."
+  },
+  {
+   "q": "We can build this ourselves and avoid platform risk.",
+   "a": "You can acknowledge that option. Then compare the ongoing burden of visibility, maintenance, change management and team-wide governance, not just the first build."
+  }
+ ],
+ "gotchas": [
+  "Do not answer detailed security or compliance questions from memory when you are not certain; mark them for follow-up [CHECK WITH PRODUCT].",
+  "Do not let the conversation stay abstract. Anchor every answer to the customer's operating model and review process.",
+  "In a demo, do not show a workflow that uses services or data the customer would never approve in their target environment."
+ ],
+ "practice": {
+  "type": "Role-play",
+  "brief": "Run a late-stage meeting with Aurora Bank. One learner plays the enterprise AE or SE, one plays the bank's security lead, and one plays the CTO sponsor. The goal is to qualify the deployment requirement, answer governance concerns, and agree on the next technical review without making unsupported claims.",
+  "rubric": [
+   {
+    "criterion": "Starts from risk and operating model",
+    "good": "Frames the discussion around where the platform runs, who uses it and how it will be governed before moving into product detail."
+   },
+   {
+    "criterion": "Handles objections honestly",
+    "good": "Answers common pushback directly, avoids overclaiming and flags uncertain points for confirmation."
+   },
+   {
+    "criterion": "Shows a controlled demo path",
+    "good": "Uses a simple workflow to illustrate visibility and governance points rather than giving a broad feature tour."
+   },
+   {
+    "criterion": "Advances the deal correctly",
+    "good": "Ends with a clear next step such as a security review, architecture session or validated requirement list."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "When should self-hosting be discussed in an enterprise deal?",
+   "answer": "As early as possible if it is a hard requirement. It changes qualification, technical review and the stakeholders who need to be involved."
+  },
+  {
+   "q": "What is the difference between security questions and governance questions in this course?",
+   "answer": "Security questions focus on risk, control and protection. Governance questions focus on who can build, approve, change and operate workflows over time."
+  },
+  {
+   "q": "What should you do if a buyer asks for a product detail you are not certain about?",
+   "answer": "Do not guess. State the likely direction carefully if appropriate, mark it for confirmation and bring in the right product or security resource [CHECK WITH PRODUCT]."
+  }
+ ]
+}</script>
 <script>
 (function(){
   var C=JSON.parse(document.getElementById('course-data').textContent);
