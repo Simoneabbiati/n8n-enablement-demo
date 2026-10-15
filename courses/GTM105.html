@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI agents in n8n — GTM Academy (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../templates/style.css">
+</head>
+<body>
+<div class="notice">Concept built by Simone Abbiati for the n8n Sales Enablement Manager application — sample data, not affiliated with n8n GmbH.</div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">GA</span>GTM Academy <span class="chip">Concept</span></a>
+  <nav class="links"><a href="../#catalog">Catalog</a><a href="../#paths">Learning paths</a><a href="../#certifications">Certifications</a><a href="../#foundations">Foundations</a></nav>
+</div></header>
+<main class="wrap">
+  <div class="course-head">
+    <div class="crumbs"><a href="../#catalog">Catalog</a> / <span id="c-path"></span></div>
+    <p class="eyebrow" id="c-code"></p>
+    <h1 id="c-title"></h1>
+    <p class="lead" id="c-objective"></p>
+    <div class="facts-row" id="c-facts"></div>
+  </div>
+  <div class="course">
+    <article id="c-body"></article>
+    <aside id="c-side"></aside>
+  </div>
+</main>
+<footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
+<script id="course-data" type="application/json">{
+ "id": "GTM105",
+ "title": "AI agents in n8n",
+ "path": "Technical Proficiency",
+ "level": "Practitioner",
+ "levelId": "L2",
+ "minutes": 60,
+ "roles": [
+  "SE",
+  "AE_ENT",
+  "PARTNER"
+ ],
+ "competencies": [
+  "Technical proficiency",
+  "Value and ROI"
+ ],
+ "moments": [
+  "Ramp (days 31-90)",
+  "Launch readiness"
+ ],
+ "assessment": [
+  "Hands-on lab",
+  "Knowledge check"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Explain how AI agents in n8n are positioned, demonstrated and implemented for enterprise customers with the right limits and prerequisites.",
+ "who_its_for": "Solutions engineers, enterprise account executives and partners who need to discuss AI agents with technical and security-conscious buyers. It assumes basic n8n and AI workflow familiarity from the prerequisite course; model selection, prompt engineering depth and security policy design are out of scope.",
+ "scenario": {
+  "name": "Aurora Bank",
+  "problem": "A regulated enterprise wants to test AI agents for internal operations, but every new AI workflow must pass strict security review and run only in a self-hosted environment."
+ },
+ "prerequisites": [
+  {
+   "code": "N8N103",
+   "title": "In Practice: AI, Testing & Best Practices",
+   "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N103+2026H2/about"
+  }
+ ],
+ "concept": "An AI agent in n8n is a workflow pattern where a model is given a goal, context and access to tools so it can decide what step to take next within defined limits [CHECK WITH PRODUCT]. In plain terms, instead of hard-coding every branch, you let the workflow use an AI step to choose actions, fetch information and return an answer, while the rest of n8n handles the surrounding logic, integrations and controls. The sales question is not whether an agent sounds advanced, but whether it solves a real process problem and can be run in a way the customer's team can test, govern and maintain.",
+ "lessons": [
+  {
+   "title": "What an AI agent is in workflow terms",
+   "minutes": 15,
+   "summary": "Define the agent pattern, where it fits in n8n, and how it differs from a fixed automation."
+  },
+  {
+   "title": "When to position agents and when not to",
+   "minutes": 10,
+   "summary": "Connect the topic to customer problems, and avoid pitching agents where standard workflows are enough."
+  },
+  {
+   "title": "How to demo an agent safely",
+   "minutes": 15,
+   "summary": "Show a simple enterprise-relevant flow, explain prerequisites, and keep the demo bounded and repeatable."
+  },
+  {
+   "title": "Enterprise concerns: hosting, review and control",
+   "minutes": 10,
+   "summary": "Frame the CTO conversation around deployment model, governance, data handling and operational risk."
+  },
+  {
+   "title": "Implementation best practices for partners",
+   "minutes": 10,
+   "summary": "Cover delivery guidance, testing discipline and what to validate before a client pilot."
+  }
+ ],
+ "by_role": {
+  "SE": {
+   "say": {
+    "format": "Talk track",
+    "text": "The useful question is not whether you want an AI agent. It is whether a workflow needs flexible decision-making instead of fixed rules. In n8n, we can show the agent inside a workflow, connect it to approved tools, and keep the rest of the process visible and testable [CHECK WITH PRODUCT]."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Open a prepared workflow that starts from a controlled trigger, such as a form or manual run.",
+     "Show the inputs the agent receives, including the task, context and the limited tools it can use [CHECK WITH PRODUCT].",
+     "Run the workflow once and inspect each step so the customer can see what the agent decided and what data moved.",
+     "Point out the non-AI parts of the workflow, such as validation, routing and notifications, to show control around the agent.",
+     "End by stating the prerequisites, known limits and what would need review before a proof of concept."
+    ]
+   }
+  },
+  "AE_ENT": {
+   "say": {
+    "format": "Talk track",
+    "text": "For a platform team, the business case is not AI for its own sake. It is reducing manual review work in processes where rules alone do not handle the full range of cases. The CTO will want to know where the agent runs, what tools it can access, how the workflow is governed and what remains deterministic around it, especially in a self-hosted setup [CHECK WITH PRODUCT]."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Start with the process problem, such as internal operations requests that need context-based triage.",
+     "Show one agent workflow and identify the control points: trigger, allowed tools, approvals and audit trail [CHECK WITH PRODUCT].",
+     "Explain how this would be evaluated in a self-hosted environment for a regulated enterprise [CHECK WITH PRODUCT].",
+     "Close with what must be confirmed in security review before any production use."
+    ]
+   }
+  },
+  "PARTNER": {
+   "say": {
+    "format": "Implementation tips",
+    "text": "Start clients with one narrow agent use case, one clear success criterion and a fallback path when the agent is unsure. Keep tool access limited, test the workflow with known edge cases and document what is handled by fixed logic versus agent decisions. Be clear that certification and delivery guidance should follow the official course path and current product capabilities [CHECK WITH PRODUCT]."
+   },
+   "show": {
+    "format": "Lab steps",
+    "steps": [
+     "Create a new workflow in your own n8n instance with a manual trigger and one simple business request input.",
+     "Add the AI steps and only the minimum supporting nodes needed to pass context, call one approved tool and return an output [CHECK WITH PRODUCT].",
+     "Add one validation or fallback branch for cases where the workflow should not proceed automatically.",
+     "Run the workflow with at least two inputs, one normal and one edge case, and inspect the execution data.",
+     "Save the workflow in a form that can be reviewed or imported for client delivery."
+    ]
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "Why not just build this ourselves with an LLM API and some scripts?",
+   "a": "Some teams will. The question is how they will orchestrate the full process, connect systems, handle changes and keep the workflow visible to more than one developer. n8n is relevant when they want the agent inside an operational workflow rather than as a stand-alone script."
+  },
+  {
+   "q": "AI agents are too unpredictable for a regulated environment.",
+   "a": "That concern is reasonable. Position agents only for bounded use cases, explain the controls around them, and confirm what can be self-hosted and governed before making any production claim [CHECK WITH PRODUCT]."
+  },
+  {
+   "q": "Can your agent do fully autonomous work across our systems?",
+   "a": "Do not overpromise. The right answer is to define the exact process, allowed actions and review points, then test that scope in a proof of concept."
+  }
+ ],
+ "gotchas": [
+  "Do not imply the agent should make unrestricted decisions across enterprise systems.",
+  "Do not start with model features before you establish the workflow problem and the control requirements.",
+  "Have a bounded demo ready; live prompts with unclear data or tool access can fail in front of the customer."
+ ],
+ "practice": {
+  "type": "Hands-on lab",
+  "brief": "Build a small AI agent workflow in your own n8n instance for Aurora Bank. The workflow should accept a simple request, pass it through an agent step with limited context and tool use, and include one fallback or validation path for cases that should not continue automatically.",
+  "rubric": [
+   {
+    "criterion": "Workflow structure",
+    "good": "The grader finds a valid workflow with a trigger, at least one AI-related step [CHECK WITH PRODUCT], supporting logic and a final output."
+   },
+   {
+    "criterion": "Bounded tool use",
+    "good": "The grader confirms the workflow exposes only the intended connected step or tool path, not an open-ended set of actions [CHECK WITH PRODUCT]."
+   },
+   {
+    "criterion": "Fallback or validation",
+    "good": "The grader detects a branch or check that handles uncertain, invalid or out-of-scope inputs."
+   },
+   {
+    "criterion": "Test readiness",
+    "good": "The grader can run the workflow with sample inputs and see a completed execution path plus an inspectable result."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "When should you position an AI agent instead of a standard workflow?",
+   "answer": "When the process needs flexible decisions based on context and the customer accepts a bounded AI step inside a controlled workflow. If fixed rules are enough, a standard workflow is usually the better starting point."
+  },
+  {
+   "q": "What does an enterprise buyer usually need to understand before approving an agent proof of concept?",
+   "answer": "They need to understand where it runs, what data and tools it can access, what controls surround it and what must be reviewed for security and governance."
+  },
+  {
+   "q": "What is one good practice for a first partner implementation of an agent workflow?",
+   "answer": "Keep the scope narrow and add a fallback path for uncertain cases. That makes the pilot easier to test, explain and review."
+  }
+ ]
+}</script>
+<script>
+(function(){
+  var C=JSON.parse(document.getElementById('course-data').textContent);
+  var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}).replace(/\[CHECK WITH PRODUCT\]/g,'<span class="check">[check with product]</span>')};
+  var ROLE={AE_MM:'Account Executive (mid-market)',AE_ENT:'Account Executive (enterprise)',SE:'Solutions Engineer',CSM:'Customer Success Manager',PARTNER:'Partner / implementation consultant'};
+  var $=function(s){return document.getElementById(s)};
+  document.title=C.title+' — GTM Academy (concept)';
+  $('c-path').textContent=C.path; $('c-code').textContent=C.id+' · '+C.level; $('c-title').textContent=C.title; $('c-objective').textContent=C.objective;
+  $('c-facts').innerHTML=['<span><b>'+C.minutes+' min</b></span>','<span>'+esc(C.lessons.length)+' lessons</span>','<span>For: '+esc(C.roles.map(function(r){return ROLE[r]||r}).join(', '))+'</span>','<span>When: '+esc(C.moments.join(', '))+'</span>'].join('');
+  var ul=function(a){return '<ul>'+a.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>'};
+  var tabs=function(key,label){var roles=C.roles.filter(function(r){return C.by_role[r]&&C.by_role[r][key]});
+    if(!roles.length)return '';
+    return '<section><h2>'+label+'</h2><div class="tabs" data-k="'+key+'">'+roles.map(function(r,i){return '<button data-r="'+r+'" class="'+(i?'':'on')+'">'+esc(ROLE[r]||r)+'</button>'}).join('')+'</div>'+
+      roles.map(function(r,i){var b=C.by_role[r][key];return '<div class="pane" data-k="'+key+'" data-r="'+r+'"'+(i?' hidden':'')+'><p><b>'+esc(b.format)+'</b></p>'+(b.steps?'<ol>'+b.steps.map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ol>':'')+(b.text?'<p>'+esc(b.text)+'</p>':'')+'</div>'}).join('')+'</section>'};
+  var h='';
+  h+='<section><h2>1. Who it is for</h2><p>'+esc(C.who_its_for)+'</p></section>';
+  h+='<section><h2>2. Business scenario</h2><p><b>'+esc(C.scenario.name)+'.</b> '+esc(C.scenario.problem)+'</p></section>';
+  h+='<section><h2>3. Before you start</h2>'+(C.prerequisites.length?ul(C.prerequisites.map(function(p){return p.code+' '+p.title})):'<p>No prerequisite.</p>')+(C.prerequisites.length?'<p>'+C.prerequisites.map(function(p){return '<a href="'+p.url+'" target="_blank" rel="noopener">Open '+esc(p.code)+' on learn.n8n.io</a>'}).join(' · ')+'</p>':'')+'</section>';
+  h+='<section><h2>4. The concept</h2><p>'+esc(C.concept)+'</p><h3>Lessons</h3><ol>'+C.lessons.map(function(l){return '<li><b>'+esc(l.title)+'</b> ('+l.minutes+' min). '+esc(l.summary)+'</li>'}).join('')+'</ol></section>';
+  h+=tabs('say','5. How to say it');
+  h+=tabs('show','6. How to show it');
+  h+='<section><h2>7. Objections and gotchas</h2>'+C.objections.map(function(o){return '<details class="q"><summary>'+esc(o.q)+'</summary><p>'+esc(o.a)+'</p></details>'}).join('')+(C.gotchas&&C.gotchas.length?ul(C.gotchas):'')+'</section>';
+  h+='<section><h2>8. Practice</h2><p><b>'+esc(C.practice.type)+'.</b> '+esc(C.practice.brief)+'</p><table class="t"><thead><tr><th>Criterion</th><th>What good looks like</th></tr></thead><tbody>'+C.practice.rubric.map(function(r){return '<tr><td>'+esc(r.criterion)+'</td><td>'+esc(r.good)+'</td></tr>'}).join('')+'</tbody></table></section>';
+  h+='<section><h2>9. Check your understanding</h2>'+C.check.map(function(q,i){return '<details class="q"><summary>'+(i+1)+'. '+esc(q.q)+'</summary><p>'+esc(q.answer)+'</p></details>'}).join('')+'</section>';
+  $('c-body').innerHTML=h;
+  document.querySelectorAll('.tabs').forEach(function(t){t.querySelectorAll('button').forEach(function(b){b.onclick=function(){var k=t.dataset.k;t.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.pane[data-k="'+k+'"]').forEach(function(p){p.hidden=p.dataset.r!==b.dataset.r})}})});
+  $('c-side').innerHTML='<div class="box"><h4>Builds</h4>'+ul(C.competencies)+'</div><div class="box"><h4>Assessment</h4>'+ul(C.assessment)+'</div><div class="box"><h4>Status</h4><p style="margin:0;color:var(--soft)">'+esc(C.status)+'</p></div>';
+  $('c-updated').textContent='Last updated '+C.updated;
+})();
+</script>
+</body>
+</html>
