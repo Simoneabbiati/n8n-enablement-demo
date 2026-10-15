@@ -30,7 +30,171 @@
   </div>
 </main>
 <footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
-<script id="course-data" type="application/json">{"id": "GTM104", "title": "Nodes triggers and integrations", "path": "Technical Proficiency", "level": "Practitioner", "levelId": "L2", "minutes": 60, "roles": ["SE", "AE_ENT", "PARTNER"], "competencies": ["Technical proficiency"], "moments": ["Ramp (days 31-90)"], "assessment": ["Hands-on lab", "Automatic grader"], "status": "Example draft, for review", "updated": "2026-10-15", "objective": "Explain how triggers, nodes and integrations work together in n8n, and demonstrate a simple workflow that uses them correctly.", "who_its_for": "Solutions engineers, enterprise account executives and partners who need a working technical explanation of how workflows connect systems. It assumes basic familiarity with n8n and APIs; advanced architecture, security review and AI topics are out of scope.", "scenario": {"name": "Meridian Logistics", "problem": "A mid-market logistics company needs to connect order and support processes across many SaaS tools. The team must react to events, move data between systems and handle cases where one app does not provide the exact action they need."}, "prerequisites": [{"code": "N8N102", "title": "Integrations: APIs & Connected Workflows", "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N102+2026H2/about"}], "concept": "A workflow in n8n starts with a trigger and then moves through nodes that read, change or send data to other systems. Triggers decide when the workflow starts, nodes define what happens next, and integrations connect the workflow to SaaS apps, databases or APIs. This matters in customer conversations because teams rarely need just one integration; they need a reliable way to connect many systems, handle gaps and keep the logic visible to the people who maintain it.", "lessons": [{"title": "How triggers start workflow execution", "minutes": 15, "summary": "What a trigger is, common trigger patterns and how to explain when a workflow runs."}, {"title": "What nodes do with data", "minutes": 15, "summary": "How nodes pass, transform and route data, and where custom logic fits."}, {"title": "How integrations connect systems", "minutes": 15, "summary": "How prebuilt integrations and API-based approaches help teams connect the tools they already use."}, {"title": "Demo and lab workflow for Meridian Logistics", "minutes": 15, "summary": "Build and explain a simple multi-step workflow that starts from an event and updates more than one system."}], "by_role": {"SE": {"say": {"format": "Talk track", "text": "A workflow starts from a trigger, then each node acts on the incoming data. I show customers both the happy path and the escape hatch: use an integration node when it exists, and call an API or add code when the prebuilt action is not enough."}, "show": {"format": "Demo steps", "steps": ["Create a workflow with one trigger that starts from a new event, such as a webhook or form submission.", "Add one node that transforms the incoming fields so the customer can see how data is shaped between systems.", "Add two integration nodes that send the data to downstream tools used in the Meridian Logistics story.", "Run the workflow and inspect the data at each step to show what changed and what was passed through.", "Replace one prebuilt action with an HTTP or code-based step to show how to handle a missing or custom requirement."]}}, "AE_ENT": {"say": {"format": "Talk track", "text": "Most enterprise teams are not asking for one connector. They are asking for a controlled way to connect many systems, keep the logic understandable and avoid a pile of one-off scripts. A useful discovery question is: where do your current integrations break down, at app coverage, custom logic or maintainability. Do not pitch this as a fit when the customer only needs one simple point-to-point sync with no expected change."}, "show": {"format": "Demo steps", "steps": ["Start with the trigger and name the business event that matters to the platform team.", "Show the workflow path across multiple systems and point out where data is transformed before it is sent onward.", "Highlight the step where a prebuilt integration is not enough and a more flexible API or code-based step is used.", "Close by explaining that the value is not one connection but a repeatable pattern for governed integrations [CHECK WITH PRODUCT]."]}}, "PARTNER": {"say": {"format": "Implementation tips", "text": "Teach clients to think in three parts: what starts the workflow, what must happen to the data and which systems must be updated. Use prebuilt nodes first for delivery speed, but plan early for API or code-based steps where client requirements are likely to be custom. During delivery, document credentials, field mappings and failure points so the client can support the workflow after handoff."}, "show": {"format": "Lab steps", "steps": ["Build a new workflow in your own n8n instance with one trigger and at least three downstream nodes.", "Use one node to transform or map fields so the workflow does not pass raw input unchanged through every step.", "Connect at least one real integration or a test endpoint, and add one HTTP or code-based step to represent a custom client requirement.", "Run the workflow successfully and verify that each node outputs data the next node can use.", "Save the workflow with clear node names so a client team could understand the flow during handoff."]}}}, "objections": [{"q": "We can already connect tools with custom scripts.", "a": "That may work for a few cases. The question is how the team will maintain, change and explain those integrations as the number of workflows grows."}, {"q": "What if the app we need is not covered by a prebuilt integration.", "a": "Do not assume coverage. Explain that teams often start with available nodes and use API or code-based steps for gaps or custom actions."}, {"q": "Why should our platform team care about triggers and nodes instead of outcomes only.", "a": "Because the buying team will ask how the workflow starts, how data moves and how custom logic is handled. Those details shape delivery effort and operational risk."}], "gotchas": ["Do not claim a specific app integration or action exists unless you have checked it.", "In a live demo, test credentials and sample data before the call so the trigger actually fires.", "Do not skip the data mapping step; customers often get lost if they cannot see how fields change between nodes."], "practice": {"type": "Hands-on lab", "brief": "In your own n8n instance, build a workflow for Meridian Logistics that starts from one trigger, transforms incoming data, and sends it through at least two downstream actions, with one step showing how to handle a custom integration need. The automatic grader checks the workflow structure, node naming and successful execution path.", "rubric": [{"criterion": "Uses the required workflow pattern", "good": "The workflow contains one trigger, at least one data transformation step and at least two downstream action steps."}, {"criterion": "Demonstrates integration flexibility", "good": "The workflow includes at least one integration or test endpoint and one HTTP or code-based step that represents a custom requirement."}, {"criterion": "Runs end to end", "good": "The grader can detect a successful execution path with output data present at each required stage."}, {"criterion": "Readable for handoff", "good": "Node names are clear and the workflow structure makes the trigger, transformation and destination steps easy to identify."}]}, "check": [{"q": "What is the difference between a trigger and a node in a workflow?", "answer": "A trigger starts the workflow when a defined event happens or at a set time. Nodes are the steps that act on the data after the workflow has started."}, {"q": "How should you explain missing integration coverage in a customer conversation?", "answer": "Be direct and do not guess. Explain that a team may use prebuilt nodes where available and use API or code-based steps when a custom action or unsupported system is needed."}, {"q": "What should a learner build in the hands-on lab?", "answer": "A workflow with one trigger, a data transformation step and multiple downstream actions, including one step that shows a custom integration approach."}]}</script>
+<script id="course-data" type="application/json">{
+ "id": "GTM104",
+ "title": "Nodes triggers and integrations",
+ "path": "Technical Proficiency",
+ "level": "Practitioner",
+ "levelId": "L2",
+ "minutes": 60,
+ "roles": [
+  "SE",
+  "AE_ENT",
+  "PARTNER"
+ ],
+ "competencies": [
+  "Technical proficiency"
+ ],
+ "moments": [
+  "Ramp (days 31-90)"
+ ],
+ "assessment": [
+  "Hands-on lab",
+  "Automatic grader"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Explain how triggers, nodes and integrations work together in n8n, and demonstrate a simple workflow with clear prerequisites and limits.",
+ "who_its_for": "Solutions engineers, enterprise account executives and partners who are past basic onboarding and now need to speak credibly about how workflows connect to other systems. It assumes a basic understanding of what n8n is; deep API design and advanced deployment topics are out of scope.",
+ "scenario": {
+  "name": "Meridian Logistics",
+  "problem": "A mid-market logistics company uses many SaaS tools for orders, support and internal operations. The team needs workflows that can start reliably, move data between systems and handle cases where one tool does not have the exact action they need."
+ },
+ "prerequisites": [
+  {
+   "code": "N8N102",
+   "title": "Integrations: APIs & Connected Workflows",
+   "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N102+2026H2/about"
+  }
+ ],
+ "concept": "A workflow is built from three practical parts: how it starts, what each step does and how it connects to other systems. In n8n, triggers start the workflow, nodes process data or take actions, and integrations connect those steps to SaaS tools, databases, APIs or custom logic. This matters in customer conversations because buyers are often not asking for a visual builder by itself. They are asking whether their systems can start the right process, pass the right data and still work when the standard connector is not enough.",
+ "lessons": [
+  {
+   "title": "Triggers: how workflows start",
+   "minutes": 15,
+   "summary": "What triggers are, common trigger types and how to explain when a workflow runs versus when it waits."
+  },
+  {
+   "title": "Nodes: what happens to the data",
+   "minutes": 15,
+   "summary": "How nodes transform, route and act on data, and how to describe this clearly in a demo."
+  },
+  {
+   "title": "Integrations: connectors, APIs and custom logic",
+   "minutes": 15,
+   "summary": "When to use a standard integration, when to call an API directly and when code is the safer answer."
+  },
+  {
+   "title": "Demo pattern and live-call risks",
+   "minutes": 15,
+   "summary": "A simple demo flow, the prerequisites to confirm first and the mistakes that usually derail technical calls."
+  }
+ ],
+ "by_role": {
+  "SE": {
+   "say": {
+    "format": "Talk track",
+    "text": "I will show this in three parts: what starts the workflow, how data moves through each node and how we connect to systems that do or do not have a ready-made integration. If a standard node is not enough, we can usually call an API or add code, but I will flag any product-specific limit we have not verified [CHECK WITH PRODUCT]."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Create a workflow with one trigger that is easy to explain, such as a webhook or schedule.",
+     "Add a small sequence of nodes that receives data, transforms one field and sends the result to another system.",
+     "Run the workflow once and inspect the input and output at each node so the customer can see how data changes.",
+     "Replace one action with an HTTP request or code step to show how you handle cases where a prebuilt node is not the right fit.",
+     "Close by naming the prerequisites, such as credentials, test data and API access, before discussing scale or production design."
+    ]
+   }
+  },
+  "AE_ENT": {
+   "say": {
+    "format": "Talk track",
+    "text": "The business question is not just whether a workflow can connect two apps. It is whether your team gets a governed way to trigger processes, pass data across systems and handle exceptions without building every integration from scratch. A good discovery question is: where do your teams lose time today because a process starts in one system but the next step still depends on manual handoff. Do not pitch this as a simple app-to-app connector if the buyer's real concern is governance, security review or operating custom integrations at enterprise scale."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Show a workflow that starts from a controlled trigger, not a toy example with unclear business value.",
+     "Walk through each node in business terms: start event, validation, system update and notification.",
+     "Point out where credentials are required and where a team may prefer an API call or custom logic for internal systems.",
+     "End with a short discussion of what would need review from security, platform or architecture teams before production use."
+    ]
+   }
+  },
+  "PARTNER": {
+   "say": {
+    "format": "Implementation tips",
+    "text": "Start every client project by mapping three things first: trigger source, required data fields and target system actions. Use standard integrations when they fit, but plan early for the cases where the client needs an API call, data transformation or error handling path. Tell clients clearly what you need from them before the build starts, especially credentials, sample payloads and access to test environments."
+   },
+   "show": {
+    "format": "Lab steps",
+    "steps": [
+     "Build a workflow in your own n8n instance with one trigger, one transformation step and one outbound action.",
+     "Use sample data that includes at least one field you must rename, format or split before sending onward.",
+     "Add one step that uses an API request or equivalent custom connection path instead of relying only on a standard node.",
+     "Test the workflow end to end and confirm that each node output is understandable to another consultant who inherits the project.",
+     "Save the workflow in a form you can reuse as a starting template for future client work."
+    ]
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "What if the system we need is not covered by a native integration?",
+   "a": "Do not guess. Explain that many teams use API calls or code for gaps, then confirm the exact requirement and validate it against the product before promising fit [CHECK WITH PRODUCT]."
+  },
+  {
+   "q": "Why not just have engineers build these integrations directly?",
+   "a": "They can. The value discussion is about speed, visibility and maintainability for recurring workflow logic, not about claiming code is never needed."
+  },
+  {
+   "q": "Are triggers reliable enough for important operational processes?",
+   "a": "That depends on the trigger type, the connected systems and the workflow design. Keep the answer honest and move quickly to design prerequisites, testing and operational review rather than broad claims [CHECK WITH PRODUCT]."
+  }
+ ],
+ "gotchas": [
+  "Using a demo trigger that looks simple but does not match the customer's real starting event.",
+  "Failing to test credentials, sample payloads or API permissions before the call.",
+  "Claiming a native integration can cover a use case when the real need is a custom API request or code step."
+ ],
+ "practice": {
+  "type": "Hands-on lab",
+  "brief": "In your own n8n instance, build a workflow for Meridian Logistics that starts from one trigger, transforms incoming order data and sends the result to a second system. Include one standard node and one step that handles a connection through an API-style request or equivalent custom path. The automatic grader checks structure and evidence that the workflow ran with sample data.",
+  "rubric": [
+   {
+    "criterion": "Workflow structure",
+    "good": "The grader finds one trigger, at least one transformation step and at least one outbound action in the workflow."
+   },
+   {
+    "criterion": "Data handling",
+    "good": "The grader finds that at least one field is changed, mapped or reformatted before the outbound step runs."
+   },
+   {
+    "criterion": "Custom connection path",
+    "good": "The grader finds one step that is not only a basic prebuilt action, such as an HTTP request or code-based handling."
+   },
+   {
+    "criterion": "Runnable result",
+    "good": "The grader finds a successful test execution with sample data passing through the main path of the workflow."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "What is the difference between a trigger and a node in a workflow?",
+   "answer": "A trigger starts the workflow when an event or schedule occurs. A node is a step inside the workflow that transforms data, makes a decision or takes an action."
+  },
+  {
+   "q": "When should you discuss APIs or code in this course?",
+   "answer": "Discuss them when a standard integration does not fit the customer's exact requirement or when the team needs more control over the logic. Do not present them as required for every workflow."
+  },
+  {
+   "q": "What should you confirm before running a live integration demo?",
+   "answer": "Confirm credentials, test data, API access and the exact systems and actions you plan to show. Also confirm any product limits you are not fully sure about before you make a claim."
+  }
+ ]
+}</script>
 <script>
 (function(){
   var C=JSON.parse(document.getElementById('course-data').textContent);
