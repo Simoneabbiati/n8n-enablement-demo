@@ -30,7 +30,167 @@
   </div>
 </main>
 <footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
-<script id="course-data" type="application/json">{"id": "GTM108", "title": "The standard demo", "path": "Discovery and Demo Certification", "level": "Practitioner", "levelId": "L2", "minutes": 60, "roles": ["AE_MM", "AE_ENT", "SE"], "competencies": ["Demo"], "moments": ["Ramp (days 31-90)"], "assessment": ["Certification"], "status": "Example draft, for review", "updated": "2026-10-15", "objective": "Deliver a standard n8n demo that links the workflow to a customer problem, explains what is happening, and handles common questions without over-claiming.", "who_its_for": "Account executives and solutions engineers who already know the basic product shape and now need a repeatable demo. It assumes you can describe a workflow at a high level; deep security review and custom proof design are out of scope.", "scenario": {"name": "Meridian Logistics", "problem": "A mid-market logistics company uses many SaaS tools for orders, support and internal updates. Teams copy data by hand between systems, and engineering cannot keep up with every integration request."}, "prerequisites": [{"code": "N8N101", "title": "Essentials: Your First Workflows", "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N101+2026H2/about"}], "concept": "A standard demo is a short, repeatable way to show how n8n solves a common automation problem. It is not a full product tour. You start with the customer's manual process, show one workflow end to end, explain just enough of triggers, nodes and data flow, and stop before you drift into features that do not matter. The goal is to make the buyer see their own process in the example and know what to ask next.", "lessons": [{"title": "Set up the story before the screen share", "minutes": 12, "summary": "Frame the manual problem, the systems involved and the result the customer wants before opening the product."}, {"title": "Run the core workflow demo", "minutes": 18, "summary": "Show a simple trigger, the steps in the workflow and the result in the destination tools."}, {"title": "Explain what matters and skip what does not", "minutes": 10, "summary": "Use plain language to explain the workflow while avoiding side paths that distract from the main value."}, {"title": "Handle common questions live", "minutes": 10, "summary": "Answer pushback on fit, complexity and AI carefully, without inventing details."}, {"title": "Close the demo and earn the next step", "minutes": 10, "summary": "Summarise what the workflow solved, confirm fit and ask for the right follow-up action."}], "by_role": {"AE_MM": {"say": {"format": "Talk track", "text": "Let me show one workflow that maps to the manual work you described. Meridian's team receives new order or support data, routes it across tools, and updates the right people without copy-paste. If the pain is not repeated manual work across systems, I would not lead with this demo."}}, "AE_ENT": {"say": {"format": "Talk track", "text": "I will keep this demo focused on the operating model, not just the UI. The point is to show how a platform team can standardise automation work across systems while keeping technical control and governance in view [CHECK WITH PRODUCT]. If the buyer only wants a point solution for one narrow task, this standard demo may be too broad."}, "show": {"format": "Demo steps", "steps": ["Start with the workflow already open and name the business process being automated.", "Show the trigger and the systems touched by the workflow, then explain why each step exists.", "Run the workflow once and follow the data through the path that matters most.", "Point out where a technical team would review logic, approvals or deployment choices [CHECK WITH PRODUCT].", "End on the business outcome and the questions needed for a deeper technical review."]}}, "SE": {"say": {"format": "Talk track", "text": "I narrate the demo from left to right: trigger, transformation, action and result. I keep the example realistic, explain any prerequisites before I run it, and say clearly when a question needs product confirmation. If the customer asks for edge cases, I note them and decide whether to branch or park them."}, "show": {"format": "Demo steps", "steps": ["Open a prepared workflow for Meridian Logistics that starts from a new request or scheduled event.", "Walk through the nodes in order and state what data enters, changes and leaves at each step.", "Execute the workflow and show the output in the target system or message destination.", "Open one node in detail to show that the workflow can be adjusted without rebuilding the whole flow.", "If relevant to the audience, show a small AI step in the flow and label it as one part of the process, not the whole story [CHECK WITH PRODUCT].", "Finish by showing where you would duplicate or extend the workflow for a second use case."]}}}, "objections": [{"q": "This looks like a canned demo. How do I know it fits our process?", "a": "That is fair. The standard demo is meant to prove the model: trigger, logic and actions across systems. The next step is to map one of your real workflows against that pattern."}, {"q": "Our team could build this ourselves with scripts.", "a": "You may be able to. The demo is meant to show a maintainable workflow that technical teams can review and change over time, rather than only proving that automation is possible."}, {"q": "Where does AI fit here?", "a": "Only show AI if it supports the process you are already discussing. If AI is not part of the problem, keep the demo focused on workflow orchestration and add AI later if needed."}], "gotchas": ["Do not start with the canvas before stating the business problem and the systems involved.", "Do not improvise on integrations, deployment options or governance details you have not confirmed [CHECK WITH PRODUCT].", "Do not let one technical side question consume the whole demo; park it and return to the main flow."], "practice": {"type": "Role-play", "brief": "Run a 10-minute standard demo for Meridian Logistics. One learner plays the seller and one plays the customer. The seller must frame the problem, show one workflow, answer two questions and close with a next step.", "rubric": [{"criterion": "Problem-first setup", "good": "Starts with Meridian's manual cross-system work and the desired outcome before opening the workflow."}, {"criterion": "Clear demo flow", "good": "Shows the workflow in a logical order, explains trigger and actions in plain language, and avoids unnecessary detours."}, {"criterion": "Honest handling of questions", "good": "Answers common objections directly and flags uncertain claims for follow-up instead of guessing."}, {"criterion": "Strong close", "good": "Ends by linking the demo to the customer's process and asks for a specific next step."}]}, "check": [{"q": "What is the main purpose of a standard demo?", "answer": "To show one repeatable workflow that makes the customer's problem concrete. It should help the buyer see how their own process could map to the product."}, {"q": "When should you avoid adding extra product features during the demo?", "answer": "When those features do not help explain the workflow or solve the customer's stated problem. Extra detail can distract from the value and create confusion."}, {"q": "How should you respond if a customer asks for a product detail you are not sure about?", "answer": "Say you need to confirm it and follow up after the call. It is better to be accurate than to guess in a live demo."}]}</script>
+<script id="course-data" type="application/json">{
+ "id": "GTM108",
+ "title": "The standard demo",
+ "path": "Discovery and Demo Certification",
+ "level": "Practitioner",
+ "levelId": "L2",
+ "minutes": 60,
+ "roles": [
+  "AE_MM",
+  "AE_ENT",
+  "SE"
+ ],
+ "competencies": [
+  "Demo"
+ ],
+ "moments": [
+  "Ramp (days 31-90)"
+ ],
+ "assessment": [
+  "Certification"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Deliver a clear, repeatable n8n demo that starts from the customer's problem, shows one workflow end to end, and handles common questions honestly.",
+ "who_its_for": "Account executives and solutions engineers who already know the basics of workflows and now need a repeatable customer demo. It assumes you can explain triggers, nodes and workflow logic; deep security review and custom proof work are out of scope.",
+ "scenario": {
+  "name": "Meridian Logistics",
+  "problem": "A mid-market logistics company runs order updates, support requests and internal alerts across many SaaS tools. Teams copy data by hand between systems, engineering is overloaded, and leaders want one practical example before they agree to a deeper evaluation."
+ },
+ "prerequisites": [
+  {
+   "code": "N8N101",
+   "title": "Essentials: Your First Workflows",
+   "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N101+2026H2/about"
+  }
+ ],
+ "concept": "A standard demo is the default story you can tell in a first or second customer meeting. It is not a tour of every feature. It is one short workflow, built around a problem the customer already admits they have, with just enough detail to show how n8n works and where it fits. The goal is to make the customer think, \"this looks like our process,\" not to prove every edge case live.",
+ "lessons": [
+  {
+   "title": "Frame the problem before the product",
+   "minutes": 12,
+   "summary": "Set up the demo with the customer's current process, the cost of manual work and the one outcome you will show."
+  },
+  {
+   "title": "Walk the workflow end to end",
+   "minutes": 16,
+   "summary": "Show a simple trigger, a few nodes, the data moving through them and the business result at the end."
+  },
+  {
+   "title": "Explain choices, limits and next steps",
+   "minutes": 12,
+   "summary": "Translate what the customer sees into how teams build, change and govern workflows, without over-claiming."
+  },
+  {
+   "title": "Handle interruptions and objections live",
+   "minutes": 10,
+   "summary": "Answer common pushback, keep control of the flow and avoid getting trapped in side paths."
+  },
+  {
+   "title": "Certification role-play",
+   "minutes": 10,
+   "summary": "Practise the standard demo with a peer who plays the customer and asks realistic questions."
+  }
+ ],
+ "by_role": {
+  "AE_MM": {
+   "say": {
+    "format": "Talk track",
+    "text": "Let me show one process your team is doing by hand today: an order issue comes in, data is checked across systems, then the right people are notified. I will keep this to one workflow so you can judge whether n8n fits the way your team already works. If your main problem is not cross-system process work, this may not be the right demo to spend time on."
+   }
+  },
+  "AE_ENT": {
+   "say": {
+    "format": "Talk track",
+    "text": "I will show a simple workflow first, then explain what it means for control, review and maintainability. The point is not just that the process can be automated, but that your platform team can manage how these automations are built and changed over time [CHECK WITH PRODUCT]. If your evaluation is already at detailed security review stage, this standard demo should be followed by a deeper technical session."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Open the prepared workflow and state the business process in one sentence before clicking anything.",
+     "Show the trigger and the connected systems, then explain why this workflow exists in the first place.",
+     "Run the workflow once and pause at each major step to show the data path and any decision logic.",
+     "Show the final outcome, such as an update in another system and a team notification.",
+     "Close by summarising what a platform or engineering team would need to review next, including hosting, access and governance topics [CHECK WITH PRODUCT]."
+    ]
+   }
+  },
+  "SE": {
+   "say": {
+    "format": "Talk track",
+    "text": "I narrate the workflow in the same order the data moves. I explain what is standard, what is configurable and where custom logic might be needed. If a customer asks about a limit or a connector I have not verified, I say I will check rather than guessing."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Start with a prepared workflow for Meridian Logistics that covers one operational process from trigger to action.",
+     "Open the trigger node and explain what event starts the workflow and what sample data is coming in.",
+     "Step through the key nodes, showing transformations, routing or decision points one by one.",
+     "Execute the workflow and inspect the output so the customer can see what changed at each stage.",
+     "Point out where a team could add code or another node if their process is more complex.",
+     "End with the outcome in the destination system and a short recap of prerequisites, limits and likely next steps."
+    ]
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "This looks like a canned demo. How do I know it applies to us?",
+   "a": "That is fair. The purpose of the standard demo is to confirm the pattern fits your process. If it does, the next step is to map one of your real workflows in more detail."
+  },
+  {
+   "q": "Our engineers could build this themselves.",
+   "a": "They might. The question is how quickly they can deliver it, who changes it later and how visible that process is to the rest of the team."
+  },
+  {
+   "q": "Can you show our exact systems right now?",
+   "a": "Only if they are prepared and verified in advance. In a first demo, it is better to show a proven flow clearly than improvise and create confusion."
+  }
+ ],
+ "gotchas": [
+  "Do not start in the product UI before you state the customer problem and what the workflow will prove.",
+  "Do not click into too many side settings; keep the flow visible and stay with the main narrative.",
+  "Do not promise that a connector, hosting option or governance control exists unless you have checked it [CHECK WITH PRODUCT]."
+ ],
+ "practice": {
+  "type": "Role-play",
+  "brief": "Run a 10-minute standard demo for Meridian Logistics. One learner plays the seller and one plays an operations or engineering stakeholder who interrupts twice: once with a relevance question and once with a build-versus-buy objection.",
+  "rubric": [
+   {
+    "criterion": "Starts from the customer's problem",
+    "good": "Frames the workflow in business terms before opening the product and states the outcome the demo will show."
+   },
+   {
+    "criterion": "Shows a clear end-to-end flow",
+    "good": "Walks through the trigger, key nodes and final result in a logical order without getting lost in side details."
+   },
+   {
+    "criterion": "Handles objections honestly",
+    "good": "Answers questions directly, avoids unsupported claims and parks deep topics for follow-up when needed."
+   },
+   {
+    "criterion": "Ends with a next step",
+    "good": "Confirms fit or lack of fit and proposes a sensible follow-up, such as discovery on a real workflow or a deeper technical session."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "What is the purpose of a standard demo in an early customer meeting?",
+   "answer": "It shows one realistic workflow clearly enough for the customer to judge fit. It is meant to confirm a problem pattern, not to cover every feature or edge case."
+  },
+  {
+   "q": "What should you do if a customer asks for a capability you have not verified?",
+   "answer": "Say you will check and follow up. It is better to be accurate than to guess in a live demo."
+  },
+  {
+   "q": "What makes a standard demo effective?",
+   "answer": "It starts from the customer's problem, shows one end-to-end workflow, and ends with a clear next step based on what the customer cares about."
+  }
+ ]
+}</script>
 <script>
 (function(){
   var C=JSON.parse(document.getElementById('course-data').textContent);
