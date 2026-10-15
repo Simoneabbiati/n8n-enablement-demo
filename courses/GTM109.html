@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security compliance and governance — GTM Academy (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../templates/style.css">
+</head>
+<body>
+<div class="notice">Concept built by Simone Abbiati for the n8n Sales Enablement Manager application — sample data, not affiliated with n8n GmbH.</div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">GA</span>GTM Academy <span class="chip">Concept</span></a>
+  <nav class="links"><a href="../#catalog">Catalog</a><a href="../#paths">Learning paths</a><a href="../#certifications">Certifications</a><a href="../#foundations">Foundations</a></nav>
+</div></header>
+<main class="wrap">
+  <div class="course-head">
+    <div class="crumbs"><a href="../#catalog">Catalog</a> / <span id="c-path"></span></div>
+    <p class="eyebrow" id="c-code"></p>
+    <h1 id="c-title"></h1>
+    <p class="lead" id="c-objective"></p>
+    <div class="facts-row" id="c-facts"></div>
+  </div>
+  <div class="course">
+    <article id="c-body"></article>
+    <aside id="c-side"></aside>
+  </div>
+</main>
+<footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
+<script id="course-data" type="application/json">{
+ "id": "GTM109",
+ "title": "Security compliance and governance",
+ "path": "Enterprise Selling",
+ "level": "Expert",
+ "levelId": "L3",
+ "minutes": 45,
+ "roles": [
+  "AE_ENT",
+  "SE"
+ ],
+ "competencies": [
+  "Objection handling"
+ ],
+ "moments": [
+  "Ramp (days 31-90)",
+  "Launch readiness"
+ ],
+ "assessment": [
+  "Certification"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Handle enterprise security, compliance and governance questions with a clear point of view, honest limits and a technical next step.",
+ "who_its_for": "Enterprise account executives and solutions engineers preparing for regulated and security-sensitive deals. It assumes basic product knowledge and discovery skills; deep legal review and detailed implementation design are out of scope.",
+ "scenario": {
+  "name": "Aurora Bank",
+  "problem": "A regulated enterprise wants workflow automation and AI agents, but its security team requires strict review, strong governance and self-hosting before any pilot can move forward."
+ },
+ "prerequisites": [],
+ "concept": "Security, compliance and governance questions are usually not about features alone. They are about whether a platform can fit the customer's risk model, operating model and approval process. In practice, this means understanding where workflows run, how access is controlled, how changes are managed, what data touches the system and which claims must be confirmed by specialists. Your job is to reduce risk in the buying process, not to guess at details.",
+ "lessons": [
+  {
+   "title": "What enterprise buyers are really asking",
+   "minutes": 10,
+   "summary": "Separate security, compliance and governance concerns so you answer the real risk behind each question."
+  },
+  {
+   "title": "How to talk about deployment and control",
+   "minutes": 12,
+   "summary": "Frame cloud versus self-hosted, access, data handling and operational ownership without over-claiming."
+  },
+  {
+   "title": "Handling the CTO and security review",
+   "minutes": 11,
+   "summary": "Use a business and risk narrative that addresses architecture, approval steps and honest limits."
+  },
+  {
+   "title": "Demoing governance credibly",
+   "minutes": 6,
+   "summary": "Show only the controls you can explain clearly, and connect each one to a review question."
+  },
+  {
+   "title": "Certification role-play",
+   "minutes": 6,
+   "summary": "Practise a live enterprise objection round with follow-up questions from security and architecture."
+  }
+ ],
+ "by_role": {
+  "AE_ENT": {
+   "say": {
+    "format": "Talk track",
+    "text": "For teams like Aurora Bank, the first question is not whether automation is useful. It is whether the platform can be operated in a way that fits your security review, governance model and infrastructure choices. We should confirm your control points early, then map n8n to them with the right technical team, especially if self-hosting is required [CHECK WITH PRODUCT]."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Start with the customer's review process and restate the controls they care about most.",
+     "Open a simple workflow and explain where it runs in the chosen deployment model [CHECK WITH PRODUCT].",
+     "Show the product areas tied to access, credentials or operational control that you can explain accurately [CHECK WITH PRODUCT].",
+     "End by listing the questions that need formal confirmation from security or product specialists."
+    ]
+   }
+  },
+  "SE": {
+   "say": {
+    "format": "Talk track",
+    "text": "I would treat this as an architecture and operating model discussion, not a feature tour. I will show how workflows are built and run, where controls apply and which details need validation, so the customer's security team can assess fit without us making unsupported claims."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Open a prepared workflow that handles non-sensitive sample data only.",
+     "Walk through the trigger, credentials and execution path, and explain which parts the customer will ask to govern.",
+     "Point out the admin or configuration areas relevant to user access, secrets or deployment operations [CHECK WITH PRODUCT].",
+     "Show how you would document open questions for the security review instead of answering from memory.",
+     "Export the example workflow and explain how a proof of concept would be scoped for the customer's environment."
+    ]
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "We cannot use a platform unless it is self-hosted in our environment.",
+   "a": "If self-hosting is a hard requirement, confirm that path early and bring in the right technical owner to validate fit and scope [CHECK WITH PRODUCT]. Do not keep the deal in a generic cloud discussion if the buyer has already ruled that out."
+  },
+  {
+   "q": "Our security team will reject anything that introduces governance gaps.",
+   "a": "Acknowledge that risk directly. Then map the review to concrete areas such as access, credentials, change control and operational ownership, and note which answers need formal confirmation."
+  },
+  {
+   "q": "We can build this ourselves and keep full control.",
+   "a": "That may be true. The trade-off is the time to build, operate and govern an internal platform over time. The discussion should compare ongoing ownership, visibility and change management, not just first delivery."
+  }
+ ],
+ "gotchas": [
+  "Do not answer certification, compliance or security questionnaire items from memory if you are not certain.",
+  "Do not treat governance as a product checkbox list; tie it to who can build, approve, run and audit workflows.",
+  "Never demo with real sensitive data in a security-focused meeting."
+ ],
+ "practice": {
+  "type": "Role-play",
+  "brief": "Run a 12-minute meeting with Aurora Bank. One learner plays the AE or SE, and one plays a CTO joined by a security architect. The customer wants AI agents but says only a self-hosted approach will be considered, and asks how governance would work in practice.",
+  "rubric": [
+   {
+    "criterion": "Starts from risk and operating model",
+    "good": "Clarifies the customer's review process, deployment requirement and control priorities before pitching features."
+   },
+   {
+    "criterion": "Handles objections honestly",
+    "good": "Answers clearly, avoids unsupported claims and flags items that require confirmation."
+   },
+   {
+    "criterion": "Connects product discussion to governance",
+    "good": "Explains access, credential handling, change control or operational ownership in plain language tied to the buyer's concerns."
+   },
+   {
+    "criterion": "Advances the deal",
+    "good": "Ends with a specific next step such as a scoped technical review, document request or follow-up with specialists."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "Why is it a mistake to answer enterprise security questions as a feature list only?",
+   "answer": "Because the buyer is usually assessing risk, control and operating fit, not just whether a feature exists. You need to connect the product to their review process and governance model."
+  },
+  {
+   "q": "How should you respond when a customer requires self-hosting?",
+   "answer": "Confirm that requirement early and treat it as a core qualification point. Then validate the fit, scope and next technical review with the right internal experts [CHECK WITH PRODUCT]."
+  },
+  {
+   "q": "What makes a strong answer to a governance objection?",
+   "answer": "It explains who can build, approve, run and monitor workflows, and it avoids claims you cannot support. A strong answer also ends with a clear next step for formal review."
+  }
+ ]
+}</script>
+<script>
+(function(){
+  var C=JSON.parse(document.getElementById('course-data').textContent);
+  var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}).replace(/\[CHECK WITH PRODUCT\]/g,'<span class="check">[check with product]</span>')};
+  var ROLE={AE_MM:'Account Executive (mid-market)',AE_ENT:'Account Executive (enterprise)',SE:'Solutions Engineer',CSM:'Customer Success Manager',PARTNER:'Partner / implementation consultant'};
+  var $=function(s){return document.getElementById(s)};
+  document.title=C.title+' — GTM Academy (concept)';
+  $('c-path').textContent=C.path; $('c-code').textContent=C.id+' · '+C.level; $('c-title').textContent=C.title; $('c-objective').textContent=C.objective;
+  $('c-facts').innerHTML=['<span><b>'+C.minutes+' min</b></span>','<span>'+esc(C.lessons.length)+' lessons</span>','<span>For: '+esc(C.roles.map(function(r){return ROLE[r]||r}).join(', '))+'</span>','<span>When: '+esc(C.moments.join(', '))+'</span>'].join('');
+  var ul=function(a){return '<ul>'+a.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>'};
+  var tabs=function(key,label){var roles=C.roles.filter(function(r){return C.by_role[r]&&C.by_role[r][key]});
+    if(!roles.length)return '';
+    return '<section><h2>'+label+'</h2><div class="tabs" data-k="'+key+'">'+roles.map(function(r,i){return '<button data-r="'+r+'" class="'+(i?'':'on')+'">'+esc(ROLE[r]||r)+'</button>'}).join('')+'</div>'+
+      roles.map(function(r,i){var b=C.by_role[r][key];return '<div class="pane" data-k="'+key+'" data-r="'+r+'"'+(i?' hidden':'')+'><p><b>'+esc(b.format)+'</b></p>'+(b.steps?'<ol>'+b.steps.map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ol>':'')+(b.text?'<p>'+esc(b.text)+'</p>':'')+'</div>'}).join('')+'</section>'};
+  var h='';
+  h+='<section><h2>1. Who it is for</h2><p>'+esc(C.who_its_for)+'</p></section>';
+  h+='<section><h2>2. Business scenario</h2><p><b>'+esc(C.scenario.name)+'.</b> '+esc(C.scenario.problem)+'</p></section>';
+  h+='<section><h2>3. Before you start</h2>'+(C.prerequisites.length?ul(C.prerequisites.map(function(p){return p.code+' '+p.title})):'<p>No prerequisite.</p>')+(C.prerequisites.length?'<p>'+C.prerequisites.map(function(p){return '<a href="'+p.url+'" target="_blank" rel="noopener">Open '+esc(p.code)+' on learn.n8n.io</a>'}).join(' · ')+'</p>':'')+'</section>';
+  h+='<section><h2>4. The concept</h2><p>'+esc(C.concept)+'</p><h3>Lessons</h3><ol>'+C.lessons.map(function(l){return '<li><b>'+esc(l.title)+'</b> ('+l.minutes+' min). '+esc(l.summary)+'</li>'}).join('')+'</ol></section>';
+  h+=tabs('say','5. How to say it');
+  h+=tabs('show','6. How to show it');
+  h+='<section><h2>7. Objections and gotchas</h2>'+C.objections.map(function(o){return '<details class="q"><summary>'+esc(o.q)+'</summary><p>'+esc(o.a)+'</p></details>'}).join('')+(C.gotchas&&C.gotchas.length?ul(C.gotchas):'')+'</section>';
+  h+='<section><h2>8. Practice</h2><p><b>'+esc(C.practice.type)+'.</b> '+esc(C.practice.brief)+'</p><table class="t"><thead><tr><th>Criterion</th><th>What good looks like</th></tr></thead><tbody>'+C.practice.rubric.map(function(r){return '<tr><td>'+esc(r.criterion)+'</td><td>'+esc(r.good)+'</td></tr>'}).join('')+'</tbody></table></section>';
+  h+='<section><h2>9. Check your understanding</h2>'+C.check.map(function(q,i){return '<details class="q"><summary>'+(i+1)+'. '+esc(q.q)+'</summary><p>'+esc(q.answer)+'</p></details>'}).join('')+'</section>';
+  $('c-body').innerHTML=h;
+  document.querySelectorAll('.tabs').forEach(function(t){t.querySelectorAll('button').forEach(function(b){b.onclick=function(){var k=t.dataset.k;t.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.pane[data-k="'+k+'"]').forEach(function(p){p.hidden=p.dataset.r!==b.dataset.r})}})});
+  $('c-side').innerHTML='<div class="box"><h4>Builds</h4>'+ul(C.competencies)+'</div><div class="box"><h4>Assessment</h4>'+ul(C.assessment)+'</div><div class="box"><h4>Status</h4><p style="margin:0;color:var(--soft)">'+esc(C.status)+'</p></div>';
+  $('c-updated').textContent='Last updated '+C.updated;
+})();
+</script>
+</body>
+</html>
