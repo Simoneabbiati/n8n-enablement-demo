@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cloud vs self-hosted — GTM Academy (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../templates/style.css">
+</head>
+<body>
+<div class="notice">Concept built by Simone Abbiati for the n8n Sales Enablement Manager application — sample data, not affiliated with n8n GmbH.</div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">GA</span>GTM Academy <span class="chip">Concept</span></a>
+  <nav class="links"><a href="../#catalog">Catalog</a><a href="../#paths">Learning paths</a><a href="../#certifications">Certifications</a><a href="../#foundations">Foundations</a></nav>
+</div></header>
+<main class="wrap">
+  <div class="course-head">
+    <div class="crumbs"><a href="../#catalog">Catalog</a> / <span id="c-path"></span></div>
+    <p class="eyebrow" id="c-code"></p>
+    <h1 id="c-title"></h1>
+    <p class="lead" id="c-objective"></p>
+    <div class="facts-row" id="c-facts"></div>
+  </div>
+  <div class="course">
+    <article id="c-body"></article>
+    <aside id="c-side"></aside>
+  </div>
+</main>
+<footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
+<script id="course-data" type="application/json">{
+ "id": "GTM106",
+ "title": "Cloud vs self-hosted",
+ "path": "Technical Proficiency",
+ "level": "Practitioner",
+ "levelId": "L2",
+ "minutes": 30,
+ "roles": [
+  "SE",
+  "AE_ENT",
+  "PARTNER"
+ ],
+ "competencies": [
+  "Product knowledge",
+  "Objection handling"
+ ],
+ "moments": [
+  "Ramp (days 31-90)"
+ ],
+ "assessment": [
+  "Knowledge check"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Compare cloud and self-hosted deployment options so you can guide the right customer conversation without overcommitting.",
+ "who_its_for": "Solutions engineers, enterprise account executives and partners who are starting technical deployment conversations. This assumes basic product familiarity and is not a deep architecture or security review; detailed requirements still need validation with the product and security teams.",
+ "scenario": {
+  "name": "Aurora Bank",
+  "problem": "A regulated enterprise wants to automate internal processes and explore AI agents, but its security review requires tight control over infrastructure, access and data handling before it can move forward."
+ },
+ "prerequisites": [],
+ "concept": "Cloud versus self-hosted is a deployment choice, not a different product experience in principle [CHECK WITH PRODUCT]. The real question is which operating model fits the customer's constraints. Some teams want the fastest path to getting workflows live with less platform work on their side [CHECK WITH PRODUCT]. Others need to run n8n on infrastructure they control because of security review, network rules, procurement standards or internal governance [CHECK WITH PRODUCT]. Your job is to frame the trade-off clearly, ask what must be true for deployment approval, and avoid promising a fit before the technical details are checked.",
+ "lessons": [
+  {
+   "title": "What the deployment decision is really about",
+   "minutes": 8,
+   "summary": "Map the choice to customer constraints such as speed, control, ownership and review processes."
+  },
+  {
+   "title": "When cloud is the simpler path",
+   "minutes": 7,
+   "summary": "Cover the situations where a managed option reduces customer operational work [CHECK WITH PRODUCT]."
+  },
+  {
+   "title": "When self-hosted is required",
+   "minutes": 7,
+   "summary": "Explain the enterprise cases where infrastructure control, internal policy or data handling rules drive the decision."
+  },
+  {
+   "title": "How to qualify and demo the deployment discussion",
+   "minutes": 8,
+   "summary": "Practise the questions, caveats and proof points that keep the conversation accurate and useful."
+  }
+ ],
+ "by_role": {
+  "SE": {
+   "say": {
+    "format": "Talk track",
+    "text": "The first question is not which option is better. It is what your security, network and operations teams require. If cloud is acceptable, we can discuss faster time to value with less customer infrastructure work [CHECK WITH PRODUCT]. If it is not, we can scope a self-hosted path and confirm the prerequisites before we promise anything."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Start with one workflow example and explain that the business outcome is the same deployment question: automate the process while meeting operating constraints.",
+     "Draw two simple paths on one slide or whiteboard: cloud and self-hosted, then label who manages infrastructure, access and operational responsibility at a high level [CHECK WITH PRODUCT].",
+     "Ask the customer to name the approval gates that matter most, such as security review, network access, procurement or internal hosting standards.",
+     "Open the workflow and show the same build flow, then explain that the deployment decision affects operating model and review effort more than the basic workflow concept [CHECK WITH PRODUCT].",
+     "End with a checklist of items that must be validated after the call, rather than guessing on unsupported architecture details."
+    ]
+   }
+  },
+  "AE_ENT": {
+   "say": {
+    "format": "Talk track",
+    "text": "We should match the deployment model to your governance model. If your platform team can use a managed service, that may reduce internal operational overhead [CHECK WITH PRODUCT]. If your policy requires control of infrastructure and reviewable architecture, self-hosted may be the right path. The important step now is to surface the CTO's non-negotiables early so we do not waste a cycle on the wrong approach."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Open with the business goal Aurora Bank is trying to achieve and state that deployment choice affects risk review and delivery path.",
+     "List the buyer concerns in order: security review, governance, ownership of operations and speed to first production use.",
+     "Show a simple comparison view of cloud and self-hosted at a non-technical level, focused on approval process and team responsibilities [CHECK WITH PRODUCT].",
+     "Use one technical example workflow to show that the platform use case stays the same while the operating model changes.",
+     "Close with the next-step plan: involve security and architecture stakeholders to confirm fit before discussing final design."
+    ]
+   }
+  },
+  "PARTNER": {
+   "say": {
+    "format": "Implementation tips",
+    "text": "Do not start client delivery with a deployment recommendation based on habit. Start with the client's policy, hosting standards and support model. For self-hosted projects, make the client name the infrastructure owner, the upgrade owner and the incident owner early. If cloud is in scope, confirm procurement and data handling requirements before you estimate delivery [CHECK WITH PRODUCT]."
+   },
+   "show": {
+    "format": "Lab steps",
+    "steps": [
+     "Create a short deployment intake checklist for a new client with sections for security policy, hosting preference, access control and support ownership.",
+     "In your own n8n instance, build or import a very simple workflow that uses one trigger and one action so the deployment discussion stays separate from workflow complexity.",
+     "Write two short recommendation notes for the same workflow: one for a cloud-suitable client and one for a self-hosted-only client, with assumptions clearly stated.",
+     "Add a final section called 'Needs validation' and list every item you would confirm with product, security or platform teams before promising scope."
+    ]
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "If we need self-hosting, does that mean the product is harder to use?",
+   "a": "Not necessarily. Self-hosting usually changes who owns infrastructure and operations, not the reason the customer uses the product. The exact impact depends on the customer's environment and should be scoped [CHECK WITH PRODUCT]."
+  },
+  {
+   "q": "Why would we not just build this ourselves on our own infrastructure?",
+   "a": "You can. The question is whether you want to own the platform work as well as the automation use cases. n8n can reduce the amount of custom platform work teams need to maintain while still allowing code where needed [CHECK WITH PRODUCT]."
+  },
+  {
+   "q": "Can you confirm right now that our security team will approve cloud?",
+   "a": "No. We can explain the deployment model and gather requirements, but approval depends on the customer's own review process and the validated product details."
+  }
+ ],
+ "gotchas": [
+  "Do not answer detailed architecture questions from memory if you are not certain; park them for follow-up.",
+  "Do not frame cloud versus self-hosted as a feature battle; keep it tied to customer constraints and ownership.",
+  "Do not skip the question of who will run and support the environment after go-live."
+ ],
+ "practice": {
+  "type": "Hands-on lab",
+  "brief": "Using your own n8n instance, prepare a short deployment recommendation for Aurora Bank. Build or import one simple workflow, then create a comparison note that explains when cloud could be considered and why self-hosted is likely required for this account's stated constraints.",
+  "rubric": [
+   {
+    "criterion": "Separates workflow value from deployment choice",
+    "good": "The submission explains the business use case first, then evaluates deployment based on constraints rather than preference."
+   },
+   {
+    "criterion": "States assumptions clearly",
+    "good": "Every uncertain product or architecture claim is marked for validation, and no unsupported promises are made."
+   },
+   {
+    "criterion": "Includes an implementation checklist",
+    "good": "The lab includes concrete items to validate, such as infrastructure ownership, security review inputs and support responsibility."
+   },
+   {
+    "criterion": "Provides evidence of completion",
+    "good": "The grader can verify that the learner created or imported a simple workflow in their own instance and submitted a comparison note with both deployment options addressed."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "What is the main mistake to avoid in a cloud versus self-hosted conversation?",
+   "answer": "Do not treat it as a generic preference question. Start from the customer's security, governance, infrastructure and support requirements."
+  },
+  {
+   "q": "When is self-hosted often the right path?",
+   "answer": "It is often the right path when a customer must control infrastructure or meet internal policy and review requirements that do not allow a managed deployment [CHECK WITH PRODUCT]."
+  },
+  {
+   "q": "What should you do if a customer asks for a detailed deployment answer you are not sure about?",
+   "answer": "Say what you know at a high level, mark the uncertain point for validation and follow up with the product or security team rather than guessing."
+  }
+ ]
+}</script>
+<script>
+(function(){
+  var C=JSON.parse(document.getElementById('course-data').textContent);
+  var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}).replace(/\[CHECK WITH PRODUCT\]/g,'<span class="check">[check with product]</span>')};
+  var ROLE={AE_MM:'Account Executive (mid-market)',AE_ENT:'Account Executive (enterprise)',SE:'Solutions Engineer',CSM:'Customer Success Manager',PARTNER:'Partner / implementation consultant'};
+  var $=function(s){return document.getElementById(s)};
+  document.title=C.title+' — GTM Academy (concept)';
+  $('c-path').textContent=C.path; $('c-code').textContent=C.id+' · '+C.level; $('c-title').textContent=C.title; $('c-objective').textContent=C.objective;
+  $('c-facts').innerHTML=['<span><b>'+C.minutes+' min</b></span>','<span>'+esc(C.lessons.length)+' lessons</span>','<span>For: '+esc(C.roles.map(function(r){return ROLE[r]||r}).join(', '))+'</span>','<span>When: '+esc(C.moments.join(', '))+'</span>'].join('');
+  var ul=function(a){return '<ul>'+a.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>'};
+  var tabs=function(key,label){var roles=C.roles.filter(function(r){return C.by_role[r]&&C.by_role[r][key]});
+    if(!roles.length)return '';
+    return '<section><h2>'+label+'</h2><div class="tabs" data-k="'+key+'">'+roles.map(function(r,i){return '<button data-r="'+r+'" class="'+(i?'':'on')+'">'+esc(ROLE[r]||r)+'</button>'}).join('')+'</div>'+
+      roles.map(function(r,i){var b=C.by_role[r][key];return '<div class="pane" data-k="'+key+'" data-r="'+r+'"'+(i?' hidden':'')+'><p><b>'+esc(b.format)+'</b></p>'+(b.steps?'<ol>'+b.steps.map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ol>':'')+(b.text?'<p>'+esc(b.text)+'</p>':'')+'</div>'}).join('')+'</section>'};
+  var h='';
+  h+='<section><h2>1. Who it is for</h2><p>'+esc(C.who_its_for)+'</p></section>';
+  h+='<section><h2>2. Business scenario</h2><p><b>'+esc(C.scenario.name)+'.</b> '+esc(C.scenario.problem)+'</p></section>';
+  h+='<section><h2>3. Before you start</h2>'+(C.prerequisites.length?ul(C.prerequisites.map(function(p){return p.code+' '+p.title})):'<p>No prerequisite.</p>')+(C.prerequisites.length?'<p>'+C.prerequisites.map(function(p){return '<a href="'+p.url+'" target="_blank" rel="noopener">Open '+esc(p.code)+' on learn.n8n.io</a>'}).join(' · ')+'</p>':'')+'</section>';
+  h+='<section><h2>4. The concept</h2><p>'+esc(C.concept)+'</p><h3>Lessons</h3><ol>'+C.lessons.map(function(l){return '<li><b>'+esc(l.title)+'</b> ('+l.minutes+' min). '+esc(l.summary)+'</li>'}).join('')+'</ol></section>';
+  h+=tabs('say','5. How to say it');
+  h+=tabs('show','6. How to show it');
+  h+='<section><h2>7. Objections and gotchas</h2>'+C.objections.map(function(o){return '<details class="q"><summary>'+esc(o.q)+'</summary><p>'+esc(o.a)+'</p></details>'}).join('')+(C.gotchas&&C.gotchas.length?ul(C.gotchas):'')+'</section>';
+  h+='<section><h2>8. Practice</h2><p><b>'+esc(C.practice.type)+'.</b> '+esc(C.practice.brief)+'</p><table class="t"><thead><tr><th>Criterion</th><th>What good looks like</th></tr></thead><tbody>'+C.practice.rubric.map(function(r){return '<tr><td>'+esc(r.criterion)+'</td><td>'+esc(r.good)+'</td></tr>'}).join('')+'</tbody></table></section>';
+  h+='<section><h2>9. Check your understanding</h2>'+C.check.map(function(q,i){return '<details class="q"><summary>'+(i+1)+'. '+esc(q.q)+'</summary><p>'+esc(q.answer)+'</p></details>'}).join('')+'</section>';
+  $('c-body').innerHTML=h;
+  document.querySelectorAll('.tabs').forEach(function(t){t.querySelectorAll('button').forEach(function(b){b.onclick=function(){var k=t.dataset.k;t.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.pane[data-k="'+k+'"]').forEach(function(p){p.hidden=p.dataset.r!==b.dataset.r})}})});
+  $('c-side').innerHTML='<div class="box"><h4>Builds</h4>'+ul(C.competencies)+'</div><div class="box"><h4>Assessment</h4>'+ul(C.assessment)+'</div><div class="box"><h4>Status</h4><p style="margin:0;color:var(--soft)">'+esc(C.status)+'</p></div>';
+  $('c-updated').textContent='Last updated '+C.updated;
+})();
+</script>
+</body>
+</html>
