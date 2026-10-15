@@ -6,13 +6,15 @@
 <title>Discovery that finds automation value — GTM Academy (concept)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../templates/style.css">
+<link rel="stylesheet" href="../templates/style.css?v=3">
 </head>
 <body>
+<div class="readbar" id="readbar" aria-hidden="true"></div>
+<a class="skip" href="#c-body">Skip to the course</a>
 <div class="notice">Concept built by Simone Abbiati for the n8n Sales Enablement Manager application — sample data, not affiliated with n8n GmbH.</div>
 <header class="top"><div class="wrap">
   <a class="brand" href="../"><span class="mark">GA</span>GTM Academy <span class="chip">Concept</span></a>
-  <nav class="links"><a href="../#catalog">Catalog</a><a href="../#paths">Learning paths</a><a href="../#certifications">Certifications</a><a href="../#foundations">Foundations</a></nav>
+  <nav class="links" aria-label="Sections"><a href="../#start">Start</a><a href="../#catalog">Catalog</a><a href="../#paths">Learning paths</a><a href="../#certifications">Certifications</a></nav>
 </div></header>
 <main class="wrap">
   <div class="course-head">
@@ -28,186 +30,60 @@
   </div>
 </main>
 <footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
-<script id="course-data" type="application/json">{
- "id": "GTM107",
- "title": "Discovery that finds automation value",
- "path": "Discovery and Demo Certification",
- "level": "Practitioner",
- "levelId": "L2",
- "minutes": 45,
- "roles": [
-  "AE_MM",
-  "AE_ENT",
-  "SE"
- ],
- "competencies": [
-  "Discovery",
-  "Value and ROI"
- ],
- "moments": [
-  "Ramp (days 31-90)"
- ],
- "assessment": [
-  "Certification"
- ],
- "status": "Example draft, for review",
- "updated": "2026-10-15",
- "objective": "Run a discovery call that surfaces where automation value exists, who owns the problem and whether n8n should be positioned at all.",
- "who_its_for": "Account executives and solutions engineers who already know the basic n8n story and now need to qualify real automation opportunities. It assumes you can explain n8n at a high level; solution design and deep technical demos are out of scope.",
- "scenario": {
-  "name": "Meridian Logistics",
-  "problem": "A mid-market logistics company uses many SaaS tools for orders, support and internal operations. Teams re-enter data by hand, workflows break across systems, and engineering cannot keep up with every integration request."
- },
- "prerequisites": [],
- "concept": "Discovery for automation is the work of finding repeated business processes, system handoffs and ownership gaps that create cost, delay or risk. The goal is not to jump to features. The goal is to learn what process matters, how it works today, what systems are involved, what happens when it fails and whether the buyer has the technical and organizational conditions to act. Good discovery also tells you when not to push n8n yet.",
- "lessons": [
-  {
-   "title": "What automation value looks like",
-   "minutes": 10,
-   "summary": "How to spot manual work, broken handoffs and process risk that may justify automation."
-  },
-  {
-   "title": "Questions that map the workflow",
-   "minutes": 12,
-   "summary": "A simple way to ask about triggers, systems, decisions, exceptions and ownership without sounding technical."
-  },
-  {
-   "title": "Finding urgency and business impact",
-   "minutes": 11,
-   "summary": "How to connect the workflow problem to team time, service quality, control and delivery delays."
-  },
-  {
-   "title": "When to involve an SE or pause",
-   "minutes": 6,
-   "summary": "Signals that the deal needs technical depth, security review or a different problem before a pitch."
-  },
-  {
-   "title": "Certification role-play prep",
-   "minutes": 6,
-   "summary": "Practice a short discovery flow that ends with a clear next step instead of a feature dump."
-  }
- ],
- "by_role": {
-  "AE_MM": {
-   "say": {
-    "format": "Talk track",
-    "text": "I want to understand where your team is losing time moving work between systems before I show anything. Walk me through one process that is frequent, manual or error-prone, and tell me what happens when it slips. If the issue is really a one-off project or a pure reporting request, I may not recommend n8n yet."
-   }
-  },
-  "AE_ENT": {
-   "say": {
-    "format": "Talk track",
-    "text": "For larger teams, I look at more than time savings. I want to know which workflows cross business units, where governance or security review slows delivery, and who owns the underlying platforms. If this is better solved by an internal build with no shared operating model, we should say that early."
-   },
-   "show": {
-    "format": "Demo steps",
-    "steps": [
-     "Open a simple workflow example and point to the trigger, systems touched and approval steps to frame the discovery conversation.",
-     "Ask the customer to map their current process to those same parts: what starts it, which teams touch it, and where exceptions appear.",
-     "Mark the places where security, audit or environment choices may matter and note them for follow-up.",
-     "Close by summarizing the business case, the technical unknowns and whether a deeper session is needed."
-    ]
-   }
-  },
-  "SE": {
-   "say": {
-    "format": "Talk track",
-    "text": "I use discovery to understand whether the workflow is technically feasible, operationally important and ready for a useful demo or proof of concept. I need to hear the trigger, source systems, target systems, business rules, failure handling and any constraints such as hosting or security review. If those basics are missing, I slow the deal down rather than guess."
-   },
-   "show": {
-    "format": "Demo steps",
-    "steps": [
-     "Take one customer process and write down the trigger, inputs, outputs and exception paths.",
-     "Sketch a draft workflow with placeholder nodes to show the shape of the solution without promising exact implementation details.",
-     "Call out prerequisites such as integration access, test data and any hosting or governance constraints [CHECK WITH PRODUCT].",
-     "End with the open questions that must be answered before a proof of concept or live demo."
-    ]
-   }
-  }
- },
- "objections": [
-  {
-   "q": "We already know we need automation, so can you just show the product?",
-   "a": "A fast demo is fine, but without one concrete process, success criteria and system context, the next step often stalls. Short discovery makes the demo more relevant and keeps the evaluation honest."
-  },
-  {
-   "q": "We can probably build this ourselves.",
-   "a": "You may be able to. Discovery should test whether the issue is speed, visibility, governance or maintainability, not assume that buying is the only answer."
-  },
-  {
-   "q": "We have too many workflows to discuss one in detail.",
-   "a": "Pick one high-frequency or high-friction process first. If that one matters and is feasible, it usually gives a pattern for the rest."
-  }
- ],
- "gotchas": [
-  "Do not ask only pain questions and forget to map the actual process step by step.",
-  "Do not promise a demo path before confirming which systems, constraints and owners are involved.",
-  "Do not confuse a vague interest in AI or automation with an agreed business problem."
- ],
- "practice": {
-  "type": "Role-play",
-  "brief": "Run a 12-minute discovery call with the operations lead at Meridian Logistics about a delayed order-to-support workflow. Your goal is to identify one automation candidate, the business impact, the systems involved, the buying stakeholders and the right next step.",
-  "rubric": [
-   {
-    "criterion": "Finds a specific workflow",
-    "good": "Moves from a broad automation theme to one clear process with a defined start, handoffs and outcome."
-   },
-   {
-    "criterion": "Maps business and technical context",
-    "good": "Surfaces owners, systems, exceptions and what failure looks like without drifting into a feature pitch."
-   },
-   {
-    "criterion": "Qualifies value and urgency",
-    "good": "Connects the process problem to operational cost, delay, risk or service impact in the customer's own words."
-   },
-   {
-    "criterion": "Sets the right next step",
-    "good": "Summarizes fit, names open questions and chooses whether to advance, involve an SE or hold off."
-   }
-  ]
- },
- "check": [
-  {
-   "q": "What is the main goal of discovery in an automation sale?",
-   "answer": "To understand the customer's process, pain, systems and constraints well enough to judge whether there is a real automation opportunity and what next step makes sense."
-  },
-  {
-   "q": "Name two signs that you should pause the pitch or involve an SE.",
-   "answer": "One sign is when the customer cannot describe a specific workflow or success measure. Another is when technical constraints, integration questions or security concerns become central to the evaluation."
-  },
-  {
-   "q": "Why is one concrete workflow better than a broad discussion of many ideas?",
-   "answer": "A single workflow makes value, feasibility and ownership easier to assess. It gives both sides a real basis for a demo, proof of concept or decision not to proceed."
-  }
- ]
-}</script>
+<script id="course-data" type="application/json">{"id": "GTM107", "title": "Discovery that finds automation value", "path": "Discovery and Demo Certification", "level": "Practitioner", "levelId": "L2", "minutes": 45, "roles": ["AE_MM", "AE_ENT", "SE"], "competencies": ["Discovery", "Value and ROI"], "moments": ["Ramp (days 31-90)"], "assessment": ["Certification"], "status": "Example draft, for review", "updated": "2026-10-15", "objective": "Run a discovery call that surfaces where automation value exists, who owns the problem and whether n8n should be positioned at all.", "who_its_for": "Account executives and solutions engineers who already know the basic n8n story and now need to qualify real automation opportunities. It assumes you can explain n8n at a high level; solution design and deep technical demos are out of scope.", "scenario": {"name": "Meridian Logistics", "problem": "A mid-market logistics company uses many SaaS tools for orders, support and internal operations. Teams re-enter data by hand, workflows break across systems, and engineering cannot keep up with every integration request."}, "prerequisites": [], "concept": "Discovery for automation is the work of finding repeated business processes, system handoffs and ownership gaps that create cost, delay or risk. The goal is not to jump to features. The goal is to learn what process matters, how it works today, what systems are involved, what happens when it fails and whether the buyer has the technical and organizational conditions to act. Good discovery also tells you when not to push n8n yet.", "lessons": [{"title": "What automation value looks like", "minutes": 10, "summary": "How to spot manual work, broken handoffs and process risk that may justify automation."}, {"title": "Questions that map the workflow", "minutes": 12, "summary": "A simple way to ask about triggers, systems, decisions, exceptions and ownership without sounding technical."}, {"title": "Finding urgency and business impact", "minutes": 11, "summary": "How to connect the workflow problem to team time, service quality, control and delivery delays."}, {"title": "When to involve an SE or pause", "minutes": 6, "summary": "Signals that the deal needs technical depth, security review or a different problem before a pitch."}, {"title": "Certification role-play prep", "minutes": 6, "summary": "Practice a short discovery flow that ends with a clear next step instead of a feature dump."}], "by_role": {"AE_MM": {"say": {"format": "Talk track", "text": "I want to understand where your team is losing time moving work between systems before I show anything. Walk me through one process that is frequent, manual or error-prone, and tell me what happens when it slips. If the issue is really a one-off project or a pure reporting request, I may not recommend n8n yet."}}, "AE_ENT": {"say": {"format": "Talk track", "text": "For larger teams, I look at more than time savings. I want to know which workflows cross business units, where governance or security review slows delivery, and who owns the underlying platforms. If this is better solved by an internal build with no shared operating model, we should say that early."}, "show": {"format": "Demo steps", "steps": ["Open a simple workflow example and point to the trigger, systems touched and approval steps to frame the discovery conversation.", "Ask the customer to map their current process to those same parts: what starts it, which teams touch it, and where exceptions appear.", "Mark the places where security, audit or environment choices may matter and note them for follow-up.", "Close by summarizing the business case, the technical unknowns and whether a deeper session is needed."]}}, "SE": {"say": {"format": "Talk track", "text": "I use discovery to understand whether the workflow is technically feasible, operationally important and ready for a useful demo or proof of concept. I need to hear the trigger, source systems, target systems, business rules, failure handling and any constraints such as hosting or security review. If those basics are missing, I slow the deal down rather than guess."}, "show": {"format": "Demo steps", "steps": ["Take one customer process and write down the trigger, inputs, outputs and exception paths.", "Sketch a draft workflow with placeholder nodes to show the shape of the solution without promising exact implementation details.", "Call out prerequisites such as integration access, test data and any hosting or governance constraints [CHECK WITH PRODUCT].", "End with the open questions that must be answered before a proof of concept or live demo."]}}}, "objections": [{"q": "We already know we need automation, so can you just show the product?", "a": "A fast demo is fine, but without one concrete process, success criteria and system context, the next step often stalls. Short discovery makes the demo more relevant and keeps the evaluation honest."}, {"q": "We can probably build this ourselves.", "a": "You may be able to. Discovery should test whether the issue is speed, visibility, governance or maintainability, not assume that buying is the only answer."}, {"q": "We have too many workflows to discuss one in detail.", "a": "Pick one high-frequency or high-friction process first. If that one matters and is feasible, it usually gives a pattern for the rest."}], "gotchas": ["Do not ask only pain questions and forget to map the actual process step by step.", "Do not promise a demo path before confirming which systems, constraints and owners are involved.", "Do not confuse a vague interest in AI or automation with an agreed business problem."], "practice": {"type": "Role-play", "brief": "Run a 12-minute discovery call with the operations lead at Meridian Logistics about a delayed order-to-support workflow. Your goal is to identify one automation candidate, the business impact, the systems involved, the buying stakeholders and the right next step.", "rubric": [{"criterion": "Finds a specific workflow", "good": "Moves from a broad automation theme to one clear process with a defined start, handoffs and outcome."}, {"criterion": "Maps business and technical context", "good": "Surfaces owners, systems, exceptions and what failure looks like without drifting into a feature pitch."}, {"criterion": "Qualifies value and urgency", "good": "Connects the process problem to operational cost, delay, risk or service impact in the customer's own words."}, {"criterion": "Sets the right next step", "good": "Summarizes fit, names open questions and chooses whether to advance, involve an SE or hold off."}]}, "check": [{"q": "What is the main goal of discovery in an automation sale?", "answer": "To understand the customer's process, pain, systems and constraints well enough to judge whether there is a real automation opportunity and what next step makes sense."}, {"q": "Name two signs that you should pause the pitch or involve an SE.", "answer": "One sign is when the customer cannot describe a specific workflow or success measure. Another is when technical constraints, integration questions or security concerns become central to the evaluation."}, {"q": "Why is one concrete workflow better than a broad discussion of many ideas?", "answer": "A single workflow makes value, feasibility and ownership easier to assess. It gives both sides a real basis for a demo, proof of concept or decision not to proceed."}]}</script>
 <script>
 (function(){
   var C=JSON.parse(document.getElementById('course-data').textContent);
+  var store={get:function(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
   var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}).replace(/\[CHECK WITH PRODUCT\]/g,'<span class="check">[check with product]</span>')};
   var ROLE={AE_MM:'Account Executive (mid-market)',AE_ENT:'Account Executive (enterprise)',SE:'Solutions Engineer',CSM:'Customer Success Manager',PARTNER:'Partner / implementation consultant'};
   var $=function(s){return document.getElementById(s)};
+  var pref=store.get('gtm-academy-role','');
   document.title=C.title+' — GTM Academy (concept)';
   $('c-path').textContent=C.path; $('c-code').textContent=C.id+' · '+C.level; $('c-title').textContent=C.title; $('c-objective').textContent=C.objective;
-  $('c-facts').innerHTML=['<span><b>'+C.minutes+' min</b></span>','<span>'+esc(C.lessons.length)+' lessons</span>','<span>For: '+esc(C.roles.map(function(r){return ROLE[r]||r}).join(', '))+'</span>','<span>When: '+esc(C.moments.join(', '))+'</span>'].join('');
+  $('c-facts').innerHTML=['<span><b>'+C.minutes+' min</b></span>','<span>'+C.lessons.length+' lessons</span>','<span>For: '+esc(C.roles.map(function(r){return ROLE[r]||r}).join(', '))+'</span>','<span>When: '+esc(C.moments.join(', '))+'</span>'].join('');
   var ul=function(a){return '<ul>'+a.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>'};
-  var tabs=function(key,label){var roles=C.roles.filter(function(r){return C.by_role[r]&&C.by_role[r][key]});
-    if(!roles.length)return '';
-    return '<section><h2>'+label+'</h2><div class="tabs" data-k="'+key+'">'+roles.map(function(r,i){return '<button data-r="'+r+'" class="'+(i?'':'on')+'">'+esc(ROLE[r]||r)+'</button>'}).join('')+'</div>'+
-      roles.map(function(r,i){var b=C.by_role[r][key];return '<div class="pane" data-k="'+key+'" data-r="'+r+'"'+(i?' hidden':'')+'><p><b>'+esc(b.format)+'</b></p>'+(b.steps?'<ol>'+b.steps.map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ol>':'')+(b.text?'<p>'+esc(b.text)+'</p>':'')+'</div>'}).join('')+'</section>'};
+  var S=[];
+  var sec=function(id,title,html){if(!html)return '';S.push([id,title]);return '<section id="'+id+'"><h2>'+title+'</h2>'+html+'</section>'};
+  var tabs=function(key){var roles=C.roles.filter(function(r){return C.by_role[r]&&C.by_role[r][key]});if(!roles.length)return '';
+    var first=roles.indexOf(pref)>-1?pref:roles[0];
+    return '<div class="tabs" role="tablist" data-k="'+key+'">'+roles.map(function(r){return '<button role="tab" aria-selected="'+(r===first)+'" data-r="'+r+'" class="'+(r===first?'on':'')+'">'+esc(ROLE[r]||r)+'</button>'}).join('')+'</div>'+
+      roles.map(function(r){var b=C.by_role[r][key];return '<div class="pane" role="tabpanel" data-k="'+key+'" data-r="'+r+'"'+(r===first?'':' hidden')+'><p><b>'+esc(b.format)+'</b></p>'+(b.steps?'<ol>'+b.steps.map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ol>':'')+(b.text?'<p>'+esc(b.text)+'</p>':'')+'</div>'}).join('')};
   var h='';
-  h+='<section><h2>1. Who it is for</h2><p>'+esc(C.who_its_for)+'</p></section>';
-  h+='<section><h2>2. Business scenario</h2><p><b>'+esc(C.scenario.name)+'.</b> '+esc(C.scenario.problem)+'</p></section>';
-  h+='<section><h2>3. Before you start</h2>'+(C.prerequisites.length?ul(C.prerequisites.map(function(p){return p.code+' '+p.title})):'<p>No prerequisite.</p>')+(C.prerequisites.length?'<p>'+C.prerequisites.map(function(p){return '<a href="'+p.url+'" target="_blank" rel="noopener">Open '+esc(p.code)+' on learn.n8n.io</a>'}).join(' · ')+'</p>':'')+'</section>';
-  h+='<section><h2>4. The concept</h2><p>'+esc(C.concept)+'</p><h3>Lessons</h3><ol>'+C.lessons.map(function(l){return '<li><b>'+esc(l.title)+'</b> ('+l.minutes+' min). '+esc(l.summary)+'</li>'}).join('')+'</ol></section>';
-  h+=tabs('say','5. How to say it');
-  h+=tabs('show','6. How to show it');
-  h+='<section><h2>7. Objections and gotchas</h2>'+C.objections.map(function(o){return '<details class="q"><summary>'+esc(o.q)+'</summary><p>'+esc(o.a)+'</p></details>'}).join('')+(C.gotchas&&C.gotchas.length?ul(C.gotchas):'')+'</section>';
-  h+='<section><h2>8. Practice</h2><p><b>'+esc(C.practice.type)+'.</b> '+esc(C.practice.brief)+'</p><table class="t"><thead><tr><th>Criterion</th><th>What good looks like</th></tr></thead><tbody>'+C.practice.rubric.map(function(r){return '<tr><td>'+esc(r.criterion)+'</td><td>'+esc(r.good)+'</td></tr>'}).join('')+'</tbody></table></section>';
-  h+='<section><h2>9. Check your understanding</h2>'+C.check.map(function(q,i){return '<details class="q"><summary>'+(i+1)+'. '+esc(q.q)+'</summary><p>'+esc(q.answer)+'</p></details>'}).join('')+'</section>';
+  h+=sec('who','Who it is for','<p>'+esc(C.who_its_for)+'</p>');
+  h+=sec('scenario','Business scenario','<p><b>'+esc(C.scenario.name)+'.</b> '+esc(C.scenario.problem)+'</p>');
+  h+=sec('before','Before you start',(C.prerequisites.length?ul(C.prerequisites.map(function(p){return p.code+' '+p.title}))+'<p>'+C.prerequisites.map(function(p){return '<a href="'+p.url+'" target="_blank" rel="noopener">Open '+esc(p.code)+' on learn.n8n.io</a>'}).join(' · ')+'</p>':'<p>No prerequisite.</p>'));
+  h+=sec('concept','The concept','<p>'+esc(C.concept)+'</p><h3>Lessons</h3><ol>'+C.lessons.map(function(l){return '<li><b>'+esc(l.title)+'</b> ('+l.minutes+' min). '+esc(l.summary)+'</li>'}).join('')+'</ol>');
+  h+=sec('say','How to say it',tabs('say'));
+  h+=sec('show','How to show it',tabs('show'));
+  h+=sec('objections','Objections and gotchas',C.objections.map(function(o){return '<details class="q"><summary>'+esc(o.q)+'</summary><p>'+esc(o.a)+'</p></details>'}).join('')+(C.gotchas&&C.gotchas.length?ul(C.gotchas):''));
+  h+=sec('practice','Practice','<p><b>'+esc(C.practice.type)+'.</b> '+esc(C.practice.brief)+'</p><table class="t"><thead><tr><th>Criterion</th><th>What good looks like</th></tr></thead><tbody>'+C.practice.rubric.map(function(r){return '<tr><td>'+esc(r.criterion)+'</td><td>'+esc(r.good)+'</td></tr>'}).join('')+'</tbody></table>');
+  h+=sec('check','Check your understanding',C.check.map(function(q,i){return '<details class="q"><summary>'+(i+1)+'. '+esc(q.q)+'</summary><p>'+esc(q.answer)+'</p></details>'}).join(''));
+  h+='<nav class="pager" id="pager" aria-label="Course navigation"></nav>';
   $('c-body').innerHTML=h;
-  document.querySelectorAll('.tabs').forEach(function(t){t.querySelectorAll('button').forEach(function(b){b.onclick=function(){var k=t.dataset.k;t.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.pane[data-k="'+k+'"]').forEach(function(p){p.hidden=p.dataset.r!==b.dataset.r})}})});
-  $('c-side').innerHTML='<div class="box"><h4>Builds</h4>'+ul(C.competencies)+'</div><div class="box"><h4>Assessment</h4>'+ul(C.assessment)+'</div><div class="box"><h4>Status</h4><p style="margin:0;color:var(--soft)">'+esc(C.status)+'</p></div>';
+  /* tabs */
+  document.querySelectorAll('.tabs').forEach(function(t){t.querySelectorAll('button').forEach(function(b){b.onclick=function(){var k=t.dataset.k;
+    t.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-selected',String(x===b))});
+    document.querySelectorAll('.pane[data-k="'+k+'"]').forEach(function(p){p.hidden=p.dataset.r!==b.dataset.r})}})});
+  /* side */
+  var done=new Set(store.get('gtm-academy-done',[]));
+  $('c-side').innerHTML='<div class="box"><button class="complete" id="complete"></button></div><div class="box toc"><h4>On this page</h4>'+S.map(function(s,i){return '<a href="#'+s[0]+'" data-s="'+s[0]+'">'+(i+1)+'. '+s[1]+'</a>'}).join('')+'</div><div class="box"><h4>Builds</h4>'+ul(C.competencies)+'</div><div class="box"><h4>Assessment</h4>'+ul(C.assessment)+'</div><div class="box"><h4>Status</h4><p style="margin:0;color:var(--soft)">'+esc(C.status)+'</p></div>';
+  var btn=$('complete');
+  var paint=function(){var d=done.has(C.id);btn.textContent=d?'Completed ✓ (undo)':'Mark as completed';btn.classList.toggle('done',d)};
+  btn.onclick=function(){done.has(C.id)?done.delete(C.id):done.add(C.id);store.set('gtm-academy-done',Array.from(done));paint()};paint();
+  /* scrollspy + read bar */
+  var links=document.querySelectorAll('.toc a');
+  var onScroll=function(){var y=window.scrollY+120,cur=S[0][0];S.forEach(function(s){var el=document.getElementById(s[0]);if(el&&el.offsetTop<=y)cur=s[0]});
+    links.forEach(function(a){a.classList.toggle('on',a.dataset.s===cur)});
+    var max=document.documentElement.scrollHeight-window.innerHeight;$('readbar').style.width=(max>0?Math.min(100,window.scrollY/max*100):0)+'%'};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  /* pager: read the live catalog */
+  fetch('../index.html').then(function(r){return r.text()}).then(function(t){
+    var m=t.match(/<script id="academy-data" type="application\/json">([\s\S]*?)<\/script>/);if(!m)return;
+    var D=JSON.parse(m[1]),ids=D.courses.map(function(c){return c.id}),i=ids.indexOf(C.id),pages=new Set(D.pages||[]);
+    var link=function(c,lab,al){if(!c)return '<span></span>';return pages.has(c.id)?'<a href="'+c.id+'.html" style="text-align:'+al+'"><span>'+lab+'</span>'+c.id+' '+esc(c.title)+'</a>':'<span style="text-align:'+al+'"><span>'+lab+'</span>'+c.id+' '+esc(c.title)+' (in progress)</span>'};
+    $('pager').innerHTML=link(D.courses[i-1],'Previous','left')+link(D.courses[i+1],'Next','right');
+  }).catch(function(){});
   $('c-updated').textContent='Last updated '+C.updated;
 })();
 </script>

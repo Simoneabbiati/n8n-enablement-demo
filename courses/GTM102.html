@@ -6,13 +6,15 @@
 <title>ICP and personas — GTM Academy (concept)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../templates/style.css">
+<link rel="stylesheet" href="../templates/style.css?v=3">
 </head>
 <body>
+<div class="readbar" id="readbar" aria-hidden="true"></div>
+<a class="skip" href="#c-body">Skip to the course</a>
 <div class="notice">Concept built by Simone Abbiati for the n8n Sales Enablement Manager application — sample data, not affiliated with n8n GmbH.</div>
 <header class="top"><div class="wrap">
   <a class="brand" href="../"><span class="mark">GA</span>GTM Academy <span class="chip">Concept</span></a>
-  <nav class="links"><a href="../#catalog">Catalog</a><a href="../#paths">Learning paths</a><a href="../#certifications">Certifications</a><a href="../#foundations">Foundations</a></nav>
+  <nav class="links" aria-label="Sections"><a href="../#start">Start</a><a href="../#catalog">Catalog</a><a href="../#paths">Learning paths</a><a href="../#certifications">Certifications</a></nav>
 </div></header>
 <main class="wrap">
   <div class="course-head">
@@ -28,184 +30,60 @@
   </div>
 </main>
 <footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
-<script id="course-data" type="application/json">{
- "id": "GTM102",
- "title": "ICP and personas",
- "path": "GTM Onboarding",
- "level": "Foundation",
- "levelId": "L1",
- "minutes": 45,
- "roles": [
-  "AE_MM",
-  "AE_ENT",
-  "CSM",
-  "SE"
- ],
- "competencies": [
-  "Discovery",
-  "Value and ROI"
- ],
- "moments": [
-  "Onboarding (days 0-30)"
- ],
- "assessment": [
-  "Knowledge check"
- ],
- "status": "Example draft, for review",
- "updated": "2026-10-15",
- "objective": "Identify which customers fit n8n best, which buyer personas matter, and how to tailor the first conversation to each one.",
- "who_its_for": "New account executives, solutions engineers and customer success managers in their first month. It assumes no deep product knowledge yet and does not cover full discovery method, security review or detailed demo design.",
- "scenario": {
-  "name": "Meridian Logistics",
-  "problem": "A mid-market logistics company runs order operations and customer support across many SaaS tools. Teams copy data between systems by hand, engineering is overloaded, and leaders disagree on whether to buy an automation platform or build scripts internally."
- },
- "prerequisites": [],
- "concept": "An ideal customer profile is the kind of company most likely to get value from n8n and buy it with a clear reason. Personas are the people inside that company who feel the problem, approve the solution or test whether it will work. This matters because the same product can sound relevant for very different reasons: an operations leader wants less manual work, an engineering manager wants flexibility, and an enterprise platform team wants control and governance [CHECK WITH PRODUCT]. If you know the account shape and the buyer's point of view, you ask better questions and avoid pitching the wrong story.",
- "lessons": [
-  {
-   "title": "What ICP means in practice",
-   "minutes": 10,
-   "summary": "How to spot account patterns such as many tools, manual handoffs and limited engineering time."
-  },
-  {
-   "title": "The personas behind the deal",
-   "minutes": 12,
-   "summary": "Who feels the pain, who evaluates the solution and who signs off in mid-market and enterprise deals."
-  },
-  {
-   "title": "How role, problem and value connect",
-   "minutes": 11,
-   "summary": "How to translate the same platform into operational, technical and governance outcomes."
-  },
-  {
-   "title": "Disqualifying early",
-   "minutes": 6,
-   "summary": "Signals that the problem is weak, the timing is poor or another path may fit better."
-  },
-  {
-   "title": "Your first call plan",
-   "minutes": 6,
-   "summary": "A simple way to open, question and position based on the persona in front of you."
-  }
- ],
- "by_role": {
-  "AE_MM": {
-   "say": {
-    "format": "Talk track",
-    "text": "I look for companies where people still move data by hand across several tools and engineering cannot keep up with integration requests. My first question is, where does work stall because systems do not talk to each other. I would not pitch hard if the account has little workflow complexity, no urgent operational pain or a buyer who only wants a simple point integration."
-   }
-  },
-  "AE_ENT": {
-   "say": {
-    "format": "Talk track",
-    "text": "In enterprise, I test whether this is a platform and governance conversation, not just a single workflow request. I want to know who owns automation standards, what security review will matter and whether the CTO is deciding between buying a platform and building internally. If those concerns are absent, I keep the discussion narrower and avoid forcing an enterprise story too early."
-   }
-  },
-  "CSM": {
-   "say": {
-    "format": "Customer email",
-    "text": "Subject: Which teams in your account may be good candidates for more workflows. I would share the common signs that another team could benefit, such as repeated manual handoffs, new tool sprawl or requests for better control over automations, and offer a short working session to map use cases."
-   }
-  },
-  "SE": {
-   "say": {
-    "format": "Talk track",
-    "text": "Before I demo, I need to know the buyer's main use case, the systems involved and whether the concern is speed, flexibility or governance. That tells me whether to show a simple workflow, a more technical build path or the limits and prerequisites first. Good persona mapping prevents the wrong demo."
-   },
-   "show": {
-    "format": "Demo steps",
-    "steps": [
-     "List the likely personas in the account and write one problem statement for each.",
-     "Map one workflow example to the operations persona and one to the engineering or platform persona.",
-     "Choose which example to lead with based on the evaluator in the meeting.",
-     "State one prerequisite or limit before starting the demo so the audience knows what the example does and does not prove."
-    ]
-   }
-  }
- },
- "objections": [
-  {
-   "q": "Why do we need ICP and persona work if the product can serve many use cases?",
-   "a": "Because broad fit does not mean every account should hear the same story. Better targeting shortens discovery and reduces mismatched demos."
-  },
-  {
-   "q": "Our prospect says everyone in the company is a buyer.",
-   "a": "Treat that as a warning sign. Someone owns the pain, someone tests the technical fit and someone approves risk or budget, even if titles vary."
-  },
-  {
-   "q": "Can we just lead with AI to get attention?",
-   "a": "Only if AI is tied to a real process problem. Leading with the trend instead of the workflow usually weakens qualification."
-  }
- ],
- "gotchas": [
-  "Do not confuse a user persona with the economic buyer.",
-  "Do not assume every company with many tools is a fit; there must also be process pain and a reason to change.",
-  "Do not give the same talk track to an operations lead and a technical evaluator."
- ],
- "practice": {
-  "type": "Role-play",
-  "brief": "A colleague plays either an operations leader at Meridian Logistics or a platform-minded enterprise buyer with concerns similar to Aurora Bank. In five minutes, identify the likely persona, ask one discovery question and explain why that account may or may not fit n8n.",
-  "rubric": [
-   {
-    "criterion": "Identifies the account pattern",
-    "good": "Names the signs of fit such as tool sprawl, manual work, integration backlog or governance needs."
-   },
-   {
-    "criterion": "Adapts to the persona",
-    "good": "Changes the value story based on whether the buyer cares most about operations, technical flexibility or governance."
-   },
-   {
-    "criterion": "Uses one clear discovery question",
-    "good": "Asks a question that reveals urgency, ownership or buying path rather than jumping into features."
-   },
-   {
-    "criterion": "Knows when not to push",
-    "good": "States at least one reason the account may not be a strong fit yet."
-   }
-  ]
- },
- "check": [
-  {
-   "q": "What is the difference between an ICP and a persona?",
-   "answer": "The ICP is the type of company that is most likely to buy and get value. A persona is the person inside that company whose goals, pain and role shape the conversation."
-  },
-  {
-   "q": "What is one common sign that an account may fit n8n well?",
-   "answer": "A common sign is repeated manual work across several systems, especially when engineering does not have time to build and maintain every integration request."
-  },
-  {
-   "q": "Why should you avoid using the same pitch for every buyer?",
-   "answer": "Different buyers care about different outcomes. An operations lead may care about manual work, while a technical or enterprise buyer may care more about flexibility, control or governance."
-  }
- ]
-}</script>
+<script id="course-data" type="application/json">{"id": "GTM102", "title": "ICP and personas", "path": "GTM Onboarding", "level": "Foundation", "levelId": "L1", "minutes": 45, "roles": ["AE_MM", "AE_ENT", "CSM", "SE"], "competencies": ["Discovery", "Value and ROI"], "moments": ["Onboarding (days 0-30)"], "assessment": ["Knowledge check"], "status": "Example draft, for review", "updated": "2026-10-15", "objective": "Identify which customers fit n8n best, which buyer personas matter, and how to tailor the first conversation to each one.", "who_its_for": "New account executives, solutions engineers and customer success managers in their first month. It assumes no deep product knowledge yet and does not cover full discovery method, security review or detailed demo design.", "scenario": {"name": "Meridian Logistics", "problem": "A mid-market logistics company runs order operations and customer support across many SaaS tools. Teams copy data between systems by hand, engineering is overloaded, and leaders disagree on whether to buy an automation platform or build scripts internally."}, "prerequisites": [], "concept": "An ideal customer profile is the kind of company most likely to get value from n8n and buy it with a clear reason. Personas are the people inside that company who feel the problem, approve the solution or test whether it will work. This matters because the same product can sound relevant for very different reasons: an operations leader wants less manual work, an engineering manager wants flexibility, and an enterprise platform team wants control and governance [CHECK WITH PRODUCT]. If you know the account shape and the buyer's point of view, you ask better questions and avoid pitching the wrong story.", "lessons": [{"title": "What ICP means in practice", "minutes": 10, "summary": "How to spot account patterns such as many tools, manual handoffs and limited engineering time."}, {"title": "The personas behind the deal", "minutes": 12, "summary": "Who feels the pain, who evaluates the solution and who signs off in mid-market and enterprise deals."}, {"title": "How role, problem and value connect", "minutes": 11, "summary": "How to translate the same platform into operational, technical and governance outcomes."}, {"title": "Disqualifying early", "minutes": 6, "summary": "Signals that the problem is weak, the timing is poor or another path may fit better."}, {"title": "Your first call plan", "minutes": 6, "summary": "A simple way to open, question and position based on the persona in front of you."}], "by_role": {"AE_MM": {"say": {"format": "Talk track", "text": "I look for companies where people still move data by hand across several tools and engineering cannot keep up with integration requests. My first question is, where does work stall because systems do not talk to each other. I would not pitch hard if the account has little workflow complexity, no urgent operational pain or a buyer who only wants a simple point integration."}}, "AE_ENT": {"say": {"format": "Talk track", "text": "In enterprise, I test whether this is a platform and governance conversation, not just a single workflow request. I want to know who owns automation standards, what security review will matter and whether the CTO is deciding between buying a platform and building internally. If those concerns are absent, I keep the discussion narrower and avoid forcing an enterprise story too early."}}, "CSM": {"say": {"format": "Customer email", "text": "Subject: Which teams in your account may be good candidates for more workflows. I would share the common signs that another team could benefit, such as repeated manual handoffs, new tool sprawl or requests for better control over automations, and offer a short working session to map use cases."}}, "SE": {"say": {"format": "Talk track", "text": "Before I demo, I need to know the buyer's main use case, the systems involved and whether the concern is speed, flexibility or governance. That tells me whether to show a simple workflow, a more technical build path or the limits and prerequisites first. Good persona mapping prevents the wrong demo."}, "show": {"format": "Demo steps", "steps": ["List the likely personas in the account and write one problem statement for each.", "Map one workflow example to the operations persona and one to the engineering or platform persona.", "Choose which example to lead with based on the evaluator in the meeting.", "State one prerequisite or limit before starting the demo so the audience knows what the example does and does not prove."]}}}, "objections": [{"q": "Why do we need ICP and persona work if the product can serve many use cases?", "a": "Because broad fit does not mean every account should hear the same story. Better targeting shortens discovery and reduces mismatched demos."}, {"q": "Our prospect says everyone in the company is a buyer.", "a": "Treat that as a warning sign. Someone owns the pain, someone tests the technical fit and someone approves risk or budget, even if titles vary."}, {"q": "Can we just lead with AI to get attention?", "a": "Only if AI is tied to a real process problem. Leading with the trend instead of the workflow usually weakens qualification."}], "gotchas": ["Do not confuse a user persona with the economic buyer.", "Do not assume every company with many tools is a fit; there must also be process pain and a reason to change.", "Do not give the same talk track to an operations lead and a technical evaluator."], "practice": {"type": "Role-play", "brief": "A colleague plays either an operations leader at Meridian Logistics or a platform-minded enterprise buyer with concerns similar to Aurora Bank. In five minutes, identify the likely persona, ask one discovery question and explain why that account may or may not fit n8n.", "rubric": [{"criterion": "Identifies the account pattern", "good": "Names the signs of fit such as tool sprawl, manual work, integration backlog or governance needs."}, {"criterion": "Adapts to the persona", "good": "Changes the value story based on whether the buyer cares most about operations, technical flexibility or governance."}, {"criterion": "Uses one clear discovery question", "good": "Asks a question that reveals urgency, ownership or buying path rather than jumping into features."}, {"criterion": "Knows when not to push", "good": "States at least one reason the account may not be a strong fit yet."}]}, "check": [{"q": "What is the difference between an ICP and a persona?", "answer": "The ICP is the type of company that is most likely to buy and get value. A persona is the person inside that company whose goals, pain and role shape the conversation."}, {"q": "What is one common sign that an account may fit n8n well?", "answer": "A common sign is repeated manual work across several systems, especially when engineering does not have time to build and maintain every integration request."}, {"q": "Why should you avoid using the same pitch for every buyer?", "answer": "Different buyers care about different outcomes. An operations lead may care about manual work, while a technical or enterprise buyer may care more about flexibility, control or governance."}]}</script>
 <script>
 (function(){
   var C=JSON.parse(document.getElementById('course-data').textContent);
+  var store={get:function(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
   var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}).replace(/\[CHECK WITH PRODUCT\]/g,'<span class="check">[check with product]</span>')};
   var ROLE={AE_MM:'Account Executive (mid-market)',AE_ENT:'Account Executive (enterprise)',SE:'Solutions Engineer',CSM:'Customer Success Manager',PARTNER:'Partner / implementation consultant'};
   var $=function(s){return document.getElementById(s)};
+  var pref=store.get('gtm-academy-role','');
   document.title=C.title+' — GTM Academy (concept)';
   $('c-path').textContent=C.path; $('c-code').textContent=C.id+' · '+C.level; $('c-title').textContent=C.title; $('c-objective').textContent=C.objective;
-  $('c-facts').innerHTML=['<span><b>'+C.minutes+' min</b></span>','<span>'+esc(C.lessons.length)+' lessons</span>','<span>For: '+esc(C.roles.map(function(r){return ROLE[r]||r}).join(', '))+'</span>','<span>When: '+esc(C.moments.join(', '))+'</span>'].join('');
+  $('c-facts').innerHTML=['<span><b>'+C.minutes+' min</b></span>','<span>'+C.lessons.length+' lessons</span>','<span>For: '+esc(C.roles.map(function(r){return ROLE[r]||r}).join(', '))+'</span>','<span>When: '+esc(C.moments.join(', '))+'</span>'].join('');
   var ul=function(a){return '<ul>'+a.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>'};
-  var tabs=function(key,label){var roles=C.roles.filter(function(r){return C.by_role[r]&&C.by_role[r][key]});
-    if(!roles.length)return '';
-    return '<section><h2>'+label+'</h2><div class="tabs" data-k="'+key+'">'+roles.map(function(r,i){return '<button data-r="'+r+'" class="'+(i?'':'on')+'">'+esc(ROLE[r]||r)+'</button>'}).join('')+'</div>'+
-      roles.map(function(r,i){var b=C.by_role[r][key];return '<div class="pane" data-k="'+key+'" data-r="'+r+'"'+(i?' hidden':'')+'><p><b>'+esc(b.format)+'</b></p>'+(b.steps?'<ol>'+b.steps.map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ol>':'')+(b.text?'<p>'+esc(b.text)+'</p>':'')+'</div>'}).join('')+'</section>'};
+  var S=[];
+  var sec=function(id,title,html){if(!html)return '';S.push([id,title]);return '<section id="'+id+'"><h2>'+title+'</h2>'+html+'</section>'};
+  var tabs=function(key){var roles=C.roles.filter(function(r){return C.by_role[r]&&C.by_role[r][key]});if(!roles.length)return '';
+    var first=roles.indexOf(pref)>-1?pref:roles[0];
+    return '<div class="tabs" role="tablist" data-k="'+key+'">'+roles.map(function(r){return '<button role="tab" aria-selected="'+(r===first)+'" data-r="'+r+'" class="'+(r===first?'on':'')+'">'+esc(ROLE[r]||r)+'</button>'}).join('')+'</div>'+
+      roles.map(function(r){var b=C.by_role[r][key];return '<div class="pane" role="tabpanel" data-k="'+key+'" data-r="'+r+'"'+(r===first?'':' hidden')+'><p><b>'+esc(b.format)+'</b></p>'+(b.steps?'<ol>'+b.steps.map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ol>':'')+(b.text?'<p>'+esc(b.text)+'</p>':'')+'</div>'}).join('')};
   var h='';
-  h+='<section><h2>1. Who it is for</h2><p>'+esc(C.who_its_for)+'</p></section>';
-  h+='<section><h2>2. Business scenario</h2><p><b>'+esc(C.scenario.name)+'.</b> '+esc(C.scenario.problem)+'</p></section>';
-  h+='<section><h2>3. Before you start</h2>'+(C.prerequisites.length?ul(C.prerequisites.map(function(p){return p.code+' '+p.title})):'<p>No prerequisite.</p>')+(C.prerequisites.length?'<p>'+C.prerequisites.map(function(p){return '<a href="'+p.url+'" target="_blank" rel="noopener">Open '+esc(p.code)+' on learn.n8n.io</a>'}).join(' · ')+'</p>':'')+'</section>';
-  h+='<section><h2>4. The concept</h2><p>'+esc(C.concept)+'</p><h3>Lessons</h3><ol>'+C.lessons.map(function(l){return '<li><b>'+esc(l.title)+'</b> ('+l.minutes+' min). '+esc(l.summary)+'</li>'}).join('')+'</ol></section>';
-  h+=tabs('say','5. How to say it');
-  h+=tabs('show','6. How to show it');
-  h+='<section><h2>7. Objections and gotchas</h2>'+C.objections.map(function(o){return '<details class="q"><summary>'+esc(o.q)+'</summary><p>'+esc(o.a)+'</p></details>'}).join('')+(C.gotchas&&C.gotchas.length?ul(C.gotchas):'')+'</section>';
-  h+='<section><h2>8. Practice</h2><p><b>'+esc(C.practice.type)+'.</b> '+esc(C.practice.brief)+'</p><table class="t"><thead><tr><th>Criterion</th><th>What good looks like</th></tr></thead><tbody>'+C.practice.rubric.map(function(r){return '<tr><td>'+esc(r.criterion)+'</td><td>'+esc(r.good)+'</td></tr>'}).join('')+'</tbody></table></section>';
-  h+='<section><h2>9. Check your understanding</h2>'+C.check.map(function(q,i){return '<details class="q"><summary>'+(i+1)+'. '+esc(q.q)+'</summary><p>'+esc(q.answer)+'</p></details>'}).join('')+'</section>';
+  h+=sec('who','Who it is for','<p>'+esc(C.who_its_for)+'</p>');
+  h+=sec('scenario','Business scenario','<p><b>'+esc(C.scenario.name)+'.</b> '+esc(C.scenario.problem)+'</p>');
+  h+=sec('before','Before you start',(C.prerequisites.length?ul(C.prerequisites.map(function(p){return p.code+' '+p.title}))+'<p>'+C.prerequisites.map(function(p){return '<a href="'+p.url+'" target="_blank" rel="noopener">Open '+esc(p.code)+' on learn.n8n.io</a>'}).join(' · ')+'</p>':'<p>No prerequisite.</p>'));
+  h+=sec('concept','The concept','<p>'+esc(C.concept)+'</p><h3>Lessons</h3><ol>'+C.lessons.map(function(l){return '<li><b>'+esc(l.title)+'</b> ('+l.minutes+' min). '+esc(l.summary)+'</li>'}).join('')+'</ol>');
+  h+=sec('say','How to say it',tabs('say'));
+  h+=sec('show','How to show it',tabs('show'));
+  h+=sec('objections','Objections and gotchas',C.objections.map(function(o){return '<details class="q"><summary>'+esc(o.q)+'</summary><p>'+esc(o.a)+'</p></details>'}).join('')+(C.gotchas&&C.gotchas.length?ul(C.gotchas):''));
+  h+=sec('practice','Practice','<p><b>'+esc(C.practice.type)+'.</b> '+esc(C.practice.brief)+'</p><table class="t"><thead><tr><th>Criterion</th><th>What good looks like</th></tr></thead><tbody>'+C.practice.rubric.map(function(r){return '<tr><td>'+esc(r.criterion)+'</td><td>'+esc(r.good)+'</td></tr>'}).join('')+'</tbody></table>');
+  h+=sec('check','Check your understanding',C.check.map(function(q,i){return '<details class="q"><summary>'+(i+1)+'. '+esc(q.q)+'</summary><p>'+esc(q.answer)+'</p></details>'}).join(''));
+  h+='<nav class="pager" id="pager" aria-label="Course navigation"></nav>';
   $('c-body').innerHTML=h;
-  document.querySelectorAll('.tabs').forEach(function(t){t.querySelectorAll('button').forEach(function(b){b.onclick=function(){var k=t.dataset.k;t.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.pane[data-k="'+k+'"]').forEach(function(p){p.hidden=p.dataset.r!==b.dataset.r})}})});
-  $('c-side').innerHTML='<div class="box"><h4>Builds</h4>'+ul(C.competencies)+'</div><div class="box"><h4>Assessment</h4>'+ul(C.assessment)+'</div><div class="box"><h4>Status</h4><p style="margin:0;color:var(--soft)">'+esc(C.status)+'</p></div>';
+  /* tabs */
+  document.querySelectorAll('.tabs').forEach(function(t){t.querySelectorAll('button').forEach(function(b){b.onclick=function(){var k=t.dataset.k;
+    t.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-selected',String(x===b))});
+    document.querySelectorAll('.pane[data-k="'+k+'"]').forEach(function(p){p.hidden=p.dataset.r!==b.dataset.r})}})});
+  /* side */
+  var done=new Set(store.get('gtm-academy-done',[]));
+  $('c-side').innerHTML='<div class="box"><button class="complete" id="complete"></button></div><div class="box toc"><h4>On this page</h4>'+S.map(function(s,i){return '<a href="#'+s[0]+'" data-s="'+s[0]+'">'+(i+1)+'. '+s[1]+'</a>'}).join('')+'</div><div class="box"><h4>Builds</h4>'+ul(C.competencies)+'</div><div class="box"><h4>Assessment</h4>'+ul(C.assessment)+'</div><div class="box"><h4>Status</h4><p style="margin:0;color:var(--soft)">'+esc(C.status)+'</p></div>';
+  var btn=$('complete');
+  var paint=function(){var d=done.has(C.id);btn.textContent=d?'Completed ✓ (undo)':'Mark as completed';btn.classList.toggle('done',d)};
+  btn.onclick=function(){done.has(C.id)?done.delete(C.id):done.add(C.id);store.set('gtm-academy-done',Array.from(done));paint()};paint();
+  /* scrollspy + read bar */
+  var links=document.querySelectorAll('.toc a');
+  var onScroll=function(){var y=window.scrollY+120,cur=S[0][0];S.forEach(function(s){var el=document.getElementById(s[0]);if(el&&el.offsetTop<=y)cur=s[0]});
+    links.forEach(function(a){a.classList.toggle('on',a.dataset.s===cur)});
+    var max=document.documentElement.scrollHeight-window.innerHeight;$('readbar').style.width=(max>0?Math.min(100,window.scrollY/max*100):0)+'%'};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  /* pager: read the live catalog */
+  fetch('../index.html').then(function(r){return r.text()}).then(function(t){
+    var m=t.match(/<script id="academy-data" type="application\/json">([\s\S]*?)<\/script>/);if(!m)return;
+    var D=JSON.parse(m[1]),ids=D.courses.map(function(c){return c.id}),i=ids.indexOf(C.id),pages=new Set(D.pages||[]);
+    var link=function(c,lab,al){if(!c)return '<span></span>';return pages.has(c.id)?'<a href="'+c.id+'.html" style="text-align:'+al+'"><span>'+lab+'</span>'+c.id+' '+esc(c.title)+'</a>':'<span style="text-align:'+al+'"><span>'+lab+'</span>'+c.id+' '+esc(c.title)+' (in progress)</span>'};
+    $('pager').innerHTML=link(D.courses[i-1],'Previous','left')+link(D.courses[i+1],'Next','right');
+  }).catch(function(){});
   $('c-updated').textContent='Last updated '+C.updated;
 })();
 </script>
