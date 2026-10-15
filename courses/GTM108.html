@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The standard demo — GTM Academy (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../templates/style.css">
+</head>
+<body>
+<div class="notice">Concept built by Simone Abbiati for the n8n Sales Enablement Manager application — sample data, not affiliated with n8n GmbH.</div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">GA</span>GTM Academy <span class="chip">Concept</span></a>
+  <nav class="links"><a href="../#catalog">Catalog</a><a href="../#paths">Learning paths</a><a href="../#certifications">Certifications</a><a href="../#foundations">Foundations</a></nav>
+</div></header>
+<main class="wrap">
+  <div class="course-head">
+    <div class="crumbs"><a href="../#catalog">Catalog</a> / <span id="c-path"></span></div>
+    <p class="eyebrow" id="c-code"></p>
+    <h1 id="c-title"></h1>
+    <p class="lead" id="c-objective"></p>
+    <div class="facts-row" id="c-facts"></div>
+  </div>
+  <div class="course">
+    <article id="c-body"></article>
+    <aside id="c-side"></aside>
+  </div>
+</main>
+<footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
+<script id="course-data" type="application/json">{
+ "id": "GTM108",
+ "title": "The standard demo",
+ "path": "Discovery and Demo Certification",
+ "level": "Practitioner",
+ "levelId": "L2",
+ "minutes": 60,
+ "roles": [
+  "AE_MM",
+  "AE_ENT",
+  "SE"
+ ],
+ "competencies": [
+  "Demo"
+ ],
+ "moments": [
+  "Ramp (days 31-90)"
+ ],
+ "assessment": [
+  "Certification"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Deliver a standard n8n demo that links the workflow to a customer problem, explains what is happening, and handles common questions without over-claiming.",
+ "who_its_for": "Account executives and solutions engineers who already know the basic product shape and now need a repeatable demo. It assumes you can describe a workflow at a high level; deep security review and custom proof design are out of scope.",
+ "scenario": {
+  "name": "Meridian Logistics",
+  "problem": "A mid-market logistics company uses many SaaS tools for orders, support and internal updates. Teams copy data by hand between systems, and engineering cannot keep up with every integration request."
+ },
+ "prerequisites": [
+  {
+   "code": "N8N101",
+   "title": "Essentials: Your First Workflows",
+   "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N101+2026H2/about"
+  }
+ ],
+ "concept": "A standard demo is a short, repeatable way to show how n8n solves a common automation problem. It is not a full product tour. You start with the customer's manual process, show one workflow end to end, explain just enough of triggers, nodes and data flow, and stop before you drift into features that do not matter. The goal is to make the buyer see their own process in the example and know what to ask next.",
+ "lessons": [
+  {
+   "title": "Set up the story before the screen share",
+   "minutes": 12,
+   "summary": "Frame the manual problem, the systems involved and the result the customer wants before opening the product."
+  },
+  {
+   "title": "Run the core workflow demo",
+   "minutes": 18,
+   "summary": "Show a simple trigger, the steps in the workflow and the result in the destination tools."
+  },
+  {
+   "title": "Explain what matters and skip what does not",
+   "minutes": 10,
+   "summary": "Use plain language to explain the workflow while avoiding side paths that distract from the main value."
+  },
+  {
+   "title": "Handle common questions live",
+   "minutes": 10,
+   "summary": "Answer pushback on fit, complexity and AI carefully, without inventing details."
+  },
+  {
+   "title": "Close the demo and earn the next step",
+   "minutes": 10,
+   "summary": "Summarise what the workflow solved, confirm fit and ask for the right follow-up action."
+  }
+ ],
+ "by_role": {
+  "AE_MM": {
+   "say": {
+    "format": "Talk track",
+    "text": "Let me show one workflow that maps to the manual work you described. Meridian's team receives new order or support data, routes it across tools, and updates the right people without copy-paste. If the pain is not repeated manual work across systems, I would not lead with this demo."
+   }
+  },
+  "AE_ENT": {
+   "say": {
+    "format": "Talk track",
+    "text": "I will keep this demo focused on the operating model, not just the UI. The point is to show how a platform team can standardise automation work across systems while keeping technical control and governance in view [CHECK WITH PRODUCT]. If the buyer only wants a point solution for one narrow task, this standard demo may be too broad."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Start with the workflow already open and name the business process being automated.",
+     "Show the trigger and the systems touched by the workflow, then explain why each step exists.",
+     "Run the workflow once and follow the data through the path that matters most.",
+     "Point out where a technical team would review logic, approvals or deployment choices [CHECK WITH PRODUCT].",
+     "End on the business outcome and the questions needed for a deeper technical review."
+    ]
+   }
+  },
+  "SE": {
+   "say": {
+    "format": "Talk track",
+    "text": "I narrate the demo from left to right: trigger, transformation, action and result. I keep the example realistic, explain any prerequisites before I run it, and say clearly when a question needs product confirmation. If the customer asks for edge cases, I note them and decide whether to branch or park them."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Open a prepared workflow for Meridian Logistics that starts from a new request or scheduled event.",
+     "Walk through the nodes in order and state what data enters, changes and leaves at each step.",
+     "Execute the workflow and show the output in the target system or message destination.",
+     "Open one node in detail to show that the workflow can be adjusted without rebuilding the whole flow.",
+     "If relevant to the audience, show a small AI step in the flow and label it as one part of the process, not the whole story [CHECK WITH PRODUCT].",
+     "Finish by showing where you would duplicate or extend the workflow for a second use case."
+    ]
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "This looks like a canned demo. How do I know it fits our process?",
+   "a": "That is fair. The standard demo is meant to prove the model: trigger, logic and actions across systems. The next step is to map one of your real workflows against that pattern."
+  },
+  {
+   "q": "Our team could build this ourselves with scripts.",
+   "a": "You may be able to. The demo is meant to show a maintainable workflow that technical teams can review and change over time, rather than only proving that automation is possible."
+  },
+  {
+   "q": "Where does AI fit here?",
+   "a": "Only show AI if it supports the process you are already discussing. If AI is not part of the problem, keep the demo focused on workflow orchestration and add AI later if needed."
+  }
+ ],
+ "gotchas": [
+  "Do not start with the canvas before stating the business problem and the systems involved.",
+  "Do not improvise on integrations, deployment options or governance details you have not confirmed [CHECK WITH PRODUCT].",
+  "Do not let one technical side question consume the whole demo; park it and return to the main flow."
+ ],
+ "practice": {
+  "type": "Role-play",
+  "brief": "Run a 10-minute standard demo for Meridian Logistics. One learner plays the seller and one plays the customer. The seller must frame the problem, show one workflow, answer two questions and close with a next step.",
+  "rubric": [
+   {
+    "criterion": "Problem-first setup",
+    "good": "Starts with Meridian's manual cross-system work and the desired outcome before opening the workflow."
+   },
+   {
+    "criterion": "Clear demo flow",
+    "good": "Shows the workflow in a logical order, explains trigger and actions in plain language, and avoids unnecessary detours."
+   },
+   {
+    "criterion": "Honest handling of questions",
+    "good": "Answers common objections directly and flags uncertain claims for follow-up instead of guessing."
+   },
+   {
+    "criterion": "Strong close",
+    "good": "Ends by linking the demo to the customer's process and asks for a specific next step."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "What is the main purpose of a standard demo?",
+   "answer": "To show one repeatable workflow that makes the customer's problem concrete. It should help the buyer see how their own process could map to the product."
+  },
+  {
+   "q": "When should you avoid adding extra product features during the demo?",
+   "answer": "When those features do not help explain the workflow or solve the customer's stated problem. Extra detail can distract from the value and create confusion."
+  },
+  {
+   "q": "How should you respond if a customer asks for a product detail you are not sure about?",
+   "answer": "Say you need to confirm it and follow up after the call. It is better to be accurate than to guess in a live demo."
+  }
+ ]
+}</script>
+<script>
+(function(){
+  var C=JSON.parse(document.getElementById('course-data').textContent);
+  var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}).replace(/\[CHECK WITH PRODUCT\]/g,'<span class="check">[check with product]</span>')};
+  var ROLE={AE_MM:'Account Executive (mid-market)',AE_ENT:'Account Executive (enterprise)',SE:'Solutions Engineer',CSM:'Customer Success Manager',PARTNER:'Partner / implementation consultant'};
+  var $=function(s){return document.getElementById(s)};
+  document.title=C.title+' — GTM Academy (concept)';
+  $('c-path').textContent=C.path; $('c-code').textContent=C.id+' · '+C.level; $('c-title').textContent=C.title; $('c-objective').textContent=C.objective;
+  $('c-facts').innerHTML=['<span><b>'+C.minutes+' min</b></span>','<span>'+esc(C.lessons.length)+' lessons</span>','<span>For: '+esc(C.roles.map(function(r){return ROLE[r]||r}).join(', '))+'</span>','<span>When: '+esc(C.moments.join(', '))+'</span>'].join('');
+  var ul=function(a){return '<ul>'+a.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>'};
+  var tabs=function(key,label){var roles=C.roles.filter(function(r){return C.by_role[r]&&C.by_role[r][key]});
+    if(!roles.length)return '';
+    return '<section><h2>'+label+'</h2><div class="tabs" data-k="'+key+'">'+roles.map(function(r,i){return '<button data-r="'+r+'" class="'+(i?'':'on')+'">'+esc(ROLE[r]||r)+'</button>'}).join('')+'</div>'+
+      roles.map(function(r,i){var b=C.by_role[r][key];return '<div class="pane" data-k="'+key+'" data-r="'+r+'"'+(i?' hidden':'')+'><p><b>'+esc(b.format)+'</b></p>'+(b.steps?'<ol>'+b.steps.map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ol>':'')+(b.text?'<p>'+esc(b.text)+'</p>':'')+'</div>'}).join('')+'</section>'};
+  var h='';
+  h+='<section><h2>1. Who it is for</h2><p>'+esc(C.who_its_for)+'</p></section>';
+  h+='<section><h2>2. Business scenario</h2><p><b>'+esc(C.scenario.name)+'.</b> '+esc(C.scenario.problem)+'</p></section>';
+  h+='<section><h2>3. Before you start</h2>'+(C.prerequisites.length?ul(C.prerequisites.map(function(p){return p.code+' '+p.title})):'<p>No prerequisite.</p>')+(C.prerequisites.length?'<p>'+C.prerequisites.map(function(p){return '<a href="'+p.url+'" target="_blank" rel="noopener">Open '+esc(p.code)+' on learn.n8n.io</a>'}).join(' · ')+'</p>':'')+'</section>';
+  h+='<section><h2>4. The concept</h2><p>'+esc(C.concept)+'</p><h3>Lessons</h3><ol>'+C.lessons.map(function(l){return '<li><b>'+esc(l.title)+'</b> ('+l.minutes+' min). '+esc(l.summary)+'</li>'}).join('')+'</ol></section>';
+  h+=tabs('say','5. How to say it');
+  h+=tabs('show','6. How to show it');
+  h+='<section><h2>7. Objections and gotchas</h2>'+C.objections.map(function(o){return '<details class="q"><summary>'+esc(o.q)+'</summary><p>'+esc(o.a)+'</p></details>'}).join('')+(C.gotchas&&C.gotchas.length?ul(C.gotchas):'')+'</section>';
+  h+='<section><h2>8. Practice</h2><p><b>'+esc(C.practice.type)+'.</b> '+esc(C.practice.brief)+'</p><table class="t"><thead><tr><th>Criterion</th><th>What good looks like</th></tr></thead><tbody>'+C.practice.rubric.map(function(r){return '<tr><td>'+esc(r.criterion)+'</td><td>'+esc(r.good)+'</td></tr>'}).join('')+'</tbody></table></section>';
+  h+='<section><h2>9. Check your understanding</h2>'+C.check.map(function(q,i){return '<details class="q"><summary>'+(i+1)+'. '+esc(q.q)+'</summary><p>'+esc(q.answer)+'</p></details>'}).join('')+'</section>';
+  $('c-body').innerHTML=h;
+  document.querySelectorAll('.tabs').forEach(function(t){t.querySelectorAll('button').forEach(function(b){b.onclick=function(){var k=t.dataset.k;t.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.pane[data-k="'+k+'"]').forEach(function(p){p.hidden=p.dataset.r!==b.dataset.r})}})});
+  $('c-side').innerHTML='<div class="box"><h4>Builds</h4>'+ul(C.competencies)+'</div><div class="box"><h4>Assessment</h4>'+ul(C.assessment)+'</div><div class="box"><h4>Status</h4><p style="margin:0;color:var(--soft)">'+esc(C.status)+'</p></div>';
+  $('c-updated').textContent='Last updated '+C.updated;
+})();
+</script>
+</body>
+</html>
