@@ -10,10 +10,11 @@
 <link rel="stylesheet" href="templates/style.css">
 </head>
 <body>
+<a class="skip" href="#catalog">Skip to the catalog</a>
 <div class="notice">Concept built by Simone Abbiati for the n8n Sales Enablement Manager application — sample data, not affiliated with n8n GmbH.</div>
 <header class="top"><div class="wrap">
   <a class="brand" href="./"><span class="mark">GA</span>GTM Academy <span class="chip">Concept</span></a>
-  <nav class="links"><a href="#catalog">Catalog</a><a href="#paths">Learning paths</a><a href="#certifications">Certifications</a><a href="#foundations">Foundations</a><a href="#about">About</a></nav>
+  <nav class="links" aria-label="Sections"><a href="#start">Start</a><a href="#catalog">Catalog</a><a href="#paths">Learning paths</a><a href="#certifications">Certifications</a><a href="#how">How it works</a><a href="#foundations">Foundations</a></nav>
 </div></header>
 
 <main>
@@ -21,42 +22,64 @@
   <p class="eyebrow">Go-to-market enablement</p>
   <h1>Training for every go-to-market role</h1>
   <p class="lead">Courses for account executives, solutions engineers, customer success managers and partners, organised by role, level and the moment you need them.</p>
-  <div class="search"><input id="q" type="search" placeholder="Search courses, for example: demo, AI agents, security" aria-label="Search courses"></div>
+  <div class="search"><input id="q" type="search" placeholder="Search courses, for example: demo, AI agents, security" aria-label="Search courses"><kbd>/</kbd></div>
   <div class="facts"><span><b id="f-courses"></b>Courses</span><span><b id="f-paths"></b>Learning paths</span><span><b id="f-roles"></b>Roles</span><span><b id="f-certs"></b>Certifications and labs</span></div>
   <!--WHATS_NEW_START-->
-  <div class="update"><span class="k">Latest release</span><p><b><a href="https://github.com/n8n-io/n8n/releases/tag/n8n%401.118.2" target="_blank" rel="noopener">n8n@1.118.2</a></b> · 15 Oct 2026 · 1.118.2 (2026-10-15) Bug Fixes core: Fix execution data not being saved for sub-workflows (#21034) editor: Improve node search ranking in the nodes panel (#21012) Affected courses are being reviewed.</p></div>
+  <div class="update"><span class="k">Latest release</span><p><b>n8n@2.43.5</b> · 14 Oct 2026 · Gemini model picker now shows model names and lists prioritised models first. Affected courses are being reviewed.</p></div>
   <!--WHATS_NEW_END-->
+  <div class="start" id="start">
+    <h2>Start with your role</h2>
+    <div class="roles" id="roles"></div>
+    <div class="mypath" id="mypath" aria-live="polite"></div>
+  </div>
 </div></div>
 
 <section class="block" id="catalog"><div class="wrap">
   <h2>Course catalog</h2>
-  <p class="sub">Choose a role to see its profile and the courses that apply to it. Each course builds on the official n8n Academy where relevant.</p>
+  <p class="sub">Every course builds one competency at one level, and links to the official n8n Academy course it builds on.</p>
+  <button class="filters-toggle" id="ftoggle" aria-expanded="false" aria-controls="filters">Show filters</button>
   <div class="catalog">
-    <aside class="filters">
+    <aside class="filters" id="filters" aria-label="Filters">
       <div class="fgroup"><h4>Role</h4><div id="f-role"></div></div>
       <div class="fgroup"><h4>Level</h4><div id="f-level"></div></div>
-      <div class="fgroup"><h4>Competency</h4><select id="f-comp"><option value="">All competencies</option></select></div>
-      <div class="fgroup"><h4>When you need it</h4><select id="f-moment"><option value="">Any time</option></select></div>
-      <div class="fgroup"><button class="reset" id="reset">Clear filters</button></div>
+      <div class="fgroup"><h4>Assessment</h4><div id="f-assess"></div></div>
+      <div class="fgroup"><h4>Competency</h4><select id="f-comp" aria-label="Competency"><option value="">All competencies</option></select></div>
+      <div class="fgroup"><h4>When you need it</h4><select id="f-moment" aria-label="When you need it"><option value="">Any time</option></select></div>
+      <div class="fgroup"><button class="reset" id="reset">Clear all filters</button></div>
     </aside>
     <div>
       <div class="rolecard" id="rolecard"></div>
-      <p class="count" id="count"></p>
-      <div class="list" id="list"></div>
+      <div class="toolbar">
+        <div><span class="count" id="count" aria-live="polite"></span> <span class="active-filters" id="active"></span></div>
+        <label class="count">Sort <select id="sort" aria-label="Sort"><option value="path">Recommended order</option><option value="short">Shortest first</option><option value="level">Level</option></select></label>
+      </div>
+      <div class="grid" id="list"></div>
     </div>
   </div>
 </div></section>
 
 <section class="block" id="paths"><div class="wrap">
   <h2>Learning paths</h2>
-  <p class="sub">Courses are grouped into paths that follow the order a new hire would take them.</p>
+  <p class="sub">Courses are grouped into paths in the order a new hire would take them. Your progress is saved in this browser.</p>
   <div class="paths" id="pathlist"></div>
 </div></section>
 
 <section class="block" id="certifications"><div class="wrap">
   <h2>Certifications and labs</h2>
-  <p class="sub">Certifications are assessed through role-play with a rubric. Labs are built in the learner's own n8n instance and checked automatically.</p>
-  <table class="t" id="certs"><thead><tr><th>Course</th><th>Title</th><th>Assessment</th><th>Level</th><th>Roles</th></tr></thead><tbody></tbody></table>
+  <p class="sub">Certifications are assessed through role-play against a rubric. Labs are built in the learner's own n8n instance and checked by an automatic grader.</p>
+  <div class="badges" id="badges"></div>
+</div></section>
+
+<section class="block" id="how"><div class="wrap">
+  <h2>How the academy stays current</h2>
+  <p class="sub">An n8n workflow watches product releases and keeps the courses in step. Nothing is published without a person reviewing it.</p>
+  <div class="pipeline">
+    <div class="pipe"><b>Release</b>A new version of n8n is published.</div>
+    <div class="pipe"><b>Analyse</b>The workflow maps each change to product areas, roles and courses.</div>
+    <div class="pipe"><b>Draft</b>It drafts the course updates for each role, using their pain points.</div>
+    <div class="pipe human"><b>Review</b>The enablement lead checks the drafts with product.</div>
+    <div class="pipe"><b>Publish</b>Approved courses and this page are updated.</div>
+  </div>
 </div></section>
 
 <section class="block" id="foundations"><div class="wrap">
@@ -69,8 +92,8 @@
   <h2>About this concept</h2>
   <div class="cols">
     <div><h3>How it is organised</h3><p>A small taxonomy tags every course by role, level, competency, product area and learning moment, so each person gets their own path and certifications map to competencies.</p></div>
-    <div><h3>How it stays current</h3><p>An n8n workflow reads new releases, finds the courses whose product area changed, drafts the updates per role for human review and republishes this page.</p></div>
-    <div><h3>Who made it</h3><p>Simone Abbiati, as part of an application. The data is illustrative. <a href="https://simoneabbiati.github.io/portfolio/">Portfolio</a> · <a href="https://github.com/Simoneabbiati/n8n-enablement-demo">Source</a></p></div>
+    <div><h3>What is real</h3><p>The structure, the taxonomy and the release workflow are real and running. The course content is illustrative and marked for product review where it makes product claims.</p></div>
+    <div><h3>Who made it</h3><p>Simone Abbiati, as part of an application. <a href="https://simoneabbiati.github.io/portfolio/">Portfolio</a> · <a href="https://github.com/Simoneabbiati/n8n-enablement-demo">Source</a></p></div>
   </div>
 </div></section>
 </main>
@@ -81,49 +104,107 @@
 <script>
 (function(){
   var D=JSON.parse(document.getElementById('academy-data').textContent);
-  var $=function(s){return document.querySelector(s)}, esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+  var $=function(s){return document.querySelector(s)}, $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+  var store={get:function(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+  var done=new Set(store.get('gtm-academy-done',[]));
+  var ICON={
+    'Product knowledge':'<path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/>',
+    'Discovery':'<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>',
+    'Demo':'<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M10 8l5 2.5-5 2.5z"/><path d="M8 21h8"/>',
+    'Technical proficiency':'<path d="M8 8l-4 4 4 4"/><path d="M16 8l4 4-4 4"/><path d="M13.5 5l-3 14"/>',
+    'Value and ROI':'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+    'Objection handling':'<path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/>',
+    'Adoption and expansion':'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 010 7"/><path d="M18 14.7c2 .7 3.2 2.5 3.5 5.3"/>',
+    'Partner delivery':'<path d="M14.7 6.3a4 4 0 00-5.6 5.6L3 18l3 3 6.1-6.1a4 4 0 005.6-5.6l-2.6 2.6-2.4-.6-.6-2.4z"/>'};
+  var ROLEICON={AE_MM:'Value and ROI',AE_ENT:'Objection handling',SE:'Technical proficiency',CSM:'Adoption and expansion',PARTNER:'Partner delivery'};
+  var icon=function(name){return '<span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24">'+(ICON[name]||ICON['Product knowledge'])+'</svg></span>'};
   var roleName={}; D.roles.forEach(function(r){roleName[r.id]=r.name});
   var pages=new Set(D.pages||[]);
-  var certs=D.courses.filter(function(c){return c.assessment.some(function(a){return /Certification|grader|lab/i.test(a)})});
-  $('#f-courses').textContent=D.courses.length; $('#f-paths').textContent=D.paths.length; $('#f-roles').textContent=D.roles.length; $('#f-certs').textContent=certs.length;
-  var st={role:'',levels:new Set(),comp:'',moment:'',q:''};
-  $('#f-role').innerHTML='<label><input type="radio" name="role" value="" checked> All roles</label>'+D.roles.map(function(r){return '<label><input type="radio" name="role" value="'+r.id+'"> '+esc(r.name)+'</label>'}).join('');
-  var levels=[['L1','Foundation'],['L2','Practitioner'],['L3','Expert']];
-  $('#f-level').innerHTML=levels.map(function(l){return '<label><input type="checkbox" value="'+l[0]+'"> '+l[1]+'</label>'}).join('');
+  var LV={L1:1,L2:2,L3:3};
+  var kind=function(c){return c.assessment.some(function(a){return /Certification/.test(a)})?'Certification':c.assessment.some(function(a){return /lab/i.test(a)})?'Lab':'Knowledge check'};
+  var certs=D.courses.filter(function(c){return kind(c)!=='Knowledge check'});
+  var hrs=function(m){return m>=60?(Math.round(m/6)/10)+' h':m+' min'};
+  $('#f-courses').textContent=D.courses.length;$('#f-paths').textContent=D.paths.length;$('#f-roles').textContent=D.roles.length;$('#f-certs').textContent=certs.length;
+
+  var params=new URLSearchParams(location.search);
+  var st={role:params.get('role')||store.get('gtm-academy-role',''),levels:new Set(),assess:new Set(),comp:'',moment:'',q:'',sort:'path'};
+  if(st.role&&!roleName[st.role])st.role='';
+
+  /* role start */
+  $('#roles').innerHTML=D.roles.map(function(r){var cs=D.courses.filter(function(c){return c.roles.indexOf(r.id)>-1});var m=cs.reduce(function(a,c){return a+c.minutes},0);
+    return '<button class="rolebtn" data-role="'+r.id+'" aria-pressed="false">'+icon(ROLEICON[r.id])+'<b>'+esc(r.name)+'</b><span>'+cs.length+' courses · '+hrs(m)+'</span></button>'}).join('');
+  $$('.rolebtn').forEach(function(b){b.onclick=function(){setRole(st.role===b.dataset.role?'':b.dataset.role,true)}});
+
+  function setRole(id,scroll){st.role=id;store.set('gtm-academy-role',id);
+    var u=new URL(location.href); id?u.searchParams.set('role',id):u.searchParams.delete('role'); history.replaceState(null,'',u);
+    $$('input[name=role]').forEach(function(i){i.checked=(i.value===id)});
+    renderAll(); if(scroll&&id)$('#mypath').scrollIntoView({behavior:'smooth',block:'nearest'});}
+
+  function mypath(){var el=$('#mypath');$$('.rolebtn').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.role===st.role))});
+    if(!st.role){el.classList.remove('on');return}
+    var cs=D.courses.filter(function(c){return c.roles.indexOf(st.role)>-1});
+    var n=cs.filter(function(c){return done.has(c.id)}).length, next=cs.find(function(c){return !done.has(c.id)});
+    el.innerHTML='<div class="mypath-head"><h3>Your path as '+esc(roleName[st.role])+'</h3><span class="count">'+n+' of '+cs.length+' completed · '+hrs(cs.reduce(function(a,c){return a+c.minutes},0))+' in total</span></div><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="'+cs.length+'" aria-valuenow="'+n+'"><span style="width:'+(cs.length?n/cs.length*100:0)+'%"></span></div>'+
+      (next?'<p class="count">Next: <b>'+next.id+' '+esc(next.title)+'</b></p>':'<p class="count">All courses completed.</p>')+
+      '<ol class="steps">'+cs.map(function(c,i){var d=done.has(c.id),link=pages.has(c.id);return '<li class="'+(d?'done':'')+'"><span class="dot">'+(d?'✓':i+1)+'</span><span>'+(link?'<a href="courses/'+c.id+'.html">':'')+'<span class="code">'+c.id+'</span> '+esc(c.title)+(link?'</a>':'')+'</span></li>'}).join('')+'</ol>';
+    el.classList.add('on');}
+
+  /* filters */
+  $('#f-role').innerHTML='<label><input type="radio" name="role" value=""> All roles</label>'+D.roles.map(function(r){return '<label><input type="radio" name="role" value="'+r.id+'"> '+esc(r.name)+'</label>'}).join('');
+  $('#f-level').innerHTML=[['L1','Foundation'],['L2','Practitioner'],['L3','Expert']].map(function(l){return '<label><input type="checkbox" value="'+l[0]+'"> '+l[1]+'</label>'}).join('');
+  $('#f-assess').innerHTML=['Certification','Lab','Knowledge check'].map(function(a){return '<label><input type="checkbox" value="'+a+'"> '+a+'</label>'}).join('');
   $('#f-comp').innerHTML+=D.competencies.map(function(c){return '<option>'+esc(c)+'</option>'}).join('');
   $('#f-moment').innerHTML+=D.moments.map(function(m){return '<option>'+esc(m)+'</option>'}).join('');
-  function names(ids){return ids.map(function(i){return roleName[i]||i}).join(', ')}
-  function render(){
+
+  function chip(label,clear){return '<button class="af" data-clear="'+clear+'" aria-label="Remove filter '+esc(label)+'">'+esc(label)+' ×</button>'}
+  function catalog(){
     var rc=$('#rolecard');
     if(st.role){var r=D.roles.find(function(x){return x.id===st.role});
-      rc.innerHTML='<h3>'+esc(r.name)+'</h3><dl><dt>Sells or supports</dt><dd>'+esc(r.sells)+'</dd><dt>Goals</dt><dd>'+esc(r.goals)+'</dd><dt>Pain points</dt><dd>'+esc(r.pains)+'</dd><dt>Needs from a release</dt><dd>'+esc(r.needs)+'</dd></dl>'; rc.classList.add('on');}
+      rc.innerHTML='<h3>'+esc(r.name)+'</h3><dl><dt>Sells or supports</dt><dd>'+esc(r.sells)+'</dd><dt>Goals</dt><dd>'+esc(r.goals)+'</dd><dt>Pain points</dt><dd>'+esc(r.pains)+'</dd><dt>Needs from a release</dt><dd>'+esc(r.needs)+'</dd></dl>';rc.classList.add('on')}
     else rc.classList.remove('on');
     var q=st.q.toLowerCase();
     var rows=D.courses.filter(function(c){
       if(st.role&&c.roles.indexOf(st.role)<0)return false;
       if(st.levels.size&&!st.levels.has(c.levelId))return false;
+      if(st.assess.size&&!st.assess.has(kind(c)))return false;
       if(st.comp&&c.competencies.indexOf(st.comp)<0)return false;
       if(st.moment&&c.moments.indexOf(st.moment)<0)return false;
-      if(q&&JSON.stringify(c).toLowerCase().indexOf(q)<0)return false;
-      return true});
+      if(q&&JSON.stringify(c).toLowerCase().indexOf(q)<0)return false;return true});
+    if(st.sort==='short')rows.sort(function(a,b){return a.minutes-b.minutes});
+    if(st.sort==='level')rows.sort(function(a,b){return LV[a.levelId]-LV[b.levelId]});
     $('#count').textContent=rows.length+' of '+D.courses.length+' courses';
+    var chips=[];if(st.role)chips.push(chip(roleName[st.role],'role'));st.levels.forEach(function(l){chips.push(chip({L1:'Foundation',L2:'Practitioner',L3:'Expert'}[l],'level:'+l))});st.assess.forEach(function(a){chips.push(chip(a,'assess:'+a))});if(st.comp)chips.push(chip(st.comp,'comp'));if(st.moment)chips.push(chip(st.moment,'moment'));if(st.q)chips.push(chip('"'+st.q+'"','q'));
+    $('#active').innerHTML=chips.join('');
+    $$('#active .af').forEach(function(b){b.onclick=function(){var k=b.dataset.clear;
+      if(k==='role')setRole('',false);else{if(k.indexOf('level:')===0)st.levels.delete(k.slice(6));else if(k.indexOf('assess:')===0)st.assess.delete(k.slice(7));else if(k==='comp'){st.comp='';$('#f-comp').value=''}else if(k==='moment'){st.moment='';$('#f-moment').value=''}else if(k==='q'){st.q='';$('#q').value=''}syncBoxes();renderAll()}}});
     $('#list').innerHTML=rows.length?rows.map(function(c){
-      var has=pages.has(c.id), tag=has?'a':'div', href=has?' href="courses/'+c.id+'.html"':'';
-      var pre=c.prereq.length?' · Builds on '+c.prereq.join(', '):'';
-      return '<'+tag+' class="row"'+href+'><span class="code">'+c.id+'</span><div><h3>'+esc(c.title)+'</h3><div class="meta">'+esc(c.path)+' · '+esc(c.competencies.join(', '))+pre+'</div><div class="roles">'+esc(names(c.roles))+'</div></div><div class="side"><span class="lvl '+c.levelId+'">'+c.level+'</span><br>'+c.minutes+' min · '+esc(c.assessment.join(' + '))+(has?'':'<br><span class="soon">Outline in progress</span>')+'</div></'+tag+'>'}).join(''):'<div class="empty">No courses match these filters.</div>';
+      var has=pages.has(c.id),d=done.has(c.id),tag=has?'a':'div',href=has?' href="courses/'+c.id+'.html"':'';
+      return '<'+tag+' class="card"'+href+'><div class="card-top">'+icon(c.competencies[0])+'<span class="lvl '+c.levelId+'">'+c.level+'</span></div><div class="card-body"><span class="eyerow"><span class="code">'+c.id+'</span> · '+esc(c.path)+'</span><h3>'+esc(c.title)+'</h3><span class="meta">'+esc(c.competencies.join(', '))+(c.prereq.length?' · Builds on '+c.prereq.join(', '):'')+'</span></div><div class="card-foot"><span>'+hrs(c.minutes)+' · '+kind(c)+'</span><span>'+(d?'<span class="ok">Completed</span>':has?'Open course →':'Outline in progress')+'</span></div></'+tag+'>'}).join(''):'<div class="empty">No courses match these filters. <button class="reset" id="reset2">Clear all filters</button></div>';
+    var r2=$('#reset2');if(r2)r2.onclick=resetAll;
   }
-  document.querySelectorAll('input[name=role]').forEach(function(i){i.onchange=function(){st.role=i.value;render()}});
-  document.querySelectorAll('#f-level input').forEach(function(i){i.onchange=function(){i.checked?st.levels.add(i.value):st.levels.delete(i.value);render()}});
-  $('#f-comp').onchange=function(e){st.comp=e.target.value;render()};
-  $('#f-moment').onchange=function(e){st.moment=e.target.value;render()};
-  $('#q').oninput=function(e){st.q=e.target.value;render();};
-  $('#reset').onclick=function(){st={role:'',levels:new Set(),comp:'',moment:'',q:''};document.querySelector('input[name=role][value=""]').checked=true;document.querySelectorAll('#f-level input').forEach(function(i){i.checked=false});$('#f-comp').value='';$('#f-moment').value='';$('#q').value='';render()};
-  render();
-  $('#pathlist').innerHTML=D.paths.map(function(p){var cs=D.courses.filter(function(c){return c.pathId===p.id});
-    return '<div class="path"><span class="pid">'+p.id+'</span><h3>'+esc(p.name)+'</h3><ol>'+cs.map(function(c){return '<li><span class="code">'+c.id+'</span> '+esc(c.title)+'</li>'}).join('')+'</ol></div>'}).join('');
-  document.querySelector('#certs tbody').innerHTML=certs.map(function(c){return '<tr><td class="c">'+c.id+'</td><td>'+esc(c.title)+'</td><td>'+esc(c.assessment.join(' + '))+'</td><td><span class="lvl '+c.levelId+'">'+c.level+'</span></td><td>'+esc(names(c.roles))+'</td></tr>'}).join('');
+  function paths(){$('#pathlist').innerHTML=D.paths.map(function(p){var cs=D.courses.filter(function(c){return c.pathId===p.id});var n=cs.filter(function(c){return done.has(c.id)}).length;
+    return '<div class="path"><span class="pid">'+p.id+' · '+hrs(cs.reduce(function(a,c){return a+c.minutes},0))+'</span><h3>'+esc(p.name)+'</h3><div class="bar"><span style="width:'+(n/cs.length*100)+'%"></span></div><span class="count">'+n+' of '+cs.length+' completed</span><ol>'+cs.map(function(c){return '<li>'+(pages.has(c.id)?'<a href="courses/'+c.id+'.html">':'')+'<span class="code">'+c.id+'</span> '+esc(c.title)+(pages.has(c.id)?'</a>':'')+(done.has(c.id)?' ✓':'')+'</li>'}).join('')+'</ol></div>'}).join('')}
+  function badges(){$('#badges').innerHTML=certs.map(function(c){var k=kind(c),col=k==='Certification'?'var(--accent)':'var(--l1)';
+    return '<div class="badge"><svg class="hex" viewBox="0 0 52 58" aria-hidden="true"><path d="M26 2l22 12.5v29L26 56 4 43.5v-29z" fill="none" stroke="'+col+'" stroke-width="2.5"/><text x="26" y="34" text-anchor="middle" font-size="12" font-weight="700" fill="'+col+'" font-family="Inter,sans-serif">'+c.id.slice(3)+'</text></svg><div><span class="code">'+k+'</span><h3>'+esc(c.title)+'</h3><p>'+c.level+' · '+hrs(c.minutes)+' · '+esc(c.roles.map(function(r){return roleName[r]}).join(', '))+'</p></div></div>'}).join('')}
+  function renderAll(){mypath();catalog();paths();}
+  function syncBoxes(){$$('#f-level input').forEach(function(i){i.checked=st.levels.has(i.value)});$$('#f-assess input').forEach(function(i){i.checked=st.assess.has(i.value)})}
+  function resetAll(){st.levels=new Set();st.assess=new Set();st.comp='';st.moment='';st.q='';$('#f-comp').value='';$('#f-moment').value='';$('#q').value='';syncBoxes();setRole('',false)}
+  $$('input[name=role]').forEach(function(i){i.onchange=function(){setRole(i.value,false)}});
+  $$('#f-level input').forEach(function(i){i.onchange=function(){i.checked?st.levels.add(i.value):st.levels.delete(i.value);renderAll()}});
+  $$('#f-assess input').forEach(function(i){i.onchange=function(){i.checked?st.assess.add(i.value):st.assess.delete(i.value);renderAll()}});
+  $('#f-comp').onchange=function(e){st.comp=e.target.value;renderAll()};
+  $('#f-moment').onchange=function(e){st.moment=e.target.value;renderAll()};
+  $('#sort').onchange=function(e){st.sort=e.target.value;catalog()};
+  $('#q').oninput=function(e){st.q=e.target.value;catalog()};
+  $('#q').onkeydown=function(e){if(e.key==='Enter')$('#catalog').scrollIntoView({behavior:'smooth'})};
+  $('#reset').onclick=resetAll;
+  $('#ftoggle').onclick=function(){var f=$('#filters'),o=f.classList.toggle('open');this.setAttribute('aria-expanded',String(o));this.textContent=o?'Hide filters':'Show filters'};
+  document.addEventListener('keydown',function(e){if(e.key==='/'&&document.activeElement.tagName!=='INPUT'){e.preventDefault();$('#q').focus()}});
+  window.addEventListener('storage',function(){done=new Set(store.get('gtm-academy-done',[]));renderAll()});
   document.querySelector('#official tbody').innerHTML=D.official.map(function(o){var fw=D.courses.filter(function(c){return c.prereq.indexOf(o.code)>-1}).map(function(c){return c.id+' '+c.title});
     return '<tr><td class="c">'+o.code+'</td><td><a href="'+o.url+'" target="_blank" rel="noopener">'+esc(o.title)+'</a></td><td>'+esc(fw.join('; '))+'</td></tr>'}).join('');
+  badges(); setRole(st.role,false);
 })();
 </script>
 </body>
