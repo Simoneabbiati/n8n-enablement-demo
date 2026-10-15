@@ -30,7 +30,151 @@
   </div>
 </main>
 <footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
-<script id="course-data" type="application/json">{"id": "GTM107", "title": "Discovery that finds automation value", "path": "Discovery and Demo Certification", "level": "Practitioner", "levelId": "L2", "minutes": 45, "roles": ["AE_MM", "AE_ENT", "SE"], "competencies": ["Discovery", "Value and ROI"], "moments": ["Ramp (days 31-90)"], "assessment": ["Certification"], "status": "Example draft, for review", "updated": "2026-10-15", "objective": "Run a discovery call that surfaces where automation value exists, who owns the problem and whether n8n should be positioned at all.", "who_its_for": "Account executives and solutions engineers who already know the basic n8n story and now need to qualify real automation opportunities. It assumes you can explain n8n at a high level; solution design and deep technical demos are out of scope.", "scenario": {"name": "Meridian Logistics", "problem": "A mid-market logistics company uses many SaaS tools for orders, support and internal operations. Teams re-enter data by hand, workflows break across systems, and engineering cannot keep up with every integration request."}, "prerequisites": [], "concept": "Discovery for automation is the work of finding repeated business processes, system handoffs and ownership gaps that create cost, delay or risk. The goal is not to jump to features. The goal is to learn what process matters, how it works today, what systems are involved, what happens when it fails and whether the buyer has the technical and organizational conditions to act. Good discovery also tells you when not to push n8n yet.", "lessons": [{"title": "What automation value looks like", "minutes": 10, "summary": "How to spot manual work, broken handoffs and process risk that may justify automation."}, {"title": "Questions that map the workflow", "minutes": 12, "summary": "A simple way to ask about triggers, systems, decisions, exceptions and ownership without sounding technical."}, {"title": "Finding urgency and business impact", "minutes": 11, "summary": "How to connect the workflow problem to team time, service quality, control and delivery delays."}, {"title": "When to involve an SE or pause", "minutes": 6, "summary": "Signals that the deal needs technical depth, security review or a different problem before a pitch."}, {"title": "Certification role-play prep", "minutes": 6, "summary": "Practice a short discovery flow that ends with a clear next step instead of a feature dump."}], "by_role": {"AE_MM": {"say": {"format": "Talk track", "text": "I want to understand where your team is losing time moving work between systems before I show anything. Walk me through one process that is frequent, manual or error-prone, and tell me what happens when it slips. If the issue is really a one-off project or a pure reporting request, I may not recommend n8n yet."}}, "AE_ENT": {"say": {"format": "Talk track", "text": "For larger teams, I look at more than time savings. I want to know which workflows cross business units, where governance or security review slows delivery, and who owns the underlying platforms. If this is better solved by an internal build with no shared operating model, we should say that early."}, "show": {"format": "Demo steps", "steps": ["Open a simple workflow example and point to the trigger, systems touched and approval steps to frame the discovery conversation.", "Ask the customer to map their current process to those same parts: what starts it, which teams touch it, and where exceptions appear.", "Mark the places where security, audit or environment choices may matter and note them for follow-up.", "Close by summarizing the business case, the technical unknowns and whether a deeper session is needed."]}}, "SE": {"say": {"format": "Talk track", "text": "I use discovery to understand whether the workflow is technically feasible, operationally important and ready for a useful demo or proof of concept. I need to hear the trigger, source systems, target systems, business rules, failure handling and any constraints such as hosting or security review. If those basics are missing, I slow the deal down rather than guess."}, "show": {"format": "Demo steps", "steps": ["Take one customer process and write down the trigger, inputs, outputs and exception paths.", "Sketch a draft workflow with placeholder nodes to show the shape of the solution without promising exact implementation details.", "Call out prerequisites such as integration access, test data and any hosting or governance constraints [CHECK WITH PRODUCT].", "End with the open questions that must be answered before a proof of concept or live demo."]}}}, "objections": [{"q": "We already know we need automation, so can you just show the product?", "a": "A fast demo is fine, but without one concrete process, success criteria and system context, the next step often stalls. Short discovery makes the demo more relevant and keeps the evaluation honest."}, {"q": "We can probably build this ourselves.", "a": "You may be able to. Discovery should test whether the issue is speed, visibility, governance or maintainability, not assume that buying is the only answer."}, {"q": "We have too many workflows to discuss one in detail.", "a": "Pick one high-frequency or high-friction process first. If that one matters and is feasible, it usually gives a pattern for the rest."}], "gotchas": ["Do not ask only pain questions and forget to map the actual process step by step.", "Do not promise a demo path before confirming which systems, constraints and owners are involved.", "Do not confuse a vague interest in AI or automation with an agreed business problem."], "practice": {"type": "Role-play", "brief": "Run a 12-minute discovery call with the operations lead at Meridian Logistics about a delayed order-to-support workflow. Your goal is to identify one automation candidate, the business impact, the systems involved, the buying stakeholders and the right next step.", "rubric": [{"criterion": "Finds a specific workflow", "good": "Moves from a broad automation theme to one clear process with a defined start, handoffs and outcome."}, {"criterion": "Maps business and technical context", "good": "Surfaces owners, systems, exceptions and what failure looks like without drifting into a feature pitch."}, {"criterion": "Qualifies value and urgency", "good": "Connects the process problem to operational cost, delay, risk or service impact in the customer's own words."}, {"criterion": "Sets the right next step", "good": "Summarizes fit, names open questions and chooses whether to advance, involve an SE or hold off."}]}, "check": [{"q": "What is the main goal of discovery in an automation sale?", "answer": "To understand the customer's process, pain, systems and constraints well enough to judge whether there is a real automation opportunity and what next step makes sense."}, {"q": "Name two signs that you should pause the pitch or involve an SE.", "answer": "One sign is when the customer cannot describe a specific workflow or success measure. Another is when technical constraints, integration questions or security concerns become central to the evaluation."}, {"q": "Why is one concrete workflow better than a broad discussion of many ideas?", "answer": "A single workflow makes value, feasibility and ownership easier to assess. It gives both sides a real basis for a demo, proof of concept or decision not to proceed."}]}</script>
+<script id="course-data" type="application/json">{
+ "id": "GTM107",
+ "title": "Discovery that finds automation value",
+ "path": "Discovery and Demo Certification",
+ "level": "Practitioner",
+ "levelId": "L2",
+ "minutes": 45,
+ "roles": [
+  "AE_MM",
+  "AE_ENT",
+  "SE"
+ ],
+ "competencies": [
+  "Discovery",
+  "Value and ROI"
+ ],
+ "moments": [
+  "Ramp (days 31-90)"
+ ],
+ "assessment": [
+  "Certification"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Run a discovery conversation that finds valuable automation problems, qualifies fit and sets up a focused next step.",
+ "who_its_for": "Account executives and solutions engineers who already know the basics of n8n and now need a repeatable discovery approach. It assumes you can describe n8n at a high level; detailed product deep dives and full demo delivery are out of scope.",
+ "scenario": {
+  "name": "Meridian Logistics",
+  "problem": "A mid-market logistics company runs order updates, customer support and internal reporting across many SaaS tools. Teams re-enter data by hand, requests queue up with engineering and leaders cannot see which automation work is worth doing first."
+ },
+ "prerequisites": [],
+ "concept": "Discovery for automation is the work of finding where manual steps, system gaps and process risk create enough pain to justify change. The goal is not to list features. The goal is to understand the workflow, who owns it, what breaks today, what the business impact is and whether n8n is a fit now. Good discovery gives you a problem worth solving, a reason to solve it soon and a clear path to the next conversation.",
+ "lessons": [
+  {
+   "title": "What good automation discovery sounds like",
+   "minutes": 10,
+   "summary": "Learn the difference between a feature-led call and a problem-led call, and what evidence of value to listen for."
+  },
+  {
+   "title": "Map the workflow before you map the product",
+   "minutes": 12,
+   "summary": "Use a simple structure to uncover trigger, systems, steps, owners, exceptions and handoffs."
+  },
+  {
+   "title": "Find value, urgency and fit",
+   "minutes": 10,
+   "summary": "Turn process pain into a clear business case by asking about time, risk, backlog, governance and timing."
+  },
+  {
+   "title": "Handle weak signals and disqualify early",
+   "minutes": 6,
+   "summary": "Spot when the problem is too small, too unclear or blocked by missing sponsorship, and know when not to pitch."
+  },
+  {
+   "title": "Set up the next step",
+   "minutes": 7,
+   "summary": "End discovery with a sharp recap, an agreed use case and the right follow-up for sales or technical validation."
+  }
+ ],
+ "by_role": {
+  "AE_MM": {
+   "say": {
+    "format": "Talk track",
+    "text": "Before we talk about product, I want to understand where work is still manual across your tools and what that costs your team each week. Which process breaks most often or pulls engineers into low-value integration work? If the issue is just one isolated task with little business impact, I would not push an automation platform yet."
+   }
+  },
+  "AE_ENT": {
+   "say": {
+    "format": "Talk track",
+    "text": "I want to understand which cross-system processes matter enough to need a governed approach, not just another point script. Where do security review, audit needs or platform standards slow down automation work today? If this is only a local team problem with no governance or scale concern, we may not have a strong enterprise case yet."
+   }
+  },
+  "SE": {
+   "say": {
+    "format": "Talk track",
+    "text": "My job in discovery is to get precise about the workflow shape before I recommend an approach. I need to know the trigger, source systems, target systems, decision points, failure cases and who will own it. If we skip that detail, the demo looks good but the proof of concept fails on day one."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Sketch the customer's current workflow in plain steps on a whiteboard or slide before opening n8n.",
+     "Translate those steps into a simple workflow with a trigger, two system actions and one branch for an exception case.",
+     "Run sample data through the workflow and show where you would inspect payloads and outputs.",
+     "Call out any prerequisites, such as access to source systems or approval to test with live data [CHECK WITH PRODUCT].",
+     "Offer to package the example as an importable workflow after the call if the use case is qualified."
+    ]
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "We already know our processes are messy. Why spend time on discovery?",
+   "a": "Because not every messy process is worth automating first. Discovery helps you find the process with clear impact, feasible scope and an owner who will drive it."
+  },
+  {
+   "q": "Can you just show the demo first and we will tell you if it fits?",
+   "a": "A short demo is useful, but without workflow context it often answers the wrong question. Ten minutes of discovery usually makes the demo more relevant and more honest."
+  },
+  {
+   "q": "We can build integrations ourselves.",
+   "a": "You may be able to. Discovery should test whether the issue is simple enough for that path or whether the team needs a more repeatable way to build, change and govern automations."
+  }
+ ],
+ "gotchas": [
+  "Do not jump into nodes and integrations before the customer has described the current process.",
+  "Do not accept vague pain like \"we need efficiency\" without asking where the work happens and who feels it.",
+  "Do not promise a strong ROI if the customer cannot describe volume, delay, risk or backlog in concrete terms."
+ ],
+ "practice": {
+  "type": "Role-play",
+  "brief": "Run a 15-minute discovery call with the operations lead at Meridian Logistics. Find one automation use case, qualify the business impact, test fit and close with a clear next step.",
+  "rubric": [
+   {
+    "criterion": "Starts with the workflow, not the product",
+    "good": "Asks the customer to describe the current process, systems, handoffs and failure points before discussing n8n."
+   },
+   {
+    "criterion": "Finds measurable value",
+    "good": "Uncovers at least one clear source of impact such as manual effort, delay, engineering backlog, error risk or governance burden."
+   },
+   {
+    "criterion": "Qualifies fit honestly",
+    "good": "Identifies one reason n8n could fit and one condition that still needs validation, or states clearly when not to pursue."
+   },
+   {
+    "criterion": "Sets a useful next step",
+    "good": "Ends with a concise recap of the use case, buyer need and the right follow-up call, demo or technical review."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "What should you understand before you start mapping n8n features to a use case?",
+   "answer": "You should understand the current workflow first: the trigger, systems involved, manual steps, owners, exceptions and where the process breaks."
+  },
+  {
+   "q": "What makes an automation opportunity strong enough to pursue?",
+   "answer": "There is a clear business problem, an identifiable owner, meaningful impact and a next step that can validate fit. If those are missing, the opportunity may not be ready."
+  },
+  {
+   "q": "When should you avoid pitching n8n too early in discovery?",
+   "answer": "Avoid it when the customer has not yet described the problem clearly or when the issue appears too small, isolated or weakly owned to justify a platform discussion."
+  }
+ ]
+}</script>
 <script>
 (function(){
   var C=JSON.parse(document.getElementById('course-data').textContent);
