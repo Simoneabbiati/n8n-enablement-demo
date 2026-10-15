@@ -30,7 +30,177 @@
   </div>
 </main>
 <footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
-<script id="course-data" type="application/json">{"id": "GTM105", "title": "AI agents in n8n", "path": "Technical Proficiency", "level": "Practitioner", "levelId": "L2", "minutes": 60, "roles": ["SE", "AE_ENT", "PARTNER"], "competencies": ["Technical proficiency", "Value and ROI"], "moments": ["Ramp (days 31-90)", "Launch readiness"], "assessment": ["Hands-on lab", "Knowledge check"], "status": "Example draft, for review", "updated": "2026-10-15", "objective": "Explain how AI agents in n8n are positioned, demonstrated and implemented for enterprise customers with the right limits and prerequisites.", "who_its_for": "Solutions engineers, enterprise account executives and partners who need to discuss AI agents with technical and security-conscious buyers. It assumes basic n8n and AI workflow familiarity from the prerequisite course; model selection, prompt engineering depth and security policy design are out of scope.", "scenario": {"name": "Aurora Bank", "problem": "A regulated enterprise wants to test AI agents for internal operations, but every new AI workflow must pass strict security review and run only in a self-hosted environment."}, "prerequisites": [{"code": "N8N103", "title": "In Practice: AI, Testing & Best Practices", "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N103+2026H2/about"}], "concept": "An AI agent in n8n is a workflow pattern where a model is given a goal, context and access to tools so it can decide what step to take next within defined limits [CHECK WITH PRODUCT]. In plain terms, instead of hard-coding every branch, you let the workflow use an AI step to choose actions, fetch information and return an answer, while the rest of n8n handles the surrounding logic, integrations and controls. The sales question is not whether an agent sounds advanced, but whether it solves a real process problem and can be run in a way the customer's team can test, govern and maintain.", "lessons": [{"title": "What an AI agent is in workflow terms", "minutes": 15, "summary": "Define the agent pattern, where it fits in n8n, and how it differs from a fixed automation."}, {"title": "When to position agents and when not to", "minutes": 10, "summary": "Connect the topic to customer problems, and avoid pitching agents where standard workflows are enough."}, {"title": "How to demo an agent safely", "minutes": 15, "summary": "Show a simple enterprise-relevant flow, explain prerequisites, and keep the demo bounded and repeatable."}, {"title": "Enterprise concerns: hosting, review and control", "minutes": 10, "summary": "Frame the CTO conversation around deployment model, governance, data handling and operational risk."}, {"title": "Implementation best practices for partners", "minutes": 10, "summary": "Cover delivery guidance, testing discipline and what to validate before a client pilot."}], "by_role": {"SE": {"say": {"format": "Talk track", "text": "The useful question is not whether you want an AI agent. It is whether a workflow needs flexible decision-making instead of fixed rules. In n8n, we can show the agent inside a workflow, connect it to approved tools, and keep the rest of the process visible and testable [CHECK WITH PRODUCT]."}, "show": {"format": "Demo steps", "steps": ["Open a prepared workflow that starts from a controlled trigger, such as a form or manual run.", "Show the inputs the agent receives, including the task, context and the limited tools it can use [CHECK WITH PRODUCT].", "Run the workflow once and inspect each step so the customer can see what the agent decided and what data moved.", "Point out the non-AI parts of the workflow, such as validation, routing and notifications, to show control around the agent.", "End by stating the prerequisites, known limits and what would need review before a proof of concept."]}}, "AE_ENT": {"say": {"format": "Talk track", "text": "For a platform team, the business case is not AI for its own sake. It is reducing manual review work in processes where rules alone do not handle the full range of cases. The CTO will want to know where the agent runs, what tools it can access, how the workflow is governed and what remains deterministic around it, especially in a self-hosted setup [CHECK WITH PRODUCT]."}, "show": {"format": "Demo steps", "steps": ["Start with the process problem, such as internal operations requests that need context-based triage.", "Show one agent workflow and identify the control points: trigger, allowed tools, approvals and audit trail [CHECK WITH PRODUCT].", "Explain how this would be evaluated in a self-hosted environment for a regulated enterprise [CHECK WITH PRODUCT].", "Close with what must be confirmed in security review before any production use."]}}, "PARTNER": {"say": {"format": "Implementation tips", "text": "Start clients with one narrow agent use case, one clear success criterion and a fallback path when the agent is unsure. Keep tool access limited, test the workflow with known edge cases and document what is handled by fixed logic versus agent decisions. Be clear that certification and delivery guidance should follow the official course path and current product capabilities [CHECK WITH PRODUCT]."}, "show": {"format": "Lab steps", "steps": ["Create a new workflow in your own n8n instance with a manual trigger and one simple business request input.", "Add the AI steps and only the minimum supporting nodes needed to pass context, call one approved tool and return an output [CHECK WITH PRODUCT].", "Add one validation or fallback branch for cases where the workflow should not proceed automatically.", "Run the workflow with at least two inputs, one normal and one edge case, and inspect the execution data.", "Save the workflow in a form that can be reviewed or imported for client delivery."]}}}, "objections": [{"q": "Why not just build this ourselves with an LLM API and some scripts?", "a": "Some teams will. The question is how they will orchestrate the full process, connect systems, handle changes and keep the workflow visible to more than one developer. n8n is relevant when they want the agent inside an operational workflow rather than as a stand-alone script."}, {"q": "AI agents are too unpredictable for a regulated environment.", "a": "That concern is reasonable. Position agents only for bounded use cases, explain the controls around them, and confirm what can be self-hosted and governed before making any production claim [CHECK WITH PRODUCT]."}, {"q": "Can your agent do fully autonomous work across our systems?", "a": "Do not overpromise. The right answer is to define the exact process, allowed actions and review points, then test that scope in a proof of concept."}], "gotchas": ["Do not imply the agent should make unrestricted decisions across enterprise systems.", "Do not start with model features before you establish the workflow problem and the control requirements.", "Have a bounded demo ready; live prompts with unclear data or tool access can fail in front of the customer."], "practice": {"type": "Hands-on lab", "brief": "Build a small AI agent workflow in your own n8n instance for Aurora Bank. The workflow should accept a simple request, pass it through an agent step with limited context and tool use, and include one fallback or validation path for cases that should not continue automatically.", "rubric": [{"criterion": "Workflow structure", "good": "The grader finds a valid workflow with a trigger, at least one AI-related step [CHECK WITH PRODUCT], supporting logic and a final output."}, {"criterion": "Bounded tool use", "good": "The grader confirms the workflow exposes only the intended connected step or tool path, not an open-ended set of actions [CHECK WITH PRODUCT]."}, {"criterion": "Fallback or validation", "good": "The grader detects a branch or check that handles uncertain, invalid or out-of-scope inputs."}, {"criterion": "Test readiness", "good": "The grader can run the workflow with sample inputs and see a completed execution path plus an inspectable result."}]}, "check": [{"q": "When should you position an AI agent instead of a standard workflow?", "answer": "When the process needs flexible decisions based on context and the customer accepts a bounded AI step inside a controlled workflow. If fixed rules are enough, a standard workflow is usually the better starting point."}, {"q": "What does an enterprise buyer usually need to understand before approving an agent proof of concept?", "answer": "They need to understand where it runs, what data and tools it can access, what controls surround it and what must be reviewed for security and governance."}, {"q": "What is one good practice for a first partner implementation of an agent workflow?", "answer": "Keep the scope narrow and add a fallback path for uncertain cases. That makes the pilot easier to test, explain and review."}]}</script>
+<script id="course-data" type="application/json">{
+ "id": "GTM105",
+ "title": "AI agents in n8n",
+ "path": "Technical Proficiency",
+ "level": "Practitioner",
+ "levelId": "L2",
+ "minutes": 60,
+ "roles": [
+  "SE",
+  "AE_ENT",
+  "PARTNER"
+ ],
+ "competencies": [
+  "Technical proficiency",
+  "Value and ROI"
+ ],
+ "moments": [
+  "Ramp (days 31-90)",
+  "Launch readiness"
+ ],
+ "assessment": [
+  "Hands-on lab",
+  "Knowledge check"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Explain how AI agents are built and evaluated in n8n, and show when they fit an enterprise workflow.",
+ "who_its_for": "Solutions engineers, enterprise account executives and partners who need to discuss or show AI agent workflows with technical buyers. It assumes basic n8n workflow knowledge; deep model selection, prompt engineering theory and security review detail are out of scope.",
+ "scenario": {
+  "name": "Aurora Bank",
+  "problem": "A regulated enterprise wants to test AI agents for internal operations, but the platform team needs tight control over where workflows run, how data moves and how human review is added before actions are taken."
+ },
+ "prerequisites": [
+  {
+   "code": "N8N103",
+   "title": "In Practice: AI, Testing & Best Practices",
+   "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N103+2026H2/about"
+  }
+ ],
+ "concept": "An AI agent workflow uses a language model to reason through a task, choose from available tools and return an output or take an action inside a broader automation. In n8n, the useful question is not just whether an agent can answer, but how it is grounded with data, how its steps are controlled, where human review is needed and how it fits the rest of the workflow. For customers, this makes AI agents less of a stand-alone experiment and more of an operational process that can be tested, monitored and adapted [CHECK WITH PRODUCT].",
+ "lessons": [
+  {
+   "title": "What an AI agent workflow is",
+   "minutes": 12,
+   "summary": "Define the parts of an agent workflow and separate agent behavior from standard workflow automation."
+  },
+  {
+   "title": "Where agents fit in enterprise processes",
+   "minutes": 14,
+   "summary": "Show the use cases that suit an agent, and the cases where fixed logic is safer and simpler."
+  },
+  {
+   "title": "Building the flow in n8n",
+   "minutes": 16,
+   "summary": "Walk through trigger, context, tools, model call, output handling and human review steps."
+  },
+  {
+   "title": "Testing, limits and live demo handling",
+   "minutes": 10,
+   "summary": "Cover what to validate before a demo and how to explain uncertainty, guardrails and fallbacks."
+  },
+  {
+   "title": "Talking to buyers and delivery teams",
+   "minutes": 8,
+   "summary": "Translate the technical design into business, governance and implementation language for each role."
+  }
+ ],
+ "by_role": {
+  "SE": {
+   "say": {
+    "format": "Talk track",
+    "text": "An AI agent workflow is useful when the task needs judgment across changing inputs, but still needs clear boundaries. In n8n, I would show the model, the tools it can use, the data it can access and the review step before any sensitive action. I would also say where I would use fixed workflow logic instead of an agent."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Start with a workflow trigger that receives a customer request or internal ticket.",
+     "Add the agent step and show the instructions, the allowed tools and the data source it can reference [CHECK WITH PRODUCT].",
+     "Run a sample input and inspect each step so the customer can see what context goes in and what output comes back.",
+     "Add a conditional path or approval step for cases where the output should be reviewed before action is taken.",
+     "Show the final action node, then explain the fallback path for low-confidence or malformed outputs [CHECK WITH PRODUCT]."
+    ]
+   }
+  },
+  "AE_ENT": {
+   "say": {
+    "format": "Talk track",
+    "text": "The business case is not just that AI answers questions. It is that your team can place AI inside governed workflows, connect it to the systems you already use and add review before action. For a CTO, the key questions are where it runs, what data it can touch and when an agent is the right tool versus standard automation or custom code."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Frame the use case in business terms, such as triaging internal requests or drafting responses for review.",
+     "Show the workflow view and point out where the model step sits inside a larger controlled process.",
+     "Highlight the approval or exception path before any system update is made.",
+     "Close by showing that the workflow can be adapted for the customer's hosting and review requirements [CHECK WITH PRODUCT]."
+    ]
+   }
+  },
+  "PARTNER": {
+   "say": {
+    "format": "Implementation tips",
+    "text": "Start client projects with one bounded task, one clear data source and one review rule. Keep the workflow easy to inspect, and separate the agent decision step from system actions so testing is simpler. Be ready to tell clients where deterministic logic is better than an agent, especially in regulated or high-risk flows."
+   },
+   "show": {
+    "format": "Lab steps",
+    "steps": [
+     "Create a workflow in your own n8n instance with a trigger, an agent step and one downstream action [CHECK WITH PRODUCT].",
+     "Connect the agent to a simple reference source or input so the output is based on defined context.",
+     "Add an approval or exception branch that stops the workflow when the response does not meet your rule.",
+     "Run multiple test inputs and save the workflow in a state that another consultant can review and reuse."
+    ]
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "Why not just build this directly with an LLM API and some code?",
+   "a": "That can be the right choice for some teams. The customer should compare build effort, maintainability, visibility of the process and how easily non-developers can review and change the flow over time."
+  },
+  {
+   "q": "AI agents are unpredictable, so we cannot use them in serious processes.",
+   "a": "That is exactly why the use case matters. Position agents for bounded tasks, add review before sensitive actions and use fixed workflow logic where consistency matters more than flexibility."
+  },
+  {
+   "q": "We need self-hosting and strict control of enterprise data.",
+   "a": "That is a hosting and architecture conversation that should be handled carefully. Confirm the customer's requirements and validate the exact deployment and data-handling details with product and solutions teams [CHECK WITH PRODUCT]."
+  }
+ ],
+ "gotchas": [
+  "Do not present an agent as if it should replace every decision in a workflow.",
+  "Avoid live prompts or inputs you have not tested, because the output may drift from the story you need to show.",
+  "Do not guess on model support, hosting details or governance features; mark them for confirmation."
+ ],
+ "practice": {
+  "type": "Hands-on lab",
+  "brief": "In your own n8n instance, build a simple AI agent workflow for Aurora Bank that receives a request, uses defined context, routes uncertain outputs for review and only then takes a downstream action. The grader checks that the workflow has an input trigger, an agent step, a review or exception branch and a final action path [CHECK WITH PRODUCT].",
+  "rubric": [
+   {
+    "criterion": "Required workflow structure",
+    "good": "The grader finds a trigger, an AI agent step, a review or exception path and a downstream action in the workflow."
+   },
+   {
+    "criterion": "Safe control of actions",
+    "good": "The grader confirms that sensitive actions do not run on every path and that one path stops or waits for review."
+   },
+   {
+    "criterion": "Use of defined context",
+    "good": "The grader confirms the agent step receives structured input or reference data instead of a free-form prompt alone [CHECK WITH PRODUCT]."
+   },
+   {
+    "criterion": "Clarity and reusability",
+    "good": "The workflow is named clearly, nodes are organized logically and another builder can understand the intended path from the canvas."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "When is an AI agent a better fit than fixed workflow logic?",
+   "answer": "Use an agent when the task needs judgment across variable inputs and can be bounded with tools, context and review. Use fixed logic when the process must be fully predictable."
+  },
+  {
+   "q": "What should an SE show in an AI agent demo besides the model output?",
+   "answer": "Show the trigger, the context the agent receives, the tools it can use, the review or exception path and the final action. The point is to show control, not just the answer."
+  },
+  {
+   "q": "What is one safe way to position AI agents to an enterprise buyer?",
+   "answer": "Position them as one step inside a governed workflow, not as an unchecked replacement for business logic. Then discuss data access, hosting requirements and human review."
+  }
+ ]
+}</script>
 <script>
 (function(){
   var C=JSON.parse(document.getElementById('course-data').textContent);
