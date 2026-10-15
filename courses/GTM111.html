@@ -30,7 +30,138 @@
   </div>
 </main>
 <footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
-<script id="course-data" type="application/json">{"id": "GTM111", "title": "Adoption plays", "path": "Customer Adoption and Expansion", "level": "Practitioner", "levelId": "L2", "minutes": 30, "roles": ["CSM", "PARTNER"], "competencies": ["Adoption and expansion"], "moments": ["Ramp (days 31-90)", "Launch readiness"], "assessment": ["Knowledge check"], "status": "Example draft, for review", "updated": "2026-10-15", "objective": "Plan adoption plays that help existing customers use more of n8n and reveal where expansion may follow.", "who_its_for": "Customer success managers and partners who work with live customers after launch or during early ramp. It assumes basic product familiarity and does not cover first-call discovery or full technical demo delivery.", "scenario": {"name": "Meridian Logistics", "problem": "A mid-market logistics company has launched a few useful workflows, but usage is uneven across teams. Some owners do not know what to automate next, and the account team needs a simple way to drive broader adoption without overloading the customer."}, "prerequisites": [], "concept": "An adoption play is a repeatable way to help a customer get value from the product after the first win. It links a customer segment, a common use case, a message, a next step and a simple success check. Good adoption plays are specific enough to act on, but light enough for a CSM or partner to run without a large project each time.", "lessons": [{"title": "What an adoption play is", "minutes": 7, "summary": "Define the parts of a repeatable play and when to use one after launch."}, {"title": "Choose the right accounts and moments", "minutes": 8, "summary": "Find which customers or client teams are ready for another workflow and which are not."}, {"title": "Message the next step clearly", "minutes": 7, "summary": "Turn a product capability into a short customer message tied to one business problem."}, {"title": "Track signals for expansion", "minutes": 8, "summary": "Use adoption activity and customer requests to spot where a broader rollout may make sense."}], "by_role": {"CSM": {"say": {"format": "Customer email", "text": "Subject: A practical next workflow for your team. I would point to one business process that still has manual handoffs, explain why it is a good fit for another n8n workflow, and offer a short working session to map it. I would also note what success would look like in simple terms so the customer knows this is a small, useful next step."}}, "PARTNER": {"say": {"format": "Implementation tips", "text": "Package adoption plays around repeatable client patterns, not around every new feature. Start with the workflows already live, identify the next adjacent process, and define the technical prerequisites before you suggest scope. If a play depends on product behavior you have not verified, mark it for review [CHECK WITH PRODUCT]."}, "show": {"format": "Lab steps", "steps": ["Pick one existing workflow in your own n8n instance and write down the business process it supports.", "Create a short adoption play brief with four fields: target user, next use case, message and success check.", "Build or duplicate a simple workflow that represents the next adjacent use case for that same customer team.", "Document any prerequisites, such as credentials, data access or approvals, inside the workflow notes.", "Run the workflow once and confirm that the outcome matches the play brief you wrote.", "Export the workflow and brief so they can be reviewed as a reusable client delivery asset."]}}}, "objections": [{"q": "We have already launched. Why do we need a formal adoption play?", "a": "Because first value does not guarantee wider use. A simple play helps the customer choose the next workflow instead of waiting until momentum fades."}, {"q": "We do not want to push more change on the team right now.", "a": "Then keep the play small. Focus on one adjacent process, one owner and one clear outcome rather than a broad rollout."}, {"q": "Our client wants ideas, but not another large implementation.", "a": "That is exactly where a light adoption play helps. It frames a contained next step and surfaces prerequisites before anyone commits to more scope."}], "gotchas": ["Do not send a feature-led email with no link to the customer's current workflow pain.", "Do not treat every active account as ready for expansion; confirm ownership, capacity and a clear next use case first.", "In partner delivery, do not suggest a reusable pattern before you have checked the client's data access and approval needs."], "practice": {"type": "Role-play", "brief": "Choose Meridian Logistics and design a short adoption play for one team that already uses n8n for a live workflow. Then explain your play to a colleague acting as the customer owner or client sponsor.", "rubric": [{"criterion": "Targets the right account or team", "good": "Explains why this customer segment is ready for a next workflow and names one reason another segment may not be."}, {"criterion": "Ties the message to a business problem", "good": "Describes the manual step or process gap before mentioning product capabilities."}, {"criterion": "Defines a practical next action", "good": "Proposes one realistic next workflow or working session with clear prerequisites."}, {"criterion": "Surfaces expansion signals carefully", "good": "Notes what customer behavior would suggest broader rollout potential without overcommitting."}]}, "check": [{"q": "What makes an adoption play different from a general product update?", "answer": "An adoption play is tied to a specific customer segment, use case and next action. It tells the customer what to do next and why it matters for their process."}, {"q": "What should a CSM look for before suggesting the next workflow?", "answer": "They should check that the customer has a live use case, a clear owner and a nearby manual process worth improving. They should also avoid pushing accounts that are not ready for change."}, {"q": "How can a partner use adoption plays well across clients?", "answer": "A partner can turn common client patterns into repeatable delivery motions. The key is to confirm prerequisites and fit before presenting the play as a reusable best practice."}]}</script>
+<script id="course-data" type="application/json">{
+ "id": "GTM111",
+ "title": "Adoption plays",
+ "path": "Customer Adoption and Expansion",
+ "level": "Practitioner",
+ "levelId": "L2",
+ "minutes": 30,
+ "roles": [
+  "CSM",
+  "PARTNER"
+ ],
+ "competencies": [
+  "Adoption and expansion"
+ ],
+ "moments": [
+  "Ramp (days 31-90)",
+  "Launch readiness"
+ ],
+ "assessment": [
+  "Knowledge check"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Build simple adoption plays that help customers use more of n8n and reveal where expansion may follow.",
+ "who_its_for": "Customer success managers and partners who work with active n8n customers after the first sale. It assumes the customer already has an initial use case live; deep technical implementation design is out of scope.",
+ "scenario": {
+  "name": "Meridian Logistics",
+  "problem": "A mid-market logistics company has launched a few workflows for order and support operations, but usage is uneven across teams and new capabilities are not reaching the people who could use them next."
+ },
+ "prerequisites": [],
+ "concept": "An adoption play is a repeatable way to help a customer get value from what they already bought. It starts with a customer segment, a likely need and one clear action, such as reviewing a workflow, introducing a relevant capability or helping a new team copy a proven pattern. Good adoption plays are simple, timed to a real customer moment and easy to measure with signals you can observe [CHECK WITH PRODUCT].",
+ "lessons": [
+  {
+   "title": "What an adoption play is",
+   "minutes": 7,
+   "summary": "Define the customer problem, the target segment and the next action without turning it into a generic check-in."
+  },
+  {
+   "title": "Choose the right accounts",
+   "minutes": 8,
+   "summary": "Find which customers are most likely to benefit based on their current workflows, team setup and stage of rollout."
+  },
+  {
+   "title": "Run the outreach",
+   "minutes": 7,
+   "summary": "Write a short message that connects one capability or best practice to one operational outcome the customer cares about."
+  },
+  {
+   "title": "Spot expansion signals",
+   "minutes": 8,
+   "summary": "Separate healthy adoption from signs that another team, environment or use case may need support [CHECK WITH PRODUCT]."
+  }
+ ],
+ "by_role": {
+  "CSM": {
+   "say": {
+    "format": "Customer email",
+    "text": "Subject: A practical next step for your n8n rollout. I would send a short note to Meridian Logistics that names one team already seeing value, one similar workflow pattern another team could reuse, and one offer to review it together in a 20-minute session."
+   }
+  },
+  "PARTNER": {
+   "say": {
+    "format": "Implementation tips",
+    "text": "Build adoption into delivery from the start. Leave the client with named workflow patterns, owners and review points so the first project becomes a repeatable model for the next team. When a new capability is relevant, explain the client problem it fits before you discuss product detail."
+   },
+   "show": {
+    "format": "Lab steps",
+    "steps": [
+     "In your own n8n instance, list three active customer workflow patterns you already know how to build or support.",
+     "For each pattern, write one likely follow-on use case for another team at the same customer.",
+     "Draft one short client outreach note for the strongest follow-on use case and include a clear next meeting ask.",
+     "Create a simple review checklist you would use 30 days after go-live to confirm adoption health and look for expansion signals."
+    ]
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "We already launched the workflows. Why do we need a separate adoption motion?",
+   "a": "Launch is not the same as repeat usage. An adoption play helps the customer extend a working pattern to the next team or process instead of letting the first win stay isolated."
+  },
+  {
+   "q": "I do not want to email every customer about every new capability.",
+   "a": "Do not. Start with the accounts and use cases that clearly match, and keep the message tied to one problem they already have."
+  },
+  {
+   "q": "How do I talk about expansion without sounding sales-led?",
+   "a": "Frame it as operational fit. If another team has the same manual process, it is reasonable to explore whether the current approach should be reused there."
+  }
+ ],
+ "gotchas": [
+  "Do not send broad feature updates with no customer context.",
+  "Do not treat every active account as ready for expansion at the same time.",
+  "In client reviews, avoid proposing a new use case before you confirm the first one is adopted by the intended users."
+ ],
+ "practice": {
+  "type": "Role-play",
+  "brief": "You are preparing a 15-minute adoption review for Meridian Logistics after its first workflows went live. Explain which team you would contact next, what you would say and what signal would make you explore expansion.",
+  "rubric": [
+   {
+    "criterion": "Targets the right account segment",
+    "good": "Chooses a customer group based on current usage, workflow similarity or rollout stage, not guesswork."
+   },
+   {
+    "criterion": "Clear adoption play",
+    "good": "Defines one customer problem, one relevant next step and one simple outreach message."
+   },
+   {
+    "criterion": "Expansion judgment",
+    "good": "Identifies a credible expansion signal without forcing a sales pitch before adoption is established."
+   },
+   {
+    "criterion": "Practical language",
+    "good": "Uses short, specific wording a customer could understand without product jargon."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "What makes an adoption play different from a generic customer check-in?",
+   "answer": "It is built around a specific customer segment, a likely need and one clear next action. It should help the customer do something useful, not just attend a meeting."
+  },
+  {
+   "q": "What should a good customer adoption email include?",
+   "answer": "A short description of the customer problem, one relevant next use case or best practice, and a clear ask for the next conversation."
+  },
+  {
+   "q": "When should you look for expansion signals?",
+   "answer": "After the first use case shows signs of real adoption, or when another team has a similar operational problem that the current pattern could fit."
+  }
+ ]
+}</script>
 <script>
 (function(){
   var C=JSON.parse(document.getElementById('course-data').textContent);
