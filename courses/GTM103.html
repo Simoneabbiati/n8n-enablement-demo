@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your first workflow — GTM Academy (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../templates/style.css">
+</head>
+<body>
+<div class="notice">Concept built by Simone Abbiati for the n8n Sales Enablement Manager application — sample data, not affiliated with n8n GmbH.</div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">GA</span>GTM Academy <span class="chip">Concept</span></a>
+  <nav class="links"><a href="../#catalog">Catalog</a><a href="../#paths">Learning paths</a><a href="../#certifications">Certifications</a><a href="../#foundations">Foundations</a></nav>
+</div></header>
+<main class="wrap">
+  <div class="course-head">
+    <div class="crumbs"><a href="../#catalog">Catalog</a> / <span id="c-path"></span></div>
+    <p class="eyebrow" id="c-code"></p>
+    <h1 id="c-title"></h1>
+    <p class="lead" id="c-objective"></p>
+    <div class="facts-row" id="c-facts"></div>
+  </div>
+  <div class="course">
+    <article id="c-body"></article>
+    <aside id="c-side"></aside>
+  </div>
+</main>
+<footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
+<script id="course-data" type="application/json">{
+ "id": "GTM103",
+ "title": "Your first workflow",
+ "path": "GTM Onboarding",
+ "level": "Foundation",
+ "levelId": "L1",
+ "minutes": 60,
+ "roles": [
+  "AE_MM",
+  "AE_ENT",
+  "CSM",
+  "SE"
+ ],
+ "competencies": [
+  "Technical proficiency"
+ ],
+ "moments": [
+  "Onboarding (days 0-30)"
+ ],
+ "assessment": [
+  "Hands-on lab",
+  "Automatic grader"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Build and explain a simple workflow so you can describe the parts, run it once, and show where business value comes from.",
+ "who_its_for": "New account executives, customer success managers and solutions engineers in their first month. It assumes you have seen the basics in the official prerequisites; deeper node behavior, architecture and security detail are out of scope.",
+ "scenario": {
+  "name": "Meridian Logistics",
+  "problem": "A mid-market logistics company has order and support data spread across many SaaS tools. The operations team keeps copying updates by hand, and simple handoffs are missed when volume rises."
+ },
+ "prerequisites": [
+  {
+   "code": "QS101",
+   "title": "n8n Quickstart",
+   "url": "https://learn.n8n.io/courses/course-v1:n8n+QS101+2026H2/about"
+  },
+  {
+   "code": "N8N101",
+   "title": "Essentials: Your First Workflows",
+   "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N101+2026H2/about"
+  }
+ ],
+ "concept": "A first workflow is the shortest useful example of how work moves through n8n. It starts with a trigger, passes data through one or more nodes, and ends with an action in another system or message channel. The point is not to build something complex. The point is to see the flow, understand what each step does, and connect the automation to a real business problem such as manual updates, slow handoffs or repeated admin work.",
+ "lessons": [
+  {
+   "title": "Pick one small business problem",
+   "minutes": 12,
+   "summary": "Choose a narrow use case that is easy to explain and ties to obvious manual work."
+  },
+  {
+   "title": "Build the workflow shape",
+   "minutes": 16,
+   "summary": "Add a trigger, connect the next nodes, and understand the path data will follow."
+  },
+  {
+   "title": "Run it and inspect the data",
+   "minutes": 12,
+   "summary": "Test the workflow once and check what entered, changed and left each step."
+  },
+  {
+   "title": "Handle simple changes",
+   "minutes": 10,
+   "summary": "Make one small edit, such as changing a field or adding a branch, without losing the story."
+  },
+  {
+   "title": "Explain the workflow to a customer",
+   "minutes": 10,
+   "summary": "Translate the build into plain language for operations, engineering and executive audiences."
+  }
+ ],
+ "by_role": {
+  "AE_MM": {
+   "say": {
+    "format": "Talk track",
+    "text": "A first workflow is the easiest way to make the value concrete. Instead of talking about automation in the abstract, show one manual step at Meridian Logistics and how it becomes a repeatable workflow. Discovery question: where does your team still copy data between tools by hand. Do not pitch this if the customer has not named a repeated process or if the pain is only about reporting, not action."
+   }
+  },
+  "AE_ENT": {
+   "say": {
+    "format": "Talk track",
+    "text": "For enterprise buyers, the first workflow is not about a toy example. It is a small proof that a platform team can standardize repeated automations and make the logic visible to more than one engineer. Frame it as a starting point for operational control, with governance and deployment questions handled separately in later conversations."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Open a simple workflow that starts from a basic trigger and label the business event it represents.",
+     "Walk through each node and tie it to one operational handoff, such as creating or updating a record and sending a team notification.",
+     "Run the workflow once and inspect the execution data so the customer sees what changed and where.",
+     "Show one small edit, such as mapping a different field or adding a simple decision point, to prove the workflow can be adapted without rewriting everything."
+    ]
+   }
+  },
+  "CSM": {
+   "say": {
+    "format": "Customer email",
+    "text": "Subject: A practical first workflow for your team. I am reaching out because teams with manual handoffs across several tools often benefit from starting with one small workflow that is easy to test and explain. If that matches your current setup, I can share a simple adoption plan and help your automation owner choose a good first use case."
+   }
+  },
+  "SE": {
+   "say": {
+    "format": "Talk track",
+    "text": "Keep the first workflow narrow and inspectable. Show the trigger, the data moving through the nodes, and the final action, then be clear about what is mocked, what needs credentials, and what you are not covering yet. If possible, use an example workflow you can import and adapt live [CHECK WITH PRODUCT]."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Create a new workflow in your n8n instance and add a simple trigger.",
+     "Add one or two downstream nodes that represent a realistic handoff between systems or teams.",
+     "Map at least one field from the trigger into the next step and explain why that field matters.",
+     "Execute the workflow and inspect the output at each node.",
+     "Make one safe change live, then run it again to show the workflow is understandable and editable."
+    ]
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "This looks basic. Why should we care about one small workflow?",
+   "a": "Because the first workflow is not the end state. It proves the team can model a real process, test it, and change it without starting from scratch."
+  },
+  {
+   "q": "Our engineers can script a simple handoff faster than building this.",
+   "a": "Sometimes they can. The value here is that the logic is easier to review, test and hand over to the rest of the team, not just the original builder."
+  },
+  {
+   "q": "We do not know the right use case to start with.",
+   "a": "Start with a repeated task that crosses tools and has a clear owner. Avoid broad transformation projects for the first workflow."
+  }
+ ],
+ "gotchas": [
+  "Do not choose a first example that needs too many credentials, approvals or custom logic.",
+  "Do not rush past execution data; customers often understand the product only when they see input and output clearly.",
+  "If a step is simulated, say so plainly instead of implying it is a production-ready pattern."
+ ],
+ "practice": {
+  "type": "Hands-on lab",
+  "brief": "In your own n8n instance, build a simple workflow that starts with a trigger, passes data to at least one additional node, and completes one clear action. Use a small business scenario inspired by Meridian Logistics and be ready to explain what problem the workflow solves.",
+  "rubric": [
+   {
+    "criterion": "Workflow structure is complete",
+    "good": "The grader finds a trigger node, at least one connected downstream node, and one successful execution path."
+   },
+   {
+    "criterion": "Data is mapped through the workflow",
+    "good": "The grader finds that at least one field from an earlier step is used in a later step, rather than every value being hard-coded."
+   },
+   {
+    "criterion": "Workflow runs successfully",
+    "good": "The grader finds a successful test execution in the learner's instance and confirms the workflow does not stop at the trigger."
+   },
+   {
+    "criterion": "Use case is explained clearly",
+    "good": "The learner can state the trigger, action and business problem in plain language in under one minute."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "What makes a good first workflow for a new learner?",
+   "answer": "It solves one small repeated problem, is easy to test, and does not depend on many complex prerequisites or approvals."
+  },
+  {
+   "q": "Why should you inspect execution data after running a workflow?",
+   "answer": "It shows what entered and left each step, which helps you explain the logic, verify mappings and spot mistakes quickly."
+  },
+  {
+   "q": "How should you position a first workflow in a customer conversation?",
+   "answer": "As a concrete example of one manual handoff becoming repeatable and visible, not as the full architecture or final production design."
+  }
+ ]
+}</script>
+<script>
+(function(){
+  var C=JSON.parse(document.getElementById('course-data').textContent);
+  var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}).replace(/\[CHECK WITH PRODUCT\]/g,'<span class="check">[check with product]</span>')};
+  var ROLE={AE_MM:'Account Executive (mid-market)',AE_ENT:'Account Executive (enterprise)',SE:'Solutions Engineer',CSM:'Customer Success Manager',PARTNER:'Partner / implementation consultant'};
+  var $=function(s){return document.getElementById(s)};
+  document.title=C.title+' — GTM Academy (concept)';
+  $('c-path').textContent=C.path; $('c-code').textContent=C.id+' · '+C.level; $('c-title').textContent=C.title; $('c-objective').textContent=C.objective;
+  $('c-facts').innerHTML=['<span><b>'+C.minutes+' min</b></span>','<span>'+esc(C.lessons.length)+' lessons</span>','<span>For: '+esc(C.roles.map(function(r){return ROLE[r]||r}).join(', '))+'</span>','<span>When: '+esc(C.moments.join(', '))+'</span>'].join('');
+  var ul=function(a){return '<ul>'+a.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>'};
+  var tabs=function(key,label){var roles=C.roles.filter(function(r){return C.by_role[r]&&C.by_role[r][key]});
+    if(!roles.length)return '';
+    return '<section><h2>'+label+'</h2><div class="tabs" data-k="'+key+'">'+roles.map(function(r,i){return '<button data-r="'+r+'" class="'+(i?'':'on')+'">'+esc(ROLE[r]||r)+'</button>'}).join('')+'</div>'+
+      roles.map(function(r,i){var b=C.by_role[r][key];return '<div class="pane" data-k="'+key+'" data-r="'+r+'"'+(i?' hidden':'')+'><p><b>'+esc(b.format)+'</b></p>'+(b.steps?'<ol>'+b.steps.map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ol>':'')+(b.text?'<p>'+esc(b.text)+'</p>':'')+'</div>'}).join('')+'</section>'};
+  var h='';
+  h+='<section><h2>1. Who it is for</h2><p>'+esc(C.who_its_for)+'</p></section>';
+  h+='<section><h2>2. Business scenario</h2><p><b>'+esc(C.scenario.name)+'.</b> '+esc(C.scenario.problem)+'</p></section>';
+  h+='<section><h2>3. Before you start</h2>'+(C.prerequisites.length?ul(C.prerequisites.map(function(p){return p.code+' '+p.title})):'<p>No prerequisite.</p>')+(C.prerequisites.length?'<p>'+C.prerequisites.map(function(p){return '<a href="'+p.url+'" target="_blank" rel="noopener">Open '+esc(p.code)+' on learn.n8n.io</a>'}).join(' · ')+'</p>':'')+'</section>';
+  h+='<section><h2>4. The concept</h2><p>'+esc(C.concept)+'</p><h3>Lessons</h3><ol>'+C.lessons.map(function(l){return '<li><b>'+esc(l.title)+'</b> ('+l.minutes+' min). '+esc(l.summary)+'</li>'}).join('')+'</ol></section>';
+  h+=tabs('say','5. How to say it');
+  h+=tabs('show','6. How to show it');
+  h+='<section><h2>7. Objections and gotchas</h2>'+C.objections.map(function(o){return '<details class="q"><summary>'+esc(o.q)+'</summary><p>'+esc(o.a)+'</p></details>'}).join('')+(C.gotchas&&C.gotchas.length?ul(C.gotchas):'')+'</section>';
+  h+='<section><h2>8. Practice</h2><p><b>'+esc(C.practice.type)+'.</b> '+esc(C.practice.brief)+'</p><table class="t"><thead><tr><th>Criterion</th><th>What good looks like</th></tr></thead><tbody>'+C.practice.rubric.map(function(r){return '<tr><td>'+esc(r.criterion)+'</td><td>'+esc(r.good)+'</td></tr>'}).join('')+'</tbody></table></section>';
+  h+='<section><h2>9. Check your understanding</h2>'+C.check.map(function(q,i){return '<details class="q"><summary>'+(i+1)+'. '+esc(q.q)+'</summary><p>'+esc(q.answer)+'</p></details>'}).join('')+'</section>';
+  $('c-body').innerHTML=h;
+  document.querySelectorAll('.tabs').forEach(function(t){t.querySelectorAll('button').forEach(function(b){b.onclick=function(){var k=t.dataset.k;t.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.pane[data-k="'+k+'"]').forEach(function(p){p.hidden=p.dataset.r!==b.dataset.r})}})});
+  $('c-side').innerHTML='<div class="box"><h4>Builds</h4>'+ul(C.competencies)+'</div><div class="box"><h4>Assessment</h4>'+ul(C.assessment)+'</div><div class="box"><h4>Status</h4><p style="margin:0;color:var(--soft)">'+esc(C.status)+'</p></div>';
+  $('c-updated').textContent='Last updated '+C.updated;
+})();
+</script>
+</body>
+</html>
