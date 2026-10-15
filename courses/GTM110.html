@@ -30,7 +30,161 @@
   </div>
 </main>
 <footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
-<script id="course-data" type="application/json">{"id": "GTM110", "title": "Workflows as software", "path": "Enterprise Selling", "level": "Expert", "levelId": "L3", "minutes": 60, "roles": ["AE_ENT", "SE"], "competencies": ["Technical proficiency", "Objection handling"], "moments": ["Ramp (days 31-90)", "Launch readiness"], "assessment": ["Hands-on lab", "Automatic grader"], "status": "Example draft, for review", "updated": "2026-10-15", "objective": "Explain how to position workflows as software that must be designed, tested and operated with engineering discipline.", "who_its_for": "Enterprise account executives and solutions engineers who speak with architects, platform teams and CTOs. It assumes basic product knowledge and is not a course on first-call discovery or a standard intro demo.", "scenario": {"name": "Aurora Bank", "problem": "A regulated bank wants to automate internal processes and explore AI agents, but its platform team treats every workflow as production software that must be reviewed, tested and run on self-hosted infrastructure."}, "prerequisites": [{"code": "N8N103", "title": "In Practice: AI, Testing & Best Practices", "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N103+2026H2/about"}], "concept": "Workflows as software means treating automation as production systems, not as one-off scripts or ad hoc business rules. The buyer is not only asking whether a workflow can be built; they are asking how it will be versioned, tested, reviewed, changed safely and operated over time [CHECK WITH PRODUCT]. In enterprise selling, this changes the conversation from single-use automation to platform discipline, so you can speak to reliability, governance and long-term ownership in terms that technical leaders already use.", "lessons": [{"title": "Why enterprises treat workflows like production systems", "minutes": 12, "summary": "How regulated and large organizations evaluate automations as durable systems with owners, change control and operational risk."}, {"title": "The buying shift from feature to engineering discipline", "minutes": 14, "summary": "How to move the conversation from what one workflow does to how teams build and manage many workflows safely."}, {"title": "What to show in a technical conversation", "minutes": 14, "summary": "A practical demo story for architects and platform teams: structure, testing, changes and handoff."}, {"title": "Handling build-versus-buy and platform objections", "minutes": 10, "summary": "Short, honest answers to common objections about custom code, control and long-term maintenance."}, {"title": "Hands-on lab: present one workflow as software", "minutes": 10, "summary": "Set up a simple workflow in your own instance and present it with clear notes on design, testing and operations."}], "by_role": {"AE_ENT": {"say": {"format": "Talk track", "text": "The question is not only whether your team can automate this process. It is whether the result can be treated like software your platform team is willing to own, review and change safely over time. If the CTO worries about control, governance or fragile scripts, position n8n around engineering discipline and self-hosted operation [CHECK WITH PRODUCT], not around speed alone."}, "show": {"format": "Demo steps", "steps": ["Open a workflow that solves one internal process and state its owner, trigger and downstream systems.", "Walk through the workflow structure and point out where logic is simple, where code may be used, and where a review would focus.", "Show a small change to the workflow and explain how a team would test and approve that change before production use [CHECK WITH PRODUCT].", "Close by summarizing why the platform team can treat this as a managed system rather than an unmanaged script."]}}, "SE": {"say": {"format": "Talk track", "text": "Frame the workflow as an application component, not as a throwaway automation. Explain the trigger, logic, dependencies, failure points and how the team would test and operate it. Be clear about prerequisites, limits and any areas where the customer should confirm their own standards against product capabilities [CHECK WITH PRODUCT]."}, "show": {"format": "Demo steps", "steps": ["Start with a workflow that has a clear trigger, at least one transformation step and one external system action.", "Run the workflow once and inspect the data moving through each step so the customer sees the logic and dependencies.", "Make a controlled change, such as adding validation or error handling, and explain why that matters in production.", "Show where custom code fits when visual nodes are not enough, while keeping the overall workflow readable.", "End with an importable example and a short summary of what the customer would need to operationalize it in their environment [CHECK WITH PRODUCT]."]}}}, "objections": [{"q": "If workflows are software, why would we not just build this ourselves?", "a": "Some teams do build it themselves. The decision usually comes down to how much they want to own from scratch versus using a platform that gives structure, visibility and reuse for many automations [CHECK WITH PRODUCT]."}, {"q": "Visual workflows sound harder to govern than normal application code.", "a": "That is a fair concern. The right answer is to show how teams can review workflow logic, control changes and keep technical ownership clear, while confirming any governance details that depend on product configuration [CHECK WITH PRODUCT]."}, {"q": "We cannot run business-critical processes on fragile automations.", "a": "Do not argue with the premise. Agree that business-critical workflows need software discipline, then show how you would design, test and operate them with the same caution the platform team already expects."}], "gotchas": ["Do not describe workflows as simple business-user automations if the buyer is a platform or architecture team.", "Do not imply software lifecycle features you have not verified in the current product [CHECK WITH PRODUCT].", "In demos, avoid overly broad examples that hide ownership, dependencies or failure handling."], "practice": {"type": "Hands-on lab", "brief": "In your own n8n instance, build or adapt a simple workflow with a clear trigger, one transformation step and one action step. Then write a short presenter note that explains the workflow as software for Aurora Bank: purpose, owner, dependencies, change risk and how you would test it before production use.", "rubric": [{"criterion": "Workflow structure is clear", "good": "The grader can detect a valid trigger, at least one intermediate logic or transformation step, and at least one final action step."}, {"criterion": "Production thinking is visible", "good": "The submitted notes name an owner, key dependency and one likely failure point in plain language."}, {"criterion": "Change and testing are addressed", "good": "The submitted notes describe one safe change and one way the learner would verify it before production use."}, {"criterion": "Enterprise positioning is accurate", "good": "The explanation focuses on control, governance and long-term maintainability, and avoids unverified product claims."}]}, "check": [{"q": "What does 'workflows as software' mean in an enterprise conversation?", "answer": "It means treating workflows as production systems that need clear ownership, review, testing and operational discipline, not as one-off automations."}, {"q": "How should an AE_ENT change the pitch for a CTO or platform team?", "answer": "Shift from speed and convenience to control, governance, maintainability and fit with existing engineering practices."}, {"q": "What should an SE show to support this message?", "answer": "A workflow with clear structure, visible logic, known dependencies and a simple example of how a change would be tested and explained before production use."}]}</script>
+<script id="course-data" type="application/json">{
+ "id": "GTM110",
+ "title": "Workflows as software",
+ "path": "Enterprise Selling",
+ "level": "Expert",
+ "levelId": "L3",
+ "minutes": 60,
+ "roles": [
+  "AE_ENT",
+  "SE"
+ ],
+ "competencies": [
+  "Technical proficiency",
+  "Objection handling"
+ ],
+ "moments": [
+  "Ramp (days 31-90)",
+  "Launch readiness"
+ ],
+ "assessment": [
+  "Hands-on lab",
+  "Automatic grader"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Explain how to position workflows as software that teams design, test, review and operate with engineering discipline.",
+ "who_its_for": "Enterprise account executives and solutions engineers preparing for technical evaluations and architecture discussions. This assumes the learner already understands basic workflows and AI use cases; it does not cover entry-level product positioning.",
+ "scenario": {
+  "name": "Aurora Bank",
+  "problem": "A regulated enterprise wants AI agents for internal operations, but its architects reject fragile automations that cannot be tested, reviewed and managed like software. The bank will only consider a self-hosted approach and expects clear answers on reliability, change control and team ownership."
+ },
+ "prerequisites": [
+  {
+   "code": "N8N103",
+   "title": "In Practice: AI, Testing & Best Practices",
+   "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N103+2026H2/about"
+  }
+ ],
+ "concept": "Workflows as software means treating automations as part of the production system, not as one-off helpers. The team designs them with clear inputs and outputs, tests expected behavior, reviews changes, handles failures and assigns ownership. In enterprise deals, this matters because buyers are not only asking whether a workflow can run today; they are asking whether their platform team can trust it, maintain it and govern it over time.",
+ "lessons": [
+  {
+   "title": "Why enterprises reject fragile automation",
+   "minutes": 12,
+   "summary": "What technical buyers mean by brittle workflows, and why that blocks adoption in regulated environments."
+  },
+  {
+   "title": "What makes a workflow behave like software",
+   "minutes": 16,
+   "summary": "Inputs, outputs, modular design, error handling, testing and ownership in plain terms."
+  },
+  {
+   "title": "How to position this to a CTO and platform team",
+   "minutes": 12,
+   "summary": "Tie workflow discipline to governance, maintainability and the build-versus-buy discussion."
+  },
+  {
+   "title": "Demo and lab: reviewable, testable workflow design",
+   "minutes": 12,
+   "summary": "Show a workflow with clear paths, controlled failure handling and a simple validation approach."
+  },
+  {
+   "title": "Handling objections and setting limits honestly",
+   "minutes": 8,
+   "summary": "Answer common pushback without overstating maturity, coverage or operational guarantees."
+  }
+ ],
+ "by_role": {
+  "AE_ENT": {
+   "say": {
+    "format": "Talk track",
+    "text": "If your concern is not just automation, but whether automation can be run safely at enterprise scale, frame workflows as software. The value is that your platform team can apply engineering discipline to business processes instead of leaving critical logic in scripts, tickets and tribal knowledge. Ask one discovery question: which automations today are too important to stay as ad hoc scripts or manual runbooks. Do not pitch this if the buyer only needs a quick team-level task automation and has no platform, governance or reliability concern."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Open a workflow that has a clear trigger, named steps and separate paths for success and failure.",
+     "Show where input data is validated before downstream actions run.",
+     "Run a success case first, then trigger a controlled failure and show how the workflow handles it.",
+     "Point out where a team would review, update and own this workflow over time."
+    ]
+   }
+  },
+  "SE": {
+   "say": {
+    "format": "Talk track",
+    "text": "Position the workflow as an operational system with defined behavior, not as a canvas full of nodes. Explain the prerequisites, such as agreed inputs, access to the required systems and a plan for testing and ownership. Be clear on limits: a workflow still needs sound design, and enterprise readiness depends on the surrounding operating model too [CHECK WITH PRODUCT]."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Import or open an example workflow for an internal approval or triage process.",
+     "Walk through the trigger, data mapping and each decision point so the evaluator can see the logic.",
+     "Show one test run with valid input and confirm the expected output.",
+     "Show a second run with missing or bad input and explain the error path or fallback behavior.",
+     "Finish by showing how the workflow could be updated in a controlled way without rewriting the whole process."
+    ]
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "This still sounds like automation, not software.",
+   "a": "Agree that a workflow is not the same thing as a full application. The point is that important automations can still be designed, tested and managed with software-like discipline instead of being treated as disposable tasks."
+  },
+  {
+   "q": "We can build this ourselves with scripts and internal services.",
+   "a": "You may be able to. The decision usually comes down to visibility, speed of change, shared ownership and how much custom engineering capacity you want tied up in process orchestration."
+  },
+  {
+   "q": "If AI is involved, how can we trust the outcome?",
+   "a": "Separate deterministic workflow steps from model-driven steps, and show where validation or human review belongs. Do not present AI outputs as guaranteed facts."
+  }
+ ],
+ "gotchas": [
+  "Do not call every workflow production-ready; show the design choices that make one safer to operate.",
+  "Do not blur together workflow logic, hosting model and governance controls if you have not confirmed the exact product capabilities [CHECK WITH PRODUCT].",
+  "In a live demo, test the failure path before the call so the example does not fail in an uncontrolled way."
+ ],
+ "practice": {
+  "type": "Hands-on lab",
+  "brief": "Build a workflow in your own n8n instance that accepts structured input, branches on a simple rule, returns a success result for valid input and a controlled error result for invalid input. The workflow should be understandable to another operator without verbal explanation.",
+  "rubric": [
+   {
+    "criterion": "Clear structure",
+    "good": "The grader can detect a trigger, at least one decision step and distinct end behavior for valid and invalid input."
+   },
+   {
+    "criterion": "Controlled handling of bad input",
+    "good": "The grader can send invalid input and confirm the workflow returns or records a predictable error outcome instead of stopping unclearly."
+   },
+   {
+    "criterion": "Testable behavior",
+    "good": "The grader can run at least one valid and one invalid test case and observe different expected results."
+   },
+   {
+    "criterion": "Readable design",
+    "good": "Node names and path structure make the purpose of the workflow understandable without extra notes."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "What does it mean to treat workflows as software?",
+   "answer": "It means designing and operating important automations with defined behavior, testing, change review and clear ownership instead of treating them as throwaway helpers."
+  },
+  {
+   "q": "Why does this matter in enterprise deals?",
+   "answer": "Enterprise buyers care about maintainability, governance and operational risk. They need to know a workflow can be trusted and managed over time, not just built once."
+  },
+  {
+   "q": "When should an AE avoid leading with this message?",
+   "answer": "Avoid it when the buyer only has a small, isolated automation need and is not concerned with platform standards, governance or long-term operational ownership."
+  }
+ ]
+}</script>
 <script>
 (function(){
   var C=JSON.parse(document.getElementById('course-data').textContent);
