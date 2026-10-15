@@ -7,7 +7,7 @@
 <meta name="description" content="Concept of a role-based enablement academy for go-to-market teams, built by Simone Abbiati.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="templates/style.css">
+<link rel="stylesheet" href="templates/style.css?v=3">
 </head>
 <body>
 <a class="skip" href="#catalog">Skip to the catalog</a>
@@ -118,7 +118,7 @@
     'Adoption and expansion':'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 010 7"/><path d="M18 14.7c2 .7 3.2 2.5 3.5 5.3"/>',
     'Partner delivery':'<path d="M14.7 6.3a4 4 0 00-5.6 5.6L3 18l3 3 6.1-6.1a4 4 0 005.6-5.6l-2.6 2.6-2.4-.6-.6-2.4z"/>'};
   var ROLEICON={AE_MM:'Value and ROI',AE_ENT:'Objection handling',SE:'Technical proficiency',CSM:'Adoption and expansion',PARTNER:'Partner delivery'};
-  var icon=function(name){return '<span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24">'+(ICON[name]||ICON['Product knowledge'])+'</svg></span>'};
+  var icon=function(name){return '<span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="17" height="17">'+(ICON[name]||ICON['Product knowledge'])+'</svg></span>'};
   var roleName={}; D.roles.forEach(function(r){roleName[r.id]=r.name});
   var pages=new Set(D.pages||[]);
   var LV={L1:1,L2:2,L3:3};
@@ -186,7 +186,7 @@
   function paths(){$('#pathlist').innerHTML=D.paths.map(function(p){var cs=D.courses.filter(function(c){return c.pathId===p.id});var n=cs.filter(function(c){return done.has(c.id)}).length;
     return '<div class="path"><span class="pid">'+p.id+' · '+hrs(cs.reduce(function(a,c){return a+c.minutes},0))+'</span><h3>'+esc(p.name)+'</h3><div class="bar"><span style="width:'+(n/cs.length*100)+'%"></span></div><span class="count">'+n+' of '+cs.length+' completed</span><ol>'+cs.map(function(c){return '<li>'+(pages.has(c.id)?'<a href="courses/'+c.id+'.html">':'')+'<span class="code">'+c.id+'</span> '+esc(c.title)+(pages.has(c.id)?'</a>':'')+(done.has(c.id)?' ✓':'')+'</li>'}).join('')+'</ol></div>'}).join('')}
   function badges(){$('#badges').innerHTML=certs.map(function(c){var k=kind(c),col=k==='Certification'?'var(--accent)':'var(--l1)';
-    return '<div class="badge"><svg class="hex" viewBox="0 0 52 58" aria-hidden="true"><path d="M26 2l22 12.5v29L26 56 4 43.5v-29z" fill="none" stroke="'+col+'" stroke-width="2.5"/><text x="26" y="34" text-anchor="middle" font-size="12" font-weight="700" fill="'+col+'" font-family="Inter,sans-serif">'+c.id.slice(3)+'</text></svg><div><span class="code">'+k+'</span><h3>'+esc(c.title)+'</h3><p>'+c.level+' · '+hrs(c.minutes)+' · '+esc(c.roles.map(function(r){return roleName[r]}).join(', '))+'</p></div></div>'}).join('')}
+    return '<div class="badge"><svg class="hex" viewBox="0 0 52 58" width="52" height="58" aria-hidden="true"><path d="M26 2l22 12.5v29L26 56 4 43.5v-29z" fill="none" stroke="'+col+'" stroke-width="2.5"/><text x="26" y="34" text-anchor="middle" font-size="12" font-weight="700" fill="'+col+'" font-family="Inter,sans-serif">'+c.id.slice(3)+'</text></svg><div><span class="code">'+k+'</span><h3>'+esc(c.title)+'</h3><p>'+c.level+' · '+hrs(c.minutes)+' · '+esc(c.roles.map(function(r){return roleName[r]}).join(', '))+'</p></div></div>'}).join('')}
   function renderAll(){mypath();catalog();paths();}
   function syncBoxes(){$$('#f-level input').forEach(function(i){i.checked=st.levels.has(i.value)});$$('#f-assess input').forEach(function(i){i.checked=st.assess.has(i.value)})}
   function resetAll(){st.levels=new Set();st.assess=new Set();st.comp='';st.moment='';st.q='';$('#f-comp').value='';$('#f-moment').value='';$('#q').value='';syncBoxes();setRole('',false)}
