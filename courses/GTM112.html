@@ -30,7 +30,139 @@
   </div>
 </main>
 <footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
-<script id="course-data" type="application/json">{"id": "GTM112", "title": "Expansion signals", "path": "Customer Adoption and Expansion", "level": "Practitioner", "levelId": "L2", "minutes": 30, "roles": ["CSM", "PARTNER"], "competencies": ["Adoption and expansion", "Value and ROI"], "moments": ["Continuous"], "assessment": ["Knowledge check"], "status": "Example draft, for review", "updated": "2026-10-15", "objective": "Identify expansion signals in customer behavior and turn them into timely, relevant follow-up actions.", "who_its_for": "Customer success managers and partners who work with existing customers over time. It assumes you already know the customer's workflows and goals; it does not cover first-call discovery or technical demos.", "scenario": {"name": "Pixel & Co.", "problem": "An automation agency supports several client accounts on n8n. Some clients have clear room to grow, but the team lacks a simple way to spot which signals mean more use cases, more stakeholders or a larger delivery need."}, "prerequisites": [], "concept": "An expansion signal is a change in customer behavior, team structure or business need that suggests the account may be ready for broader use of n8n. The point is not to push a larger deal too early. The point is to notice when the customer is already showing demand, then connect that signal to a useful next step such as a new workflow, a governance conversation or a broader rollout plan.", "lessons": [{"title": "What counts as an expansion signal", "minutes": 8, "summary": "Learn the difference between real buying or adoption signals and weak activity that means little on its own."}, {"title": "Signals by account type", "minutes": 7, "summary": "See how signals differ for a direct customer account versus a partner-led client delivery."}, {"title": "What to do next", "minutes": 8, "summary": "Match each signal to a practical follow-up action, message and owner."}, {"title": "Avoid false positives", "minutes": 7, "summary": "Learn when not to treat activity as expansion and how to confirm value before acting."}], "by_role": {"CSM": {"say": {"format": "Customer email", "text": "Subject: A few signs your team may be ready for the next set of workflows. I would share the patterns I am seeing across your current use cases, point out where more teams or processes may benefit, and suggest one short review to confirm whether there is a real expansion opportunity."}}, "PARTNER": {"say": {"format": "Implementation tips", "text": "Track signals during delivery, not just at renewal time. When a client asks for similar workflows in new teams, tighter controls, or support for more systems, treat that as a cue to propose the next phase with clear scope and best practices."}, "show": {"format": "Lab steps", "steps": ["Review one active client account and list the workflows already delivered, the teams using them and any open requests.", "Sort the requests into three groups: more volume, more departments, or more complex requirements such as governance or security [CHECK WITH PRODUCT].", "Write one expansion hypothesis for each group, linked to a customer problem and a likely next project.", "Draft a short client update that names the signal, the risk of doing nothing and the next step you recommend."]}}}, "objections": [{"q": "We do not want to look like we are always trying to upsell.", "a": "That is fair. Start with observed usage and business need, not package size or price. If there is no clear customer outcome, do not force an expansion conversation."}, {"q": "More workflow activity does not always mean they want to expand.", "a": "Correct. Treat activity as a signal to investigate, not proof. Confirm whether new teams, new processes or new requirements are actually appearing."}, {"q": "Our client has interest, but no budget yet.", "a": "Then keep the conversation focused on prioritization and value. Help them define the next use case and the cost of delay, so the request is ready when budget opens."}], "gotchas": ["Do not confuse one active builder with broad account adoption.", "Do not raise expansion before the current use case is stable and delivering value.", "Do not assume every request for help means a larger project; some requests are just support needs."], "practice": {"type": "Role-play", "brief": "Review a Pixel & Co. client account and identify two real expansion signals and one false positive. Then explain what follow-up you would take and why.", "rubric": [{"criterion": "Signal quality", "good": "Distinguishes clear signals from weak activity and explains the difference in plain terms."}, {"criterion": "Action plan", "good": "Matches each valid signal to a specific next step, owner and customer outcome."}, {"criterion": "Customer relevance", "good": "Frames the follow-up around the client's business need, not around selling more by default."}, {"criterion": "Judgment", "good": "Names at least one case where no expansion conversation should happen yet."}]}, "check": [{"q": "What is an expansion signal?", "answer": "It is a change in customer behavior, need or scope that suggests the account may be ready for broader use of n8n. It is a reason to investigate, not automatic proof of a larger opportunity."}, {"q": "Why is it risky to act on usage alone?", "answer": "Usage can reflect one busy user or temporary project work. You need to confirm whether the activity maps to a wider business problem, more stakeholders or a new delivery need."}, {"q": "What should you do after spotting a strong signal?", "answer": "Tie it to a customer problem and propose a focused next step, such as a review, a new use case plan or a scoped next phase."}]}</script>
+<script id="course-data" type="application/json">{
+ "id": "GTM112",
+ "title": "Expansion signals",
+ "path": "Customer Adoption and Expansion",
+ "level": "Practitioner",
+ "levelId": "L2",
+ "minutes": 30,
+ "roles": [
+  "CSM",
+  "PARTNER"
+ ],
+ "competencies": [
+  "Adoption and expansion",
+  "Value and ROI"
+ ],
+ "moments": [
+  "Continuous"
+ ],
+ "assessment": [
+  "Knowledge check"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Identify customer behaviors that suggest readiness for broader n8n use and turn them into a simple expansion plan.",
+ "who_its_for": "Customer success managers and partners who work with existing n8n customers over time. It assumes the learner already knows the customer's current use case; detailed product training and first-call discovery are out of scope.",
+ "scenario": {
+  "name": "Pixel & Co.",
+  "problem": "An automation agency supports several client accounts on n8n. Some clients have one successful workflow and stop there, while others ask for more use cases, governance and delivery help. The team needs a simple way to spot which accounts are ready for the next conversation."
+ },
+ "prerequisites": [],
+ "concept": "An expansion signal is a customer behavior, request or operating change that suggests they may be ready for broader use of n8n. The point is not to force a sales motion. It is to notice when the customer has more automation demand, more stakeholders, higher standards or more delivery pressure than the current setup covers. Good signals connect to a real next step, such as a new workflow area, a governance discussion, partner services or a review of how the team is building today.",
+ "lessons": [
+  {
+   "title": "What counts as an expansion signal",
+   "minutes": 8,
+   "summary": "Define the difference between healthy product use, a support issue and a real sign that the account may be ready to grow."
+  },
+  {
+   "title": "Signals from adoption and usage patterns",
+   "minutes": 7,
+   "summary": "Look for repeated workflow success, more teams getting involved and requests that point beyond the original use case."
+  },
+  {
+   "title": "Signals from delivery and governance needs",
+   "minutes": 7,
+   "summary": "Spot when scale, reliability, security or handoff questions suggest a broader account conversation."
+  },
+  {
+   "title": "Turn signals into an account plan",
+   "minutes": 8,
+   "summary": "Prioritize the signal, define the next customer conversation and choose the right follow-up message."
+  }
+ ],
+ "by_role": {
+  "CSM": {
+   "say": {
+    "format": "Customer email",
+    "text": "Subject: A quick review of where your automation program could go next. I noticed your team has moved beyond the first workflow and is now involving more users and use cases. If helpful, we can review which patterns usually suggest the next step in adoption, and where teams like yours often add governance, new workflows or delivery support."
+   }
+  },
+  "PARTNER": {
+   "say": {
+    "format": "Implementation tips",
+    "text": "Track signals in the normal delivery process, not as a separate sales task. Note when the client asks for a second workflow in a new team, requests a more repeatable delivery model or starts asking about standards, approvals or ownership. Use those moments to suggest a scoped next phase, not a broad upsell."
+   },
+   "show": {
+    "format": "Lab steps",
+    "steps": [
+     "Pick one current or fictional client account in your own n8n instance notes or project tracker and list its first delivered workflow.",
+     "Add three possible expansion signals for that client, such as demand from another team, requests for more reliable operations or repeated manual handoffs around the workflow.",
+     "For each signal, write one next action: customer review, governance workshop, new use case assessment or implementation phase proposal.",
+     "Draft a short client summary that links the signal to business impact and a realistic next step.",
+     "Check that each signal is based on an observed behavior or request, not a guess about budget or urgency."
+    ]
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "We do not want to push expansion before the customer is ready.",
+   "a": "That is correct. A signal is a reason to explore, not to force a pitch. Start with the customer's new need, then decide whether there is a real next step."
+  },
+  {
+   "q": "Most of these signals sound like support or delivery issues, not expansion.",
+   "a": "Some are just support issues. They become expansion signals when they repeat, affect more teams or show that the current scope no longer matches the customer's operating reality."
+  },
+  {
+   "q": "We cannot tell if a client wants software growth or more services help.",
+   "a": "You do not need to decide too early. Clarify whether the customer needs more use cases, better operating standards or implementation capacity, then route the conversation accordingly."
+  }
+ ],
+ "gotchas": [
+  "Do not treat every feature question as an expansion signal.",
+  "Do not jump to pricing or packaging before you can name the customer's next problem.",
+  "Avoid vague account plans; tie each signal to one clear follow-up action."
+ ],
+ "practice": {
+  "type": "Role-play",
+  "brief": "Review a Pixel & Co. client account that has one successful workflow and new requests from two other teams. Explain which signs are true expansion signals, which are not, and propose the next customer conversation.",
+  "rubric": [
+   {
+    "criterion": "Signal quality",
+    "good": "Separates observed customer behaviors from guesses and picks signals that suggest a real next need."
+   },
+   {
+    "criterion": "Customer relevance",
+    "good": "Connects each signal to the client's workflow maturity, delivery pressure or governance need."
+   },
+   {
+    "criterion": "Next-step clarity",
+    "good": "Recommends one practical follow-up action for each signal instead of a vague expansion message."
+   },
+   {
+    "criterion": "Role-appropriate communication",
+    "good": "Uses a short customer email or implementation recommendation that is specific, plain and accurate."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "What makes something a true expansion signal instead of normal usage?",
+   "answer": "It points to a new customer need that the current scope does not fully cover, such as more teams, more workflows, stronger governance or more delivery support."
+  },
+  {
+   "q": "What should a CSM do after spotting an expansion signal?",
+   "answer": "Confirm the underlying customer problem and set up a focused follow-up conversation. The next step should match the signal, such as an adoption review or a discussion about broader workflow ownership."
+  },
+  {
+   "q": "How should a partner use expansion signals during delivery?",
+   "answer": "Partners should capture them as part of normal project work, then suggest a small and relevant next phase. The recommendation should be tied to observed client needs, not a generic upsell."
+  }
+ ]
+}</script>
 <script>
 (function(){
   var C=JSON.parse(document.getElementById('course-data').textContent);
