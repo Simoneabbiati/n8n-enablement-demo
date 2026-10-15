@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>n8n in 30 minutes — GTM Academy (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../templates/style.css">
+</head>
+<body>
+<div class="notice">Concept built by Simone Abbiati for the n8n Sales Enablement Manager application — sample data, not affiliated with n8n GmbH.</div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">GA</span>GTM Academy <span class="chip">Concept</span></a>
+  <nav class="links"><a href="../#catalog">Catalog</a><a href="../#paths">Learning paths</a><a href="../#certifications">Certifications</a><a href="../#foundations">Foundations</a></nav>
+</div></header>
+<main class="wrap">
+  <div class="course-head">
+    <div class="crumbs"><a href="../#catalog">Catalog</a> / <span id="c-path"></span></div>
+    <p class="eyebrow" id="c-code"></p>
+    <h1 id="c-title"></h1>
+    <p class="lead" id="c-objective"></p>
+    <div class="facts-row" id="c-facts"></div>
+  </div>
+  <div class="course">
+    <article id="c-body"></article>
+    <aside id="c-side"></aside>
+  </div>
+</main>
+<footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
+<script id="course-data" type="application/json">{"id": "GTM101", "title": "n8n in 30 minutes", "path": "GTM Onboarding", "level": "Foundation", "levelId": "L1", "minutes": 30, "roles": ["AE_MM", "AE_ENT", "CSM", "SE"], "competencies": ["Product knowledge"], "moments": ["Onboarding (days 0-30)"], "assessment": ["Knowledge check"], "status": "Example draft, for review", "updated": "2026-10-15", "objective": "Explain what n8n does, who uses it and why, in under two minutes and in plain words.", "who_its_for": "New account executives, solutions engineers and customer success managers in their first week. No technical background is assumed; solutions engineers should take it quickly and move on to GTM104.", "scenario": {"name": "Meridian Logistics", "problem": "A mid-market logistics company runs orders and support across a dozen SaaS tools. Data is copied by hand between them, and the engineering team has no time to build integrations."}, "prerequisites": [{"code": "QS101", "title": "n8n Quickstart", "url": "https://learn.n8n.io/courses/course-v1:n8n+QS101+2026H2/about"}], "concept": "n8n is an open workflow orchestration platform. A workflow starts from a trigger, such as a new form submission or a schedule, and passes data through nodes that act on other tools or call AI models. Technical teams can write code where they need it and use visual building blocks everywhere else, so they automate faster than with code alone and with fewer limits than with no-code tools. Teams can run it in the cloud or host it themselves [CHECK WITH PRODUCT].", "lessons": [{"title": "What a workflow is", "minutes": 8, "summary": "Triggers, nodes and the data that moves between them, shown on one simple example."}, {"title": "Why teams choose n8n", "minutes": 8, "summary": "Code freedom with no-code speed; the community of builders and integrations; where AI fits."}, {"title": "Who buys it and why", "minutes": 8, "summary": "Technical buyers versus business buyers, and the problem each one is trying to solve."}, {"title": "Your two-minute explanation", "minutes": 6, "summary": "Practise the explanation you will use in your first customer calls."}], "by_role": {"AE_MM": {"say": {"format": "Talk track", "text": "Your team spends hours moving data between tools. n8n lets your engineers automate those steps in days instead of months, with code where they want it and visual building blocks everywhere else."}}, "AE_ENT": {"say": {"format": "Talk track", "text": "n8n gives your platform team one place to build, run and govern automations, including AI agents, in the cloud or on your own infrastructure [CHECK WITH PRODUCT]."}}, "CSM": {"say": {"format": "Customer email", "text": "Subject: Getting more from your first workflows. A short note on the three workflows teams like yours usually automate next, and a link to book 20 minutes with me."}}, "SE": {"say": {"format": "Talk track", "text": "Start from the trigger and the systems involved; show that every node can be replaced by code when the visual version is not enough."}, "show": {"format": "Demo steps", "steps": ["Open a blank workflow and add a form trigger.", "Add two integration nodes that write the submission to a CRM and post to Slack.", "Run it once and show the data passing through each node.", "Replace one node with a code node to show the escape hatch."]}}}, "objections": [{"q": "We already use a no-code automation tool.", "a": "Ask where it stops: custom logic, volume, cost or data residency. n8n is chosen when teams outgrow those limits [CHECK WITH PRODUCT]."}, {"q": "Our engineers can just write scripts.", "a": "They can. The question is who maintains them, monitors them and changes them next quarter. Workflows make that visible to the whole team."}], "gotchas": ["Do not promise an integration you have not checked exists.", "Keep the first explanation about the customer's problem, not the feature list."], "practice": {"type": "Role-play", "brief": "Explain n8n to the operations lead of Meridian Logistics in two minutes. A colleague plays the customer and asks one follow-up question.", "rubric": [{"criterion": "Starts from the customer's problem", "good": "Names the manual work and its cost before mentioning n8n."}, {"criterion": "Plain language", "good": "No unexplained jargon; one concrete example."}, {"criterion": "Accurate", "good": "Every claim is true or flagged for checking."}]}, "check": [{"q": "What starts a workflow?", "answer": "A trigger, such as a new form submission, a webhook or a schedule."}, {"q": "Why do technical teams choose n8n over pure no-code tools?", "answer": "They can write code where they need it and avoid the limits of visual-only tools, while still building faster than with code alone."}, {"q": "Which official course should you take before this one?", "answer": "QS101 n8n Quickstart."}]}</script>
+<script>
+(function(){
+  var C=JSON.parse(document.getElementById('course-data').textContent);
+  var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}).replace(/\[CHECK WITH PRODUCT\]/g,'<span class="check">[check with product]</span>')};
+  var ROLE={AE_MM:'Account Executive (mid-market)',AE_ENT:'Account Executive (enterprise)',SE:'Solutions Engineer',CSM:'Customer Success Manager',PARTNER:'Partner / implementation consultant'};
+  var $=function(s){return document.getElementById(s)};
+  document.title=C.title+' — GTM Academy (concept)';
+  $('c-path').textContent=C.path; $('c-code').textContent=C.id+' · '+C.level; $('c-title').textContent=C.title; $('c-objective').textContent=C.objective;
+  $('c-facts').innerHTML=['<span><b>'+C.minutes+' min</b></span>','<span>'+esc(C.lessons.length)+' lessons</span>','<span>For: '+esc(C.roles.map(function(r){return ROLE[r]||r}).join(', '))+'</span>','<span>When: '+esc(C.moments.join(', '))+'</span>'].join('');
+  var ul=function(a){return '<ul>'+a.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>'};
+  var tabs=function(key,label){var roles=C.roles.filter(function(r){return C.by_role[r]&&C.by_role[r][key]});
+    if(!roles.length)return '';
+    return '<section><h2>'+label+'</h2><div class="tabs" data-k="'+key+'">'+roles.map(function(r,i){return '<button data-r="'+r+'" class="'+(i?'':'on')+'">'+esc(ROLE[r]||r)+'</button>'}).join('')+'</div>'+
+      roles.map(function(r,i){var b=C.by_role[r][key];return '<div class="pane" data-k="'+key+'" data-r="'+r+'"'+(i?' hidden':'')+'><p><b>'+esc(b.format)+'</b></p>'+(b.steps?'<ol>'+b.steps.map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ol>':'')+(b.text?'<p>'+esc(b.text)+'</p>':'')+'</div>'}).join('')+'</section>'};
+  var h='';
+  h+='<section><h2>1. Who it is for</h2><p>'+esc(C.who_its_for)+'</p></section>';
+  h+='<section><h2>2. Business scenario</h2><p><b>'+esc(C.scenario.name)+'.</b> '+esc(C.scenario.problem)+'</p></section>';
+  h+='<section><h2>3. Before you start</h2>'+(C.prerequisites.length?ul(C.prerequisites.map(function(p){return p.code+' '+p.title})):'<p>No prerequisite.</p>')+(C.prerequisites.length?'<p>'+C.prerequisites.map(function(p){return '<a href="'+p.url+'" target="_blank" rel="noopener">Open '+esc(p.code)+' on learn.n8n.io</a>'}).join(' · ')+'</p>':'')+'</section>';
+  h+='<section><h2>4. The concept</h2><p>'+esc(C.concept)+'</p><h3>Lessons</h3><ol>'+C.lessons.map(function(l){return '<li><b>'+esc(l.title)+'</b> ('+l.minutes+' min). '+esc(l.summary)+'</li>'}).join('')+'</ol></section>';
+  h+=tabs('say','5. How to say it');
+  h+=tabs('show','6. How to show it');
+  h+='<section><h2>7. Objections and gotchas</h2>'+C.objections.map(function(o){return '<details class="q"><summary>'+esc(o.q)+'</summary><p>'+esc(o.a)+'</p></details>'}).join('')+(C.gotchas&&C.gotchas.length?ul(C.gotchas):'')+'</section>';
+  h+='<section><h2>8. Practice</h2><p><b>'+esc(C.practice.type)+'.</b> '+esc(C.practice.brief)+'</p><table class="t"><thead><tr><th>Criterion</th><th>What good looks like</th></tr></thead><tbody>'+C.practice.rubric.map(function(r){return '<tr><td>'+esc(r.criterion)+'</td><td>'+esc(r.good)+'</td></tr>'}).join('')+'</tbody></table></section>';
+  h+='<section><h2>9. Check your understanding</h2>'+C.check.map(function(q,i){return '<details class="q"><summary>'+(i+1)+'. '+esc(q.q)+'</summary><p>'+esc(q.answer)+'</p></details>'}).join('')+'</section>';
+  $('c-body').innerHTML=h;
+  document.querySelectorAll('.tabs').forEach(function(t){t.querySelectorAll('button').forEach(function(b){b.onclick=function(){var k=t.dataset.k;t.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.pane[data-k="'+k+'"]').forEach(function(p){p.hidden=p.dataset.r!==b.dataset.r})}})});
+  $('c-side').innerHTML='<div class="box"><h4>Builds</h4>'+ul(C.competencies)+'</div><div class="box"><h4>Assessment</h4>'+ul(C.assessment)+'</div><div class="box"><h4>Status</h4><p style="margin:0;color:var(--soft)">'+esc(C.status)+'</p></div>';
+  $('c-updated').textContent='Last updated '+C.updated;
+})();
+</script>
+</body>
+</html>

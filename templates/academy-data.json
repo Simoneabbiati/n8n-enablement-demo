@@ -1,0 +1,596 @@
+{
+ "courses": [
+  {
+   "id": "GTM101",
+   "module": "P1-M1",
+   "title": "n8n in 30 minutes",
+   "path": "GTM Onboarding",
+   "pathId": "P1",
+   "level": "Foundation",
+   "levelId": "L1",
+   "roles": [
+    "AE_MM",
+    "AE_ENT",
+    "CSM",
+    "SE"
+   ],
+   "competencies": [
+    "Product knowledge"
+   ],
+   "area": [
+    "Workflows and nodes"
+   ],
+   "moments": [
+    "Onboarding (days 0-30)"
+   ],
+   "formats": [
+    "Short video (UI how-to)",
+    "Text explainer"
+   ],
+   "prereq": [
+    "QS101"
+   ],
+   "scenario": [
+    "Meridian Logistics"
+   ],
+   "assessment": [
+    "Knowledge check"
+   ],
+   "access": [
+    "Employees"
+   ],
+   "minutes": 30
+  },
+  {
+   "id": "GTM102",
+   "module": "P1-M2",
+   "title": "ICP and personas",
+   "path": "GTM Onboarding",
+   "pathId": "P1",
+   "level": "Foundation",
+   "levelId": "L1",
+   "roles": [
+    "AE_MM",
+    "AE_ENT",
+    "CSM",
+    "SE"
+   ],
+   "competencies": [
+    "Discovery",
+    "Value and ROI"
+   ],
+   "area": [],
+   "moments": [
+    "Onboarding (days 0-30)"
+   ],
+   "formats": [
+    "Text explainer",
+    "Live session"
+   ],
+   "prereq": [],
+   "scenario": [
+    "Meridian Logistics",
+    "Aurora Bank"
+   ],
+   "assessment": [
+    "Knowledge check"
+   ],
+   "access": [
+    "Employees"
+   ],
+   "minutes": 45
+  },
+  {
+   "id": "GTM103",
+   "module": "P1-M3",
+   "title": "Your first workflow",
+   "path": "GTM Onboarding",
+   "pathId": "P1",
+   "level": "Foundation",
+   "levelId": "L1",
+   "roles": [
+    "AE_MM",
+    "AE_ENT",
+    "CSM",
+    "SE"
+   ],
+   "competencies": [
+    "Technical proficiency"
+   ],
+   "area": [
+    "Workflows and nodes"
+   ],
+   "moments": [
+    "Onboarding (days 0-30)"
+   ],
+   "formats": [
+    "Short video (UI how-to)",
+    "Interactive walkthrough"
+   ],
+   "prereq": [
+    "QS101",
+    "N8N101"
+   ],
+   "scenario": [
+    "Meridian Logistics"
+   ],
+   "assessment": [
+    "Hands-on lab",
+    "Automatic grader"
+   ],
+   "access": [
+    "Employees"
+   ],
+   "minutes": 60
+  },
+  {
+   "id": "GTM104",
+   "module": "P2-M1",
+   "title": "Nodes triggers and integrations",
+   "path": "Technical Proficiency",
+   "pathId": "P2",
+   "level": "Practitioner",
+   "levelId": "L2",
+   "roles": [
+    "SE",
+    "AE_ENT",
+    "PARTNER"
+   ],
+   "competencies": [
+    "Technical proficiency"
+   ],
+   "area": [
+    "Integrations and APIs"
+   ],
+   "moments": [
+    "Ramp (days 31-90)"
+   ],
+   "formats": [
+    "Short video (UI how-to)",
+    "Text explainer"
+   ],
+   "prereq": [
+    "N8N102"
+   ],
+   "scenario": [
+    "Meridian Logistics"
+   ],
+   "assessment": [
+    "Hands-on lab",
+    "Automatic grader"
+   ],
+   "access": [
+    "Partners"
+   ],
+   "minutes": 60
+  },
+  {
+   "id": "GTM105",
+   "module": "P2-M2",
+   "title": "AI agents in n8n",
+   "path": "Technical Proficiency",
+   "pathId": "P2",
+   "level": "Practitioner",
+   "levelId": "L2",
+   "roles": [
+    "SE",
+    "AE_ENT",
+    "PARTNER"
+   ],
+   "competencies": [
+    "Technical proficiency",
+    "Value and ROI"
+   ],
+   "area": [
+    "AI agents"
+   ],
+   "moments": [
+    "Ramp (days 31-90)",
+    "Launch readiness"
+   ],
+   "formats": [
+    "Short video (UI how-to)",
+    "Text explainer"
+   ],
+   "prereq": [
+    "N8N103"
+   ],
+   "scenario": [
+    "Aurora Bank"
+   ],
+   "assessment": [
+    "Hands-on lab",
+    "Knowledge check"
+   ],
+   "access": [
+    "Partners"
+   ],
+   "minutes": 60
+  },
+  {
+   "id": "GTM106",
+   "module": "P2-M3",
+   "title": "Cloud vs self-hosted",
+   "path": "Technical Proficiency",
+   "pathId": "P2",
+   "level": "Practitioner",
+   "levelId": "L2",
+   "roles": [
+    "SE",
+    "AE_ENT",
+    "PARTNER"
+   ],
+   "competencies": [
+    "Product knowledge",
+    "Objection handling"
+   ],
+   "area": [
+    "Deployment"
+   ],
+   "moments": [
+    "Ramp (days 31-90)"
+   ],
+   "formats": [
+    "Text explainer"
+   ],
+   "prereq": [],
+   "scenario": [
+    "Aurora Bank"
+   ],
+   "assessment": [
+    "Knowledge check"
+   ],
+   "access": [
+    "Partners"
+   ],
+   "minutes": 30
+  },
+  {
+   "id": "GTM107",
+   "module": "P3-M1",
+   "title": "Discovery that finds automation value",
+   "path": "Discovery and Demo Certification",
+   "pathId": "P3",
+   "level": "Practitioner",
+   "levelId": "L2",
+   "roles": [
+    "AE_MM",
+    "AE_ENT",
+    "SE"
+   ],
+   "competencies": [
+    "Discovery",
+    "Value and ROI"
+   ],
+   "area": [],
+   "moments": [
+    "Ramp (days 31-90)"
+   ],
+   "formats": [
+    "Role-play",
+    "Live session"
+   ],
+   "prereq": [],
+   "scenario": [
+    "Meridian Logistics"
+   ],
+   "assessment": [
+    "Certification"
+   ],
+   "access": [
+    "Employees"
+   ],
+   "minutes": 45
+  },
+  {
+   "id": "GTM108",
+   "module": "P3-M2",
+   "title": "The standard demo",
+   "path": "Discovery and Demo Certification",
+   "pathId": "P3",
+   "level": "Practitioner",
+   "levelId": "L2",
+   "roles": [
+    "AE_MM",
+    "AE_ENT",
+    "SE"
+   ],
+   "competencies": [
+    "Demo"
+   ],
+   "area": [
+    "Workflows and nodes",
+    "AI agents"
+   ],
+   "moments": [
+    "Ramp (days 31-90)"
+   ],
+   "formats": [
+    "Short video (UI how-to)",
+    "Role-play"
+   ],
+   "prereq": [
+    "N8N101"
+   ],
+   "scenario": [
+    "Meridian Logistics"
+   ],
+   "assessment": [
+    "Certification"
+   ],
+   "access": [
+    "Employees"
+   ],
+   "minutes": 60
+  },
+  {
+   "id": "GTM109",
+   "module": "P4-M1",
+   "title": "Security compliance and governance",
+   "path": "Enterprise Selling",
+   "pathId": "P4",
+   "level": "Expert",
+   "levelId": "L3",
+   "roles": [
+    "AE_ENT",
+    "SE"
+   ],
+   "competencies": [
+    "Objection handling"
+   ],
+   "area": [
+    "Security and governance"
+   ],
+   "moments": [
+    "Ramp (days 31-90)",
+    "Launch readiness"
+   ],
+   "formats": [
+    "Text explainer",
+    "Role-play"
+   ],
+   "prereq": [],
+   "scenario": [
+    "Aurora Bank"
+   ],
+   "assessment": [
+    "Certification"
+   ],
+   "access": [
+    "Employees"
+   ],
+   "minutes": 45
+  },
+  {
+   "id": "GTM110",
+   "module": "P4-M2",
+   "title": "Workflows as software",
+   "path": "Enterprise Selling",
+   "pathId": "P4",
+   "level": "Expert",
+   "levelId": "L3",
+   "roles": [
+    "AE_ENT",
+    "SE"
+   ],
+   "competencies": [
+    "Technical proficiency",
+    "Objection handling"
+   ],
+   "area": [
+    "Workflows as software"
+   ],
+   "moments": [
+    "Ramp (days 31-90)",
+    "Launch readiness"
+   ],
+   "formats": [
+    "Short video (UI how-to)",
+    "Text explainer"
+   ],
+   "prereq": [
+    "N8N103"
+   ],
+   "scenario": [
+    "Aurora Bank"
+   ],
+   "assessment": [
+    "Hands-on lab",
+    "Automatic grader"
+   ],
+   "access": [
+    "Employees"
+   ],
+   "minutes": 60
+  },
+  {
+   "id": "GTM111",
+   "module": "P5-M1",
+   "title": "Adoption plays",
+   "path": "Customer Adoption and Expansion",
+   "pathId": "P5",
+   "level": "Practitioner",
+   "levelId": "L2",
+   "roles": [
+    "CSM",
+    "PARTNER"
+   ],
+   "competencies": [
+    "Adoption and expansion"
+   ],
+   "area": [],
+   "moments": [
+    "Ramp (days 31-90)",
+    "Launch readiness"
+   ],
+   "formats": [
+    "Text explainer",
+    "Live session"
+   ],
+   "prereq": [],
+   "scenario": [
+    "Meridian Logistics",
+    "Pixel & Co."
+   ],
+   "assessment": [
+    "Knowledge check"
+   ],
+   "access": [
+    "Partners"
+   ],
+   "minutes": 30
+  },
+  {
+   "id": "GTM112",
+   "module": "P5-M2",
+   "title": "Expansion signals",
+   "path": "Customer Adoption and Expansion",
+   "pathId": "P5",
+   "level": "Practitioner",
+   "levelId": "L2",
+   "roles": [
+    "CSM",
+    "PARTNER"
+   ],
+   "competencies": [
+    "Adoption and expansion",
+    "Value and ROI"
+   ],
+   "area": [],
+   "moments": [
+    "Continuous"
+   ],
+   "formats": [
+    "Text explainer"
+   ],
+   "prereq": [],
+   "scenario": [
+    "Pixel & Co."
+   ],
+   "assessment": [
+    "Knowledge check"
+   ],
+   "access": [
+    "Partners"
+   ],
+   "minutes": 30
+  }
+ ],
+ "roles": [
+  {
+   "id": "AE_MM",
+   "name": "Account Executive (mid-market)",
+   "sells": "Heads of Ops and Engineering managers at 200-2000 employee companies",
+   "goals": "Close deals faster; run confident discovery",
+   "pains": "Ramp time; struggles to explain technical value to engineering managers; unsure which features matter for which use case",
+   "needs": "One-sentence value story; the customer problem it solves; one discovery question; when NOT to pitch it"
+  },
+  {
+   "id": "AE_ENT",
+   "name": "Account Executive (enterprise)",
+   "sells": "CTOs and platform teams at large enterprises",
+   "goals": "Win 6-to-7-figure deals with security and IT approval",
+   "pains": "Long buying committees; security and compliance objections; competing against build-it-yourself",
+   "needs": "Business case; impact on security/compliance/governance; objection handling; proof points for the CTO"
+  },
+  {
+   "id": "SE",
+   "name": "Solutions Engineer",
+   "sells": "Technical evaluators and architects",
+   "goals": "Run convincing demos and proofs of concept",
+   "pains": "New features land before demo assets exist; edge cases surface live in front of customers",
+   "needs": "How it works; limits and prerequisites; a demo flow; a ready-to-import example workflow"
+  },
+  {
+   "id": "CSM",
+   "name": "Customer Success Manager",
+   "sells": "Existing customers' automation owners",
+   "goals": "Drive adoption and expansion",
+   "pains": "Hard to know which accounts benefit from a release; customers miss new capabilities",
+   "needs": "Which customer segments benefit; adoption play; a short email to customers; expansion signals"
+  },
+  {
+   "id": "PARTNER",
+   "name": "Partner / implementation consultant",
+   "sells": "Clients of agencies and consultancies building on n8n",
+   "goals": "Deliver client projects faster and resell",
+   "pains": "Learns about features late; lacks certified best practices",
+   "needs": "Implementation guidance; best practices; certification impact; what to tell clients"
+  }
+ ],
+ "paths": [
+  {
+   "id": "P1",
+   "name": "GTM Onboarding"
+  },
+  {
+   "id": "P2",
+   "name": "Technical Proficiency"
+  },
+  {
+   "id": "P3",
+   "name": "Discovery and Demo Certification"
+  },
+  {
+   "id": "P4",
+   "name": "Enterprise Selling"
+  },
+  {
+   "id": "P5",
+   "name": "Customer Adoption and Expansion"
+  }
+ ],
+ "official": [
+  {
+   "code": "QS101",
+   "title": "n8n Quickstart",
+   "url": "https://learn.n8n.io/courses/course-v1:n8n+QS101+2026H2/about"
+  },
+  {
+   "code": "N8N101",
+   "title": "Essentials: Your First Workflows",
+   "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N101+2026H2/about"
+  },
+  {
+   "code": "N8N102",
+   "title": "Integrations: APIs & Connected Workflows",
+   "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N102+2026H2/about"
+  },
+  {
+   "code": "N8N103",
+   "title": "In Practice: AI, Testing & Best Practices",
+   "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N103+2026H2/about"
+  }
+ ],
+ "scenarios": [
+  {
+   "name": "Meridian Logistics",
+   "desc": "Mid-market logistics company automating order and support workflows across many SaaS tools."
+  },
+  {
+   "name": "Aurora Bank",
+   "desc": "Regulated enterprise; strict security review; wants AI agents but only self-hosted."
+  },
+  {
+   "name": "Pixel & Co.",
+   "desc": "Automation agency building n8n solutions for several clients."
+  }
+ ],
+ "competencies": [
+  "Product knowledge",
+  "Discovery",
+  "Demo",
+  "Technical proficiency",
+  "Value and ROI",
+  "Objection handling",
+  "Adoption and expansion",
+  "Partner delivery"
+ ],
+ "moments": [
+  "Onboarding (days 0-30)",
+  "Ramp (days 31-90)",
+  "Launch readiness",
+  "Continuous"
+ ],
+ "pages": []
+}

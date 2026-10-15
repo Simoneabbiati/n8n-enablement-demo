@@ -1,163 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTM Sales Academy</title>
-<meta name="description" content="Role-based course catalog for go-to-market teams selling workflow automation.">
-<style>
-  :root {
-    --bg: #0f0f14; --panel: #1a1a24; --panel-2: #232332; --text: #f2f2f7; --muted: #a3a3b8;
-    --accent: #ea4b71; --accent-2: #ff8a5c; --border: #2e2e42; --radius: 14px;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; }
-  a { color: var(--accent); }
-  .concept { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; text-align: center; font-size: 13.5px; font-weight: 600; padding: 9px 18px; }
-  header.nav { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; background: rgba(15,15,20,.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
-  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; }
-  .logo { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: grid; place-items: center; font-size: 13px; font-weight: 800; color: #fff; }
-  .nav a { color: var(--muted); text-decoration: none; margin-left: 22px; font-size: 14px; }
-  .nav a:hover { color: var(--text); }
-  .hero { padding: 80px 32px 56px; text-align: center; background: radial-gradient(ellipse at top, rgba(234,75,113,.20), transparent 60%); }
-  .hero h1 { font-size: clamp(32px, 5vw, 54px); line-height: 1.1; margin: 0 0 14px; }
-  .hero h1 span { background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .hero p { color: var(--muted); max-width: 640px; margin: 0 auto; font-size: 18px; }
-  .bigsearch { display: block; width: 100%; max-width: 680px; margin: 30px auto 0; padding: 18px 24px; font-size: 18px; border-radius: 999px; border: 1px solid var(--border); background: var(--panel); color: var(--text); outline: none; }
-  .bigsearch:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(234,75,113,.18); }
-  .stats { display: flex; justify-content: center; gap: 36px; margin-top: 30px; flex-wrap: wrap; }
-  .stat b { display: block; font-size: 26px; }
-  .stat small { color: var(--muted); }
-  main { max-width: 1180px; margin: 0 auto; padding: 0 32px 80px; }
-  h2.section { font-size: 26px; margin: 48px 0 6px; }
-  .section-intro { color: var(--muted); margin: 0 0 22px; }
-  .release { background: linear-gradient(135deg, rgba(234,75,113,.16), rgba(255,138,92,.08)); border: 1px solid rgba(234,75,113,.45); border-radius: var(--radius); padding: 16px 20px; margin: 32px 0 0; }
-  .release .label { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; color: var(--accent); text-transform: uppercase; }
-  .release h3 { margin: 4px 0 6px; font-size: 18px; }
-  .release p { margin: 0; color: var(--muted); font-size: 14px; }
-  .toolbar { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 24px; }
-  .chip { border: 1px solid var(--border); background: var(--panel); color: var(--text); padding: 8px 14px; border-radius: 999px; cursor: pointer; font-size: 14px; }
-  .chip:hover { border-color: var(--accent); }
-  .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-  .card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform .15s, border-color .15s; }
-  .card:hover { transform: translateY(-3px); border-color: var(--accent); }
-  .card-top { height: 92px; padding: 16px 18px; background: linear-gradient(135deg, rgba(234,75,113,.35), rgba(255,138,92,.12)); display: flex; justify-content: space-between; align-items: flex-start; }
-  .code { font-weight: 800; letter-spacing: 1px; font-size: 13px; background: rgba(15,15,20,.6); padding: 4px 10px; border-radius: 6px; }
-  .mid { font-size: 11px; color: rgba(255,255,255,.8); }
-  .card-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
-  .card h3 { margin: 0; font-size: 17px; line-height: 1.3; }
-  .path { font-size: 12.5px; color: var(--accent-2); font-weight: 600; }
-  .summary { color: var(--muted); font-size: 14px; margin: 0; flex: 1; }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .tag { font-size: 11px; padding: 3px 8px; border-radius: 6px; background: var(--panel-2); color: var(--muted); border: 1px solid var(--border); }
-  .tag.hl { color: #fff; border-color: rgba(234,75,113,.6); }
-  .empty { color: var(--muted); text-align: center; padding: 40px; display: none; }
-  .official { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
-  .ocard { background: var(--panel); border: 1px solid var(--border); border-left: 4px solid var(--accent-2); border-radius: var(--radius); padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; }
-  .ocard h3 { margin: 0; font-size: 16px; }
-  .ocard .ocode { font-size: 12px; font-weight: 800; letter-spacing: 1px; color: var(--accent-2); }
-  .ocard .builds { font-size: 13px; color: var(--muted); }
-  .ocard .builds b { color: var(--text); font-weight: 600; }
-  .ocard a.btn { align-self: flex-start; margin-top: auto; text-decoration: none; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 8px; border: 1px solid var(--accent); }
-  .ocard a.btn:hover { background: var(--accent); color: #fff; }
-  footer { border-top: 1px solid var(--border); padding: 26px 32px; color: var(--muted); font-size: 13px; text-align: center; }
-  @media (max-width: 640px) { header.nav { padding: 12px 18px; } .hero, main { padding-left: 18px; padding-right: 18px; } .nav a { margin-left: 12px; } }
-</style>
+<title>GTM Academy — concept</title>
+<meta name="description" content="Concept of a role-based enablement academy for go-to-market teams, built by Simone Abbiati.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="templates/style.css">
 </head>
 <body>
-<div class="concept" role="note">Concept built by Simone Abbiati for the n8n Sales Enablement Manager application — sample data, not affiliated with n8n GmbH.</div>
-<header class="nav">
-  <div class="brand"><div class="logo">GTM</div>GTM Sales Academy</div>
-  <nav><a href="#courses">Courses</a><a href="#official">Foundations</a><a href="https://github.com/Simoneabbiati" target="_blank" rel="noopener">GitHub</a></nav>
-</header>
-
-<section class="hero">
-  <h1>Welcome to the <span>GTM Sales Academy</span></h1>
-  <p>Role-based courses for account executives, solutions engineers, customer success and partners.</p>
-  <input class="bigsearch" id="search" type="search" placeholder="Search courses, e.g. demo, AI agents, security..." aria-label="Search courses">
-  <div class="stats" id="stats"></div>
-</section>
+<div class="notice">Concept built by Simone Abbiati for the n8n Sales Enablement Manager application — sample data, not affiliated with n8n GmbH.</div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><span class="mark">GA</span>GTM Academy <span class="chip">Concept</span></a>
+  <nav class="links"><a href="#catalog">Catalog</a><a href="#paths">Learning paths</a><a href="#certifications">Certifications</a><a href="#foundations">Foundations</a><a href="#about">About</a></nav>
+</div></header>
 
 <main>
-  <section class="release" id="release" aria-live="polite"></section>
+<div class="hero"><div class="wrap">
+  <p class="eyebrow">Go-to-market enablement</p>
+  <h1>Training for every go-to-market role</h1>
+  <p class="lead">Courses for account executives, solutions engineers, customer success managers and partners, organised by role, level and the moment you need them.</p>
+  <div class="search"><input id="q" type="search" placeholder="Search courses, for example: demo, AI agents, security" aria-label="Search courses"></div>
+  <div class="facts"><span><b id="f-courses"></b>Courses</span><span><b id="f-paths"></b>Learning paths</span><span><b id="f-roles"></b>Roles</span><span><b id="f-certs"></b>Certifications and labs</span></div>
+  <!--WHATS_NEW_START-->
+  <div class="update"><span class="k">Latest release</span><p><b>n8n@2.43.5</b> · 14 Oct 2026 · Gemini model picker now shows model names and lists prioritised models first. Affected courses are being reviewed.</p></div>
+  <!--WHATS_NEW_END-->
+</div></div>
 
-  <h2 class="section" id="courses">Course catalog</h2>
-  <p class="section-intro">Filter by role to see the courses that matter to you.</p>
-  <div class="toolbar" id="roles" role="toolbar" aria-label="Filter by role"></div>
-  <section class="grid" id="grid"></section>
-  <p class="empty" id="empty">No courses match your search.</p>
+<section class="block" id="catalog"><div class="wrap">
+  <h2>Course catalog</h2>
+  <p class="sub">Choose a role to see its profile and the courses that apply to it. Each course builds on the official n8n Academy where relevant.</p>
+  <div class="catalog">
+    <aside class="filters">
+      <div class="fgroup"><h4>Role</h4><div id="f-role"></div></div>
+      <div class="fgroup"><h4>Level</h4><div id="f-level"></div></div>
+      <div class="fgroup"><h4>Competency</h4><select id="f-comp"><option value="">All competencies</option></select></div>
+      <div class="fgroup"><h4>When you need it</h4><select id="f-moment"><option value="">Any time</option></select></div>
+      <div class="fgroup"><button class="reset" id="reset">Clear filters</button></div>
+    </aside>
+    <div>
+      <div class="rolecard" id="rolecard"></div>
+      <p class="count" id="count"></p>
+      <div class="list" id="list"></div>
+    </div>
+  </div>
+</div></section>
 
-  <h2 class="section" id="official">Built on the official n8n Academy</h2>
-  <p class="section-intro">The official courses teach the product. These GTM modules teach how to sell, demo and expand it, role by role.</p>
-  <section class="official" id="officialGrid"></section>
+<section class="block" id="paths"><div class="wrap">
+  <h2>Learning paths</h2>
+  <p class="sub">Courses are grouped into paths that follow the order a new hire would take them.</p>
+  <div class="paths" id="pathlist"></div>
+</div></section>
+
+<section class="block" id="certifications"><div class="wrap">
+  <h2>Certifications and labs</h2>
+  <p class="sub">Certifications are assessed through role-play with a rubric. Labs are built in the learner's own n8n instance and checked automatically.</p>
+  <table class="t" id="certs"><thead><tr><th>Course</th><th>Title</th><th>Assessment</th><th>Level</th><th>Roles</th></tr></thead><tbody></tbody></table>
+</div></section>
+
+<section class="block" id="foundations"><div class="wrap">
+  <h2>Foundations: the official n8n Academy</h2>
+  <p class="sub">The official courses teach the product. These GTM courses teach how to sell, demo and expand it, role by role. Take the official course first where it is listed as a prerequisite.</p>
+  <table class="t" id="official"><thead><tr><th>Code</th><th>Official course</th><th>Prerequisite for</th></tr></thead><tbody></tbody></table>
+</div></section>
+
+<section class="block" id="about"><div class="wrap">
+  <h2>About this concept</h2>
+  <div class="cols">
+    <div><h3>How it is organised</h3><p>A small taxonomy tags every course by role, level, competency, product area and learning moment, so each person gets their own path and certifications map to competencies.</p></div>
+    <div><h3>How it stays current</h3><p>An n8n workflow reads new releases, finds the courses whose product area changed, drafts the updates per role for human review and republishes this page.</p></div>
+    <div><h3>Who made it</h3><p>Simone Abbiati, as part of an application. The data is illustrative. <a href="https://simoneabbiati.github.io/portfolio/">Portfolio</a> · <a href="https://github.com/Simoneabbiati/n8n-enablement-demo">Source</a></p></div>
+  </div>
+</div></section>
 </main>
 
-<footer>Last updated 2026-10-15.</footer>
+<footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span>Last updated <span id="updated">2026-10-15</span></span></div></footer>
 
+<script id="academy-data" type="application/json">{"courses": [{"id": "GTM101", "module": "P1-M1", "title": "n8n in 30 minutes", "path": "GTM Onboarding", "pathId": "P1", "level": "Foundation", "levelId": "L1", "roles": ["AE_MM", "AE_ENT", "CSM", "SE"], "competencies": ["Product knowledge"], "area": ["Workflows and nodes"], "moments": ["Onboarding (days 0-30)"], "formats": ["Short video (UI how-to)", "Text explainer"], "prereq": ["QS101"], "scenario": ["Meridian Logistics"], "assessment": ["Knowledge check"], "access": ["Employees"], "minutes": 30}, {"id": "GTM102", "module": "P1-M2", "title": "ICP and personas", "path": "GTM Onboarding", "pathId": "P1", "level": "Foundation", "levelId": "L1", "roles": ["AE_MM", "AE_ENT", "CSM", "SE"], "competencies": ["Discovery", "Value and ROI"], "area": [], "moments": ["Onboarding (days 0-30)"], "formats": ["Text explainer", "Live session"], "prereq": [], "scenario": ["Meridian Logistics", "Aurora Bank"], "assessment": ["Knowledge check"], "access": ["Employees"], "minutes": 45}, {"id": "GTM103", "module": "P1-M3", "title": "Your first workflow", "path": "GTM Onboarding", "pathId": "P1", "level": "Foundation", "levelId": "L1", "roles": ["AE_MM", "AE_ENT", "CSM", "SE"], "competencies": ["Technical proficiency"], "area": ["Workflows and nodes"], "moments": ["Onboarding (days 0-30)"], "formats": ["Short video (UI how-to)", "Interactive walkthrough"], "prereq": ["QS101", "N8N101"], "scenario": ["Meridian Logistics"], "assessment": ["Hands-on lab", "Automatic grader"], "access": ["Employees"], "minutes": 60}, {"id": "GTM104", "module": "P2-M1", "title": "Nodes triggers and integrations", "path": "Technical Proficiency", "pathId": "P2", "level": "Practitioner", "levelId": "L2", "roles": ["SE", "AE_ENT", "PARTNER"], "competencies": ["Technical proficiency"], "area": ["Integrations and APIs"], "moments": ["Ramp (days 31-90)"], "formats": ["Short video (UI how-to)", "Text explainer"], "prereq": ["N8N102"], "scenario": ["Meridian Logistics"], "assessment": ["Hands-on lab", "Automatic grader"], "access": ["Partners"], "minutes": 60}, {"id": "GTM105", "module": "P2-M2", "title": "AI agents in n8n", "path": "Technical Proficiency", "pathId": "P2", "level": "Practitioner", "levelId": "L2", "roles": ["SE", "AE_ENT", "PARTNER"], "competencies": ["Technical proficiency", "Value and ROI"], "area": ["AI agents"], "moments": ["Ramp (days 31-90)", "Launch readiness"], "formats": ["Short video (UI how-to)", "Text explainer"], "prereq": ["N8N103"], "scenario": ["Aurora Bank"], "assessment": ["Hands-on lab", "Knowledge check"], "access": ["Partners"], "minutes": 60}, {"id": "GTM106", "module": "P2-M3", "title": "Cloud vs self-hosted", "path": "Technical Proficiency", "pathId": "P2", "level": "Practitioner", "levelId": "L2", "roles": ["SE", "AE_ENT", "PARTNER"], "competencies": ["Product knowledge", "Objection handling"], "area": ["Deployment"], "moments": ["Ramp (days 31-90)"], "formats": ["Text explainer"], "prereq": [], "scenario": ["Aurora Bank"], "assessment": ["Knowledge check"], "access": ["Partners"], "minutes": 30}, {"id": "GTM107", "module": "P3-M1", "title": "Discovery that finds automation value", "path": "Discovery and Demo Certification", "pathId": "P3", "level": "Practitioner", "levelId": "L2", "roles": ["AE_MM", "AE_ENT", "SE"], "competencies": ["Discovery", "Value and ROI"], "area": [], "moments": ["Ramp (days 31-90)"], "formats": ["Role-play", "Live session"], "prereq": [], "scenario": ["Meridian Logistics"], "assessment": ["Certification"], "access": ["Employees"], "minutes": 45}, {"id": "GTM108", "module": "P3-M2", "title": "The standard demo", "path": "Discovery and Demo Certification", "pathId": "P3", "level": "Practitioner", "levelId": "L2", "roles": ["AE_MM", "AE_ENT", "SE"], "competencies": ["Demo"], "area": ["Workflows and nodes", "AI agents"], "moments": ["Ramp (days 31-90)"], "formats": ["Short video (UI how-to)", "Role-play"], "prereq": ["N8N101"], "scenario": ["Meridian Logistics"], "assessment": ["Certification"], "access": ["Employees"], "minutes": 60}, {"id": "GTM109", "module": "P4-M1", "title": "Security compliance and governance", "path": "Enterprise Selling", "pathId": "P4", "level": "Expert", "levelId": "L3", "roles": ["AE_ENT", "SE"], "competencies": ["Objection handling"], "area": ["Security and governance"], "moments": ["Ramp (days 31-90)", "Launch readiness"], "formats": ["Text explainer", "Role-play"], "prereq": [], "scenario": ["Aurora Bank"], "assessment": ["Certification"], "access": ["Employees"], "minutes": 45}, {"id": "GTM110", "module": "P4-M2", "title": "Workflows as software", "path": "Enterprise Selling", "pathId": "P4", "level": "Expert", "levelId": "L3", "roles": ["AE_ENT", "SE"], "competencies": ["Technical proficiency", "Objection handling"], "area": ["Workflows as software"], "moments": ["Ramp (days 31-90)", "Launch readiness"], "formats": ["Short video (UI how-to)", "Text explainer"], "prereq": ["N8N103"], "scenario": ["Aurora Bank"], "assessment": ["Hands-on lab", "Automatic grader"], "access": ["Employees"], "minutes": 60}, {"id": "GTM111", "module": "P5-M1", "title": "Adoption plays", "path": "Customer Adoption and Expansion", "pathId": "P5", "level": "Practitioner", "levelId": "L2", "roles": ["CSM", "PARTNER"], "competencies": ["Adoption and expansion"], "area": [], "moments": ["Ramp (days 31-90)", "Launch readiness"], "formats": ["Text explainer", "Live session"], "prereq": [], "scenario": ["Meridian Logistics", "Pixel & Co."], "assessment": ["Knowledge check"], "access": ["Partners"], "minutes": 30}, {"id": "GTM112", "module": "P5-M2", "title": "Expansion signals", "path": "Customer Adoption and Expansion", "pathId": "P5", "level": "Practitioner", "levelId": "L2", "roles": ["CSM", "PARTNER"], "competencies": ["Adoption and expansion", "Value and ROI"], "area": [], "moments": ["Continuous"], "formats": ["Text explainer"], "prereq": [], "scenario": ["Pixel & Co."], "assessment": ["Knowledge check"], "access": ["Partners"], "minutes": 30}], "roles": [{"id": "AE_MM", "name": "Account Executive (mid-market)", "sells": "Heads of Ops and Engineering managers at 200-2000 employee companies", "goals": "Close deals faster; run confident discovery", "pains": "Ramp time; struggles to explain technical value to engineering managers; unsure which features matter for which use case", "needs": "One-sentence value story; the customer problem it solves; one discovery question; when NOT to pitch it"}, {"id": "AE_ENT", "name": "Account Executive (enterprise)", "sells": "CTOs and platform teams at large enterprises", "goals": "Win 6-to-7-figure deals with security and IT approval", "pains": "Long buying committees; security and compliance objections; competing against build-it-yourself", "needs": "Business case; impact on security/compliance/governance; objection handling; proof points for the CTO"}, {"id": "SE", "name": "Solutions Engineer", "sells": "Technical evaluators and architects", "goals": "Run convincing demos and proofs of concept", "pains": "New features land before demo assets exist; edge cases surface live in front of customers", "needs": "How it works; limits and prerequisites; a demo flow; a ready-to-import example workflow"}, {"id": "CSM", "name": "Customer Success Manager", "sells": "Existing customers' automation owners", "goals": "Drive adoption and expansion", "pains": "Hard to know which accounts benefit from a release; customers miss new capabilities", "needs": "Which customer segments benefit; adoption play; a short email to customers; expansion signals"}, {"id": "PARTNER", "name": "Partner / implementation consultant", "sells": "Clients of agencies and consultancies building on n8n", "goals": "Deliver client projects faster and resell", "pains": "Learns about features late; lacks certified best practices", "needs": "Implementation guidance; best practices; certification impact; what to tell clients"}], "paths": [{"id": "P1", "name": "GTM Onboarding"}, {"id": "P2", "name": "Technical Proficiency"}, {"id": "P3", "name": "Discovery and Demo Certification"}, {"id": "P4", "name": "Enterprise Selling"}, {"id": "P5", "name": "Customer Adoption and Expansion"}], "official": [{"code": "QS101", "title": "n8n Quickstart", "url": "https://learn.n8n.io/courses/course-v1:n8n+QS101+2026H2/about"}, {"code": "N8N101", "title": "Essentials: Your First Workflows", "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N101+2026H2/about"}, {"code": "N8N102", "title": "Integrations: APIs & Connected Workflows", "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N102+2026H2/about"}, {"code": "N8N103", "title": "In Practice: AI, Testing & Best Practices", "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N103+2026H2/about"}], "scenarios": [{"name": "Meridian Logistics", "desc": "Mid-market logistics company automating order and support workflows across many SaaS tools."}, {"name": "Aurora Bank", "desc": "Regulated enterprise; strict security review; wants AI agents but only self-hosted."}, {"name": "Pixel & Co.", "desc": "Automation agency building n8n solutions for several clients."}], "competencies": ["Product knowledge", "Discovery", "Demo", "Technical proficiency", "Value and ROI", "Objection handling", "Adoption and expansion", "Partner delivery"], "moments": ["Onboarding (days 0-30)", "Ramp (days 31-90)", "Launch readiness", "Continuous"], "pages": ["GTM101"]}</script>
 <script>
-const DATA = {"personas":[{"persona_id":"AE_MM","persona":"Account Executive (mid-market)","level":"new_hire","goals":"Close deals faster; run confident discovery","pain_points":"Ramp time; struggles to explain technical value to engineering managers; unsure which features matter for which use case","what_they_need_from_a_new_feature":"One-sentence value story; the customer problem it solves; one discovery question; when NOT to pitch it"},{"persona_id":"AE_ENT","persona":"Account Executive (enterprise)","level":"experienced","goals":"Win 6-to-7-figure deals with security and IT approval","pain_points":"Long buying committees; security and compliance objections; competing against build-it-yourself","what_they_need_from_a_new_feature":"Business case; impact on security/compliance/governance; objection handling; proof points for the CTO"},{"persona_id":"SE","persona":"Solutions Engineer","level":"experienced","goals":"Run convincing demos and proofs of concept","pain_points":"New features land before demo assets exist; edge cases surface live in front of customers","what_they_need_from_a_new_feature":"How it works; limits and prerequisites; a demo flow; a ready-to-import example workflow"},{"persona_id":"CSM","persona":"Customer Success Manager","level":"new_hire","goals":"Drive adoption and expansion","pain_points":"Hard to know which accounts benefit from a release; customers miss new capabilities","what_they_need_from_a_new_feature":"Which customer segments benefit; adoption play; a short email to customers; expansion signals"},{"persona_id":"PARTNER","persona":"Partner / implementation consultant","level":"new_hire","goals":"Deliver client projects faster and resell","pain_points":"Learns about features late; lacks certified best practices","what_they_need_from_a_new_feature":"Implementation guidance; best practices; certification impact; what to tell clients"}],"modules":[{"path_id":"P1","learning_path":"GTM Onboarding","personas":"AE_MM;AE_ENT;CSM;SE","module_id":"P1-M1","module":"n8n in 30 minutes","summary":"What n8n is; code freedom vs no-code speed; the community and open-source story"},{"path_id":"P1","learning_path":"GTM Onboarding","personas":"AE_MM;AE_ENT;CSM;SE","module_id":"P1-M2","module":"ICP and personas","summary":"Who buys n8n; technical vs business buyers; key pain points"},{"path_id":"P1","learning_path":"GTM Onboarding","personas":"AE_MM;AE_ENT;CSM;SE","module_id":"P1-M3","module":"Your first workflow","summary":"Build and explain a simple workflow end to end"},{"path_id":"P2","learning_path":"Technical Proficiency","personas":"SE;AE_ENT;PARTNER","module_id":"P2-M1","module":"Nodes triggers and integrations","summary":"How workflows are built; 500+ integrations; credentials"},{"path_id":"P2","learning_path":"Technical Proficiency","personas":"SE;AE_ENT;PARTNER","module_id":"P2-M2","module":"AI agents in n8n","summary":"Agent and LLM nodes; tools; memory; when to use agents vs deterministic flows"},{"path_id":"P2","learning_path":"Technical Proficiency","personas":"SE;AE_ENT;PARTNER","module_id":"P2-M3","module":"Cloud vs self-hosted","summary":"Deployment options; scaling; what changes for the customer"},{"path_id":"P3","learning_path":"Discovery and Demo Certification","personas":"AE_MM;AE_ENT;SE","module_id":"P3-M1","module":"Discovery that finds automation value","summary":"Questions that surface use cases and ROI"},{"path_id":"P3","learning_path":"Discovery and Demo Certification","personas":"AE_MM;AE_ENT;SE","module_id":"P3-M2","module":"The standard demo","summary":"A repeatable demo flow and how to adapt it per persona"},{"path_id":"P4","learning_path":"Enterprise Selling","personas":"AE_ENT;SE","module_id":"P4-M1","module":"Security compliance and governance","summary":"SSO; RBAC; audit; environments; answering security questionnaires"},{"path_id":"P4","learning_path":"Enterprise Selling","personas":"AE_ENT;SE","module_id":"P4-M2","module":"Workflows as software","summary":"Source control; environments; promotion from dev to prod"},{"path_id":"P5","learning_path":"Customer Adoption and Expansion","personas":"CSM;PARTNER","module_id":"P5-M1","module":"Adoption plays","summary":"Spot accounts that would benefit from new capabilities"},{"path_id":"P5","learning_path":"Customer Adoption and Expansion","personas":"CSM;PARTNER","module_id":"P5-M2","module":"Expansion signals","summary":"Usage patterns that indicate expansion"}],"releases":[{"title":"n8n@2.43.5","link":"https://github.com/n8n-io/n8n/releases/tag/n8n%402.43.5","date":"2026-10-14","snippet":"Gemini model picker now shows model names and lists prioritized models first."}]};
-const OFFICIAL = [
-  { code: 'QS101', title: 'n8n Quickstart', url: 'https://learn.n8n.io/courses/course-v1:n8n+QS101+2026H2/about', modules: ['P1-M1', 'P1-M3'], roles: 'All roles', note: 'Prerequisite for' },
-  { code: 'N8N101', title: 'Essentials: Your First Workflows', url: 'https://learn.n8n.io/courses/course-v1:n8n+N8N101+2026H2/about', modules: ['P1-M3', 'P3-M2'], roles: 'AE, SE', note: 'Builds into' },
-  { code: 'N8N102', title: 'Integrations: APIs & Connected Workflows', url: 'https://learn.n8n.io/courses/course-v1:n8n+N8N102+2026H2/about', modules: ['P2-M1'], roles: 'SE, AE enterprise, Partner', note: 'Builds into' },
-  { code: 'N8N103', title: 'In Practice: AI, Testing & Best Practices', url: 'https://learn.n8n.io/courses/course-v1:n8n+N8N103+2026H2/about', modules: ['P2-M2', 'P4-M2'], roles: 'SE, Partner', note: 'Builds into' }
-];
-const state = { role: 'ALL', q: '' };
-const personaById = Object.fromEntries(DATA.personas.map(p => [p.persona_id, p]));
-const COURSES = DATA.modules.map((m, i) => Object.assign({}, m, { code: 'GTM' + (101 + i), roles: String(m.personas).split(';') }));
-const byModule = Object.fromEntries(COURSES.map(c => [c.module_id, c]));
-
-function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
-function roleName(id) { return personaById[id] ? personaById[id].persona : id; }
-
-function renderStats() {
-  const paths = new Set(COURSES.map(c => c.path_id)).size;
-  document.getElementById('stats').innerHTML =
-    '<div class="stat"><b>' + COURSES.length + '</b><small>Courses</small></div>' +
-    '<div class="stat"><b>' + paths + '</b><small>Learning paths</small></div>' +
-    '<div class="stat"><b>' + DATA.personas.length + '</b><small>Roles</small></div>';
-}
-
-function renderRoles() {
-  const bar = document.getElementById('roles');
-  const chips = [{ id: 'ALL', label: 'All roles' }].concat(DATA.personas.map(p => ({ id: p.persona_id, label: p.persona })));
-  bar.innerHTML = chips.map(c => '<button class="chip' + (state.role === c.id ? ' active' : '') + '" data-id="' + c.id + '">' + esc(c.label) + '</button>').join('');
-  bar.querySelectorAll('.chip').forEach(b => b.onclick = () => { state.role = b.dataset.id; renderRoles(); render(); });
-}
-
-function render() {
-  const q = state.q;
-  const list = COURSES.filter(c => (state.role === 'ALL' || c.roles.includes(state.role)) &&
-    (!q || (c.code + ' ' + c.module_id + ' ' + c.module + ' ' + c.summary + ' ' + c.learning_path).toLowerCase().includes(q)));
-  document.getElementById('grid').innerHTML = list.map(c =>
-    '<article class="card"><div class="card-top"><span class="code">' + esc(c.code) + '</span><span class="mid">' + esc(c.module_id) + '</span></div>' +
-    '<div class="card-body"><h3>' + esc(c.module) + '</h3><div class="path">' + esc(c.path_id) + ' &middot; ' + esc(c.learning_path) + '</div>' +
-    '<p class="summary">' + esc(c.summary) + '</p><div class="tags">' +
-    c.roles.map(r => '<span class="tag' + (r === state.role ? ' hl' : '') + '">' + esc(roleName(r)) + '</span>').join('') + '</div></div></article>').join('');
-  document.getElementById('empty').style.display = list.length ? 'none' : 'block';
-}
-
-function renderOfficial() {
-  document.getElementById('officialGrid').innerHTML = OFFICIAL.map(o =>
-    '<article class="ocard"><div class="ocode">' + esc(o.code) + '</div><h3>' + esc(o.title) + '</h3>' +
-    '<div class="builds">' + esc(o.note) + ': ' + o.modules.map(id => '<b>' + esc(byModule[id] ? byModule[id].code + ' ' + byModule[id].module : id) + '</b>').join(', ') + '</div>' +
-    '<div class="tags"><span class="tag">' + esc(o.roles) + '</span></div>' +
-    '<a class="btn" href="' + esc(o.url) + '" target="_blank" rel="noopener">View on learn.n8n.io</a></article>').join('');
-}
-
-function renderRelease() {
-  const el = document.getElementById('release');
-  const r = DATA.releases || [];
-  if (!r.length) { el.style.display = 'none'; return; }
-  el.innerHTML = '<div class="label">What\'s new</div>' + r.map(x =>
-    '<h3><a href="' + esc(x.link) + '" target="_blank" rel="noopener">' + esc(x.title) + '</a></h3>' +
-    '<p>' + esc(x.date) + (x.snippet ? ' &middot; ' + esc(x.snippet) : '') + '</p>').join('') +
-    '<p style="margin-top:8px">Course updates for this release are being drafted and reviewed.</p>';
-}
-
-document.getElementById('search').oninput = e => { state.q = e.target.value.toLowerCase(); render(); };
-renderRelease(); renderStats(); renderRoles(); render(); renderOfficial();
+(function(){
+  var D=JSON.parse(document.getElementById('academy-data').textContent);
+  var $=function(s){return document.querySelector(s)}, esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+  var roleName={}; D.roles.forEach(function(r){roleName[r.id]=r.name});
+  var pages=new Set(D.pages||[]);
+  var certs=D.courses.filter(function(c){return c.assessment.some(function(a){return /Certification|grader|lab/i.test(a)})});
+  $('#f-courses').textContent=D.courses.length; $('#f-paths').textContent=D.paths.length; $('#f-roles').textContent=D.roles.length; $('#f-certs').textContent=certs.length;
+  var st={role:'',levels:new Set(),comp:'',moment:'',q:''};
+  $('#f-role').innerHTML='<label><input type="radio" name="role" value="" checked> All roles</label>'+D.roles.map(function(r){return '<label><input type="radio" name="role" value="'+r.id+'"> '+esc(r.name)+'</label>'}).join('');
+  var levels=[['L1','Foundation'],['L2','Practitioner'],['L3','Expert']];
+  $('#f-level').innerHTML=levels.map(function(l){return '<label><input type="checkbox" value="'+l[0]+'"> '+l[1]+'</label>'}).join('');
+  $('#f-comp').innerHTML+=D.competencies.map(function(c){return '<option>'+esc(c)+'</option>'}).join('');
+  $('#f-moment').innerHTML+=D.moments.map(function(m){return '<option>'+esc(m)+'</option>'}).join('');
+  function names(ids){return ids.map(function(i){return roleName[i]||i}).join(', ')}
+  function render(){
+    var rc=$('#rolecard');
+    if(st.role){var r=D.roles.find(function(x){return x.id===st.role});
+      rc.innerHTML='<h3>'+esc(r.name)+'</h3><dl><dt>Sells or supports</dt><dd>'+esc(r.sells)+'</dd><dt>Goals</dt><dd>'+esc(r.goals)+'</dd><dt>Pain points</dt><dd>'+esc(r.pains)+'</dd><dt>Needs from a release</dt><dd>'+esc(r.needs)+'</dd></dl>'; rc.classList.add('on');}
+    else rc.classList.remove('on');
+    var q=st.q.toLowerCase();
+    var rows=D.courses.filter(function(c){
+      if(st.role&&c.roles.indexOf(st.role)<0)return false;
+      if(st.levels.size&&!st.levels.has(c.levelId))return false;
+      if(st.comp&&c.competencies.indexOf(st.comp)<0)return false;
+      if(st.moment&&c.moments.indexOf(st.moment)<0)return false;
+      if(q&&JSON.stringify(c).toLowerCase().indexOf(q)<0)return false;
+      return true});
+    $('#count').textContent=rows.length+' of '+D.courses.length+' courses';
+    $('#list').innerHTML=rows.length?rows.map(function(c){
+      var has=pages.has(c.id), tag=has?'a':'div', href=has?' href="courses/'+c.id+'.html"':'';
+      var pre=c.prereq.length?' · Builds on '+c.prereq.join(', '):'';
+      return '<'+tag+' class="row"'+href+'><span class="code">'+c.id+'</span><div><h3>'+esc(c.title)+'</h3><div class="meta">'+esc(c.path)+' · '+esc(c.competencies.join(', '))+pre+'</div><div class="roles">'+esc(names(c.roles))+'</div></div><div class="side"><span class="lvl '+c.levelId+'">'+c.level+'</span><br>'+c.minutes+' min · '+esc(c.assessment.join(' + '))+(has?'':'<br><span class="soon">Outline in progress</span>')+'</div></'+tag+'>'}).join(''):'<div class="empty">No courses match these filters.</div>';
+  }
+  document.querySelectorAll('input[name=role]').forEach(function(i){i.onchange=function(){st.role=i.value;render()}});
+  document.querySelectorAll('#f-level input').forEach(function(i){i.onchange=function(){i.checked?st.levels.add(i.value):st.levels.delete(i.value);render()}});
+  $('#f-comp').onchange=function(e){st.comp=e.target.value;render()};
+  $('#f-moment').onchange=function(e){st.moment=e.target.value;render()};
+  $('#q').oninput=function(e){st.q=e.target.value;render();};
+  $('#reset').onclick=function(){st={role:'',levels:new Set(),comp:'',moment:'',q:''};document.querySelector('input[name=role][value=""]').checked=true;document.querySelectorAll('#f-level input').forEach(function(i){i.checked=false});$('#f-comp').value='';$('#f-moment').value='';$('#q').value='';render()};
+  render();
+  $('#pathlist').innerHTML=D.paths.map(function(p){var cs=D.courses.filter(function(c){return c.pathId===p.id});
+    return '<div class="path"><span class="pid">'+p.id+'</span><h3>'+esc(p.name)+'</h3><ol>'+cs.map(function(c){return '<li><span class="code">'+c.id+'</span> '+esc(c.title)+'</li>'}).join('')+'</ol></div>'}).join('');
+  document.querySelector('#certs tbody').innerHTML=certs.map(function(c){return '<tr><td class="c">'+c.id+'</td><td>'+esc(c.title)+'</td><td>'+esc(c.assessment.join(' + '))+'</td><td><span class="lvl '+c.levelId+'">'+c.level+'</span></td><td>'+esc(names(c.roles))+'</td></tr>'}).join('');
+  document.querySelector('#official tbody').innerHTML=D.official.map(function(o){var fw=D.courses.filter(function(c){return c.prereq.indexOf(o.code)>-1}).map(function(c){return c.id+' '+c.title});
+    return '<tr><td class="c">'+o.code+'</td><td><a href="'+o.url+'" target="_blank" rel="noopener">'+esc(o.title)+'</a></td><td>'+esc(fw.join('; '))+'</td></tr>'}).join('');
+})();
 </script>
 </body>
 </html>

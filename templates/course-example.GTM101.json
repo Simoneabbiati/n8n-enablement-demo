@@ -1,0 +1,142 @@
+{
+ "id": "GTM101",
+ "title": "n8n in 30 minutes",
+ "path": "GTM Onboarding",
+ "level": "Foundation",
+ "levelId": "L1",
+ "minutes": 30,
+ "roles": [
+  "AE_MM",
+  "AE_ENT",
+  "CSM",
+  "SE"
+ ],
+ "competencies": [
+  "Product knowledge"
+ ],
+ "moments": [
+  "Onboarding (days 0-30)"
+ ],
+ "assessment": [
+  "Knowledge check"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Explain what n8n does, who uses it and why, in under two minutes and in plain words.",
+ "who_its_for": "New account executives, solutions engineers and customer success managers in their first week. No technical background is assumed; solutions engineers should take it quickly and move on to GTM104.",
+ "scenario": {
+  "name": "Meridian Logistics",
+  "problem": "A mid-market logistics company runs orders and support across a dozen SaaS tools. Data is copied by hand between them, and the engineering team has no time to build integrations."
+ },
+ "prerequisites": [
+  {
+   "code": "QS101",
+   "title": "n8n Quickstart",
+   "url": "https://learn.n8n.io/courses/course-v1:n8n+QS101+2026H2/about"
+  }
+ ],
+ "concept": "n8n is an open workflow orchestration platform. A workflow starts from a trigger, such as a new form submission or a schedule, and passes data through nodes that act on other tools or call AI models. Technical teams can write code where they need it and use visual building blocks everywhere else, so they automate faster than with code alone and with fewer limits than with no-code tools. Teams can run it in the cloud or host it themselves [CHECK WITH PRODUCT].",
+ "lessons": [
+  {
+   "title": "What a workflow is",
+   "minutes": 8,
+   "summary": "Triggers, nodes and the data that moves between them, shown on one simple example."
+  },
+  {
+   "title": "Why teams choose n8n",
+   "minutes": 8,
+   "summary": "Code freedom with no-code speed; the community of builders and integrations; where AI fits."
+  },
+  {
+   "title": "Who buys it and why",
+   "minutes": 8,
+   "summary": "Technical buyers versus business buyers, and the problem each one is trying to solve."
+  },
+  {
+   "title": "Your two-minute explanation",
+   "minutes": 6,
+   "summary": "Practise the explanation you will use in your first customer calls."
+  }
+ ],
+ "by_role": {
+  "AE_MM": {
+   "say": {
+    "format": "Talk track",
+    "text": "Your team spends hours moving data between tools. n8n lets your engineers automate those steps in days instead of months, with code where they want it and visual building blocks everywhere else."
+   }
+  },
+  "AE_ENT": {
+   "say": {
+    "format": "Talk track",
+    "text": "n8n gives your platform team one place to build, run and govern automations, including AI agents, in the cloud or on your own infrastructure [CHECK WITH PRODUCT]."
+   }
+  },
+  "CSM": {
+   "say": {
+    "format": "Customer email",
+    "text": "Subject: Getting more from your first workflows. A short note on the three workflows teams like yours usually automate next, and a link to book 20 minutes with me."
+   }
+  },
+  "SE": {
+   "say": {
+    "format": "Talk track",
+    "text": "Start from the trigger and the systems involved; show that every node can be replaced by code when the visual version is not enough."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Open a blank workflow and add a form trigger.",
+     "Add two integration nodes that write the submission to a CRM and post to Slack.",
+     "Run it once and show the data passing through each node.",
+     "Replace one node with a code node to show the escape hatch."
+    ]
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "We already use a no-code automation tool.",
+   "a": "Ask where it stops: custom logic, volume, cost or data residency. n8n is chosen when teams outgrow those limits [CHECK WITH PRODUCT]."
+  },
+  {
+   "q": "Our engineers can just write scripts.",
+   "a": "They can. The question is who maintains them, monitors them and changes them next quarter. Workflows make that visible to the whole team."
+  }
+ ],
+ "gotchas": [
+  "Do not promise an integration you have not checked exists.",
+  "Keep the first explanation about the customer's problem, not the feature list."
+ ],
+ "practice": {
+  "type": "Role-play",
+  "brief": "Explain n8n to the operations lead of Meridian Logistics in two minutes. A colleague plays the customer and asks one follow-up question.",
+  "rubric": [
+   {
+    "criterion": "Starts from the customer's problem",
+    "good": "Names the manual work and its cost before mentioning n8n."
+   },
+   {
+    "criterion": "Plain language",
+    "good": "No unexplained jargon; one concrete example."
+   },
+   {
+    "criterion": "Accurate",
+    "good": "Every claim is true or flagged for checking."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "What starts a workflow?",
+   "answer": "A trigger, such as a new form submission, a webhook or a schedule."
+  },
+  {
+   "q": "Why do technical teams choose n8n over pure no-code tools?",
+   "answer": "They can write code where they need it and avoid the limits of visual-only tools, while still building faster than with code alone."
+  },
+  {
+   "q": "Which official course should you take before this one?",
+   "answer": "QS101 n8n Quickstart."
+  }
+ ]
+}
