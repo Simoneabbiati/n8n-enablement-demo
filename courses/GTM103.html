@@ -30,7 +30,178 @@
   </div>
 </main>
 <footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
-<script id="course-data" type="application/json">{"id": "GTM103", "title": "Your first workflow", "path": "GTM Onboarding", "level": "Foundation", "levelId": "L1", "minutes": 60, "roles": ["AE_MM", "AE_ENT", "CSM", "SE"], "competencies": ["Technical proficiency"], "moments": ["Onboarding (days 0-30)"], "assessment": ["Hands-on lab", "Automatic grader"], "status": "Example draft, for review", "updated": "2026-10-15", "objective": "Build and explain a simple workflow so you can describe the parts, run it once, and show where business value comes from.", "who_its_for": "New account executives, customer success managers and solutions engineers in their first month. It assumes you have seen the basics in the official prerequisites; deeper node behavior, architecture and security detail are out of scope.", "scenario": {"name": "Meridian Logistics", "problem": "A mid-market logistics company has order and support data spread across many SaaS tools. The operations team keeps copying updates by hand, and simple handoffs are missed when volume rises."}, "prerequisites": [{"code": "QS101", "title": "n8n Quickstart", "url": "https://learn.n8n.io/courses/course-v1:n8n+QS101+2026H2/about"}, {"code": "N8N101", "title": "Essentials: Your First Workflows", "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N101+2026H2/about"}], "concept": "A first workflow is the shortest useful example of how work moves through n8n. It starts with a trigger, passes data through one or more nodes, and ends with an action in another system or message channel. The point is not to build something complex. The point is to see the flow, understand what each step does, and connect the automation to a real business problem such as manual updates, slow handoffs or repeated admin work.", "lessons": [{"title": "Pick one small business problem", "minutes": 12, "summary": "Choose a narrow use case that is easy to explain and ties to obvious manual work."}, {"title": "Build the workflow shape", "minutes": 16, "summary": "Add a trigger, connect the next nodes, and understand the path data will follow."}, {"title": "Run it and inspect the data", "minutes": 12, "summary": "Test the workflow once and check what entered, changed and left each step."}, {"title": "Handle simple changes", "minutes": 10, "summary": "Make one small edit, such as changing a field or adding a branch, without losing the story."}, {"title": "Explain the workflow to a customer", "minutes": 10, "summary": "Translate the build into plain language for operations, engineering and executive audiences."}], "by_role": {"AE_MM": {"say": {"format": "Talk track", "text": "A first workflow is the easiest way to make the value concrete. Instead of talking about automation in the abstract, show one manual step at Meridian Logistics and how it becomes a repeatable workflow. Discovery question: where does your team still copy data between tools by hand. Do not pitch this if the customer has not named a repeated process or if the pain is only about reporting, not action."}}, "AE_ENT": {"say": {"format": "Talk track", "text": "For enterprise buyers, the first workflow is not about a toy example. It is a small proof that a platform team can standardize repeated automations and make the logic visible to more than one engineer. Frame it as a starting point for operational control, with governance and deployment questions handled separately in later conversations."}, "show": {"format": "Demo steps", "steps": ["Open a simple workflow that starts from a basic trigger and label the business event it represents.", "Walk through each node and tie it to one operational handoff, such as creating or updating a record and sending a team notification.", "Run the workflow once and inspect the execution data so the customer sees what changed and where.", "Show one small edit, such as mapping a different field or adding a simple decision point, to prove the workflow can be adapted without rewriting everything."]}}, "CSM": {"say": {"format": "Customer email", "text": "Subject: A practical first workflow for your team. I am reaching out because teams with manual handoffs across several tools often benefit from starting with one small workflow that is easy to test and explain. If that matches your current setup, I can share a simple adoption plan and help your automation owner choose a good first use case."}}, "SE": {"say": {"format": "Talk track", "text": "Keep the first workflow narrow and inspectable. Show the trigger, the data moving through the nodes, and the final action, then be clear about what is mocked, what needs credentials, and what you are not covering yet. If possible, use an example workflow you can import and adapt live [CHECK WITH PRODUCT]."}, "show": {"format": "Demo steps", "steps": ["Create a new workflow in your n8n instance and add a simple trigger.", "Add one or two downstream nodes that represent a realistic handoff between systems or teams.", "Map at least one field from the trigger into the next step and explain why that field matters.", "Execute the workflow and inspect the output at each node.", "Make one safe change live, then run it again to show the workflow is understandable and editable."]}}}, "objections": [{"q": "This looks basic. Why should we care about one small workflow?", "a": "Because the first workflow is not the end state. It proves the team can model a real process, test it, and change it without starting from scratch."}, {"q": "Our engineers can script a simple handoff faster than building this.", "a": "Sometimes they can. The value here is that the logic is easier to review, test and hand over to the rest of the team, not just the original builder."}, {"q": "We do not know the right use case to start with.", "a": "Start with a repeated task that crosses tools and has a clear owner. Avoid broad transformation projects for the first workflow."}], "gotchas": ["Do not choose a first example that needs too many credentials, approvals or custom logic.", "Do not rush past execution data; customers often understand the product only when they see input and output clearly.", "If a step is simulated, say so plainly instead of implying it is a production-ready pattern."], "practice": {"type": "Hands-on lab", "brief": "In your own n8n instance, build a simple workflow that starts with a trigger, passes data to at least one additional node, and completes one clear action. Use a small business scenario inspired by Meridian Logistics and be ready to explain what problem the workflow solves.", "rubric": [{"criterion": "Workflow structure is complete", "good": "The grader finds a trigger node, at least one connected downstream node, and one successful execution path."}, {"criterion": "Data is mapped through the workflow", "good": "The grader finds that at least one field from an earlier step is used in a later step, rather than every value being hard-coded."}, {"criterion": "Workflow runs successfully", "good": "The grader finds a successful test execution in the learner's instance and confirms the workflow does not stop at the trigger."}, {"criterion": "Use case is explained clearly", "good": "The learner can state the trigger, action and business problem in plain language in under one minute."}]}, "check": [{"q": "What makes a good first workflow for a new learner?", "answer": "It solves one small repeated problem, is easy to test, and does not depend on many complex prerequisites or approvals."}, {"q": "Why should you inspect execution data after running a workflow?", "answer": "It shows what entered and left each step, which helps you explain the logic, verify mappings and spot mistakes quickly."}, {"q": "How should you position a first workflow in a customer conversation?", "answer": "As a concrete example of one manual handoff becoming repeatable and visible, not as the full architecture or final production design."}]}</script>
+<script id="course-data" type="application/json">{
+ "id": "GTM103",
+ "title": "Your first workflow",
+ "path": "GTM Onboarding",
+ "level": "Foundation",
+ "levelId": "L1",
+ "minutes": 60,
+ "roles": [
+  "AE_MM",
+  "AE_ENT",
+  "CSM",
+  "SE"
+ ],
+ "competencies": [
+  "Technical proficiency"
+ ],
+ "moments": [
+  "Onboarding (days 0-30)"
+ ],
+ "assessment": [
+  "Hands-on lab",
+  "Automatic grader"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Build and explain a simple workflow so you can describe how n8n works from trigger to result.",
+ "who_its_for": "New account executives, customer success managers and solutions engineers in their first month. It assumes you have seen the product once already; detailed architecture, security review and advanced AI topics are out of scope.",
+ "scenario": {
+  "name": "Meridian Logistics",
+  "problem": "A mid-market logistics company moves order and support data between many SaaS tools by hand. The team needs a first automation that is simple to build, easy to explain and useful enough to discuss in customer conversations."
+ },
+ "prerequisites": [
+  {
+   "code": "QS101",
+   "title": "n8n Quickstart",
+   "url": "https://learn.n8n.io/courses/course-v1:n8n+QS101+2026H2/about"
+  },
+  {
+   "code": "N8N101",
+   "title": "Essentials: Your First Workflows",
+   "url": "https://learn.n8n.io/courses/course-v1:n8n+N8N101+2026H2/about"
+  }
+ ],
+ "concept": "A first workflow is the smallest useful automation you can build and explain clearly. It starts with one trigger, moves data through a few nodes, and ends with one visible outcome. The goal is not to cover every feature. The goal is to show how a real business step can move from manual work to a repeatable workflow, and where a team would extend it later.",
+ "lessons": [
+  {
+   "title": "Choose a simple use case",
+   "minutes": 12,
+   "summary": "Pick one manual step that has a clear trigger, a few fields of data and one useful result."
+  },
+  {
+   "title": "Build the flow from trigger to action",
+   "minutes": 18,
+   "summary": "Create a basic workflow with a trigger, one or two processing steps and an action in another tool."
+  },
+  {
+   "title": "Test, inspect and fix errors",
+   "minutes": 12,
+   "summary": "Run the workflow, inspect the data at each step and correct common setup mistakes."
+  },
+  {
+   "title": "Explain the workflow to a customer",
+   "minutes": 10,
+   "summary": "Translate the build into plain business language for technical and non-technical audiences."
+  },
+  {
+   "title": "Prepare for a first live demo",
+   "minutes": 8,
+   "summary": "Set up a safe path through the workflow and avoid the most common live-demo failures."
+  }
+ ],
+ "by_role": {
+  "AE_MM": {
+   "say": {
+    "format": "Talk track",
+    "text": "A first workflow is a simple way to show where your team loses time today and how that step can become repeatable. One good discovery question is, which process still depends on someone copying data between two tools every day. Do not pitch this if the customer has not named a real manual step or if the issue is only reporting with no workflow action behind it."
+   }
+  },
+  "AE_ENT": {
+   "say": {
+    "format": "Talk track",
+    "text": "The business case for a first workflow is not the single task by itself. It is proving that one governed automation pattern can be repeated across teams, with the right controls and deployment model [CHECK WITH PRODUCT]. Expect the CTO to ask where the workflow runs, how it connects to internal systems and who maintains it over time."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Open a simple workflow that starts from a form or webhook trigger.",
+     "Show the incoming data and explain which fields matter to the business process.",
+     "Run one processing step and one destination step so the audience can see the path from input to output.",
+     "Point out where credentials, approvals or hosting choices would matter in an enterprise setup [CHECK WITH PRODUCT]."
+    ]
+   }
+  },
+  "CSM": {
+   "say": {
+    "format": "Customer email",
+    "text": "Subject: A simple workflow your team can build this week. Share one practical starter use case, suggest a short working session to build it in their own instance, and note that accounts with manual cross-tool handoffs are the best fit for this adoption step."
+   }
+  },
+  "SE": {
+   "say": {
+    "format": "Talk track",
+    "text": "Keep the first workflow small enough to understand in one screen. Explain the trigger, the data shape, the transformation and the final action, then note any prerequisites such as credentials, reachable endpoints or sample data. If a customer asks about scale or governance, answer at a high level and move deeper only if the evaluation needs it."
+   },
+   "show": {
+    "format": "Demo steps",
+    "steps": [
+     "Create a new workflow and add a simple trigger such as a form, schedule or webhook.",
+     "Add one node that changes, maps or checks the incoming data.",
+     "Add one action node that sends the result to another system or channel.",
+     "Execute the workflow and inspect the data output at each node.",
+     "Save the workflow and explain how you would adapt it to the customer's tools."
+    ]
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "This looks basic. Why should we care about one small workflow?",
+   "a": "The first workflow is a proof of approach. It shows how your team would connect systems, handle data and maintain an automation before you invest in larger use cases."
+  },
+  {
+   "q": "Our team can already script this.",
+   "a": "That may be true. The question is whether the result is easy for others to inspect, change and run as business needs change."
+  },
+  {
+   "q": "We do not want to spend time learning a new tool for a tiny process.",
+   "a": "Start with a process that is frequent, visible and low risk. If that first use case is not useful, it is too early to broaden the rollout."
+  }
+ ],
+ "gotchas": [
+  "Do not build with unclear sample data; missing or messy fields cause confusion later in the flow.",
+  "Check credentials and permissions before a live session, especially on destination systems.",
+  "Avoid adding too many branches or edge cases in the first demo; keep the path easy to follow."
+ ],
+ "practice": {
+  "type": "Hands-on lab",
+  "brief": "In your own n8n instance, build a simple workflow for Meridian Logistics that starts from one trigger, processes the data in at least one intermediate step and finishes with one action. Be ready to explain what each node does and why this is a good first workflow.",
+  "rubric": [
+   {
+    "criterion": "Workflow structure",
+    "good": "The grader finds one valid trigger, at least one intermediate processing node and one final action node connected in the correct order."
+   },
+   {
+    "criterion": "Successful execution",
+    "good": "The grader confirms the workflow runs and produces output data at the final step without manual repair during grading."
+   },
+   {
+    "criterion": "Data handling",
+    "good": "The grader detects that input fields are passed or transformed in a way that matches the intended business step."
+   },
+   {
+    "criterion": "Clarity of design",
+    "good": "Node names or structure make the flow understandable, and the learner can explain the business purpose in plain words."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "What makes a workflow a good first workflow for training or a first customer discussion?",
+   "answer": "It should solve one real manual step, be easy to follow from trigger to outcome and avoid unnecessary complexity."
+  },
+  {
+   "q": "Why is testing each node important before a live demo?",
+   "answer": "It helps you confirm that the data is arriving in the expected shape and that each step works before you show it to a customer."
+  },
+  {
+   "q": "How should you explain a first workflow to a non-technical buyer?",
+   "answer": "Start with the manual process, name the trigger and the result, and avoid deep product detail unless they ask for it."
+  }
+ ]
+}</script>
 <script>
 (function(){
   var C=JSON.parse(document.getElementById('course-data').textContent);
