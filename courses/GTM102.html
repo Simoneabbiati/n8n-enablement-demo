@@ -30,7 +30,148 @@
   </div>
 </main>
 <footer><div class="wrap"><span>GTM Academy · concept · sample data</span><span id="c-updated"></span></div></footer>
-<script id="course-data" type="application/json">{"id": "GTM102", "title": "ICP and personas", "path": "GTM Onboarding", "level": "Foundation", "levelId": "L1", "minutes": 45, "roles": ["AE_MM", "AE_ENT", "CSM", "SE"], "competencies": ["Discovery", "Value and ROI"], "moments": ["Onboarding (days 0-30)"], "assessment": ["Knowledge check"], "status": "Example draft, for review", "updated": "2026-10-15", "objective": "Identify which customers fit n8n best, which buyer personas matter, and how to tailor the first conversation to each one.", "who_its_for": "New account executives, solutions engineers and customer success managers in their first month. It assumes no deep product knowledge yet and does not cover full discovery method, security review or detailed demo design.", "scenario": {"name": "Meridian Logistics", "problem": "A mid-market logistics company runs order operations and customer support across many SaaS tools. Teams copy data between systems by hand, engineering is overloaded, and leaders disagree on whether to buy an automation platform or build scripts internally."}, "prerequisites": [], "concept": "An ideal customer profile is the kind of company most likely to get value from n8n and buy it with a clear reason. Personas are the people inside that company who feel the problem, approve the solution or test whether it will work. This matters because the same product can sound relevant for very different reasons: an operations leader wants less manual work, an engineering manager wants flexibility, and an enterprise platform team wants control and governance [CHECK WITH PRODUCT]. If you know the account shape and the buyer's point of view, you ask better questions and avoid pitching the wrong story.", "lessons": [{"title": "What ICP means in practice", "minutes": 10, "summary": "How to spot account patterns such as many tools, manual handoffs and limited engineering time."}, {"title": "The personas behind the deal", "minutes": 12, "summary": "Who feels the pain, who evaluates the solution and who signs off in mid-market and enterprise deals."}, {"title": "How role, problem and value connect", "minutes": 11, "summary": "How to translate the same platform into operational, technical and governance outcomes."}, {"title": "Disqualifying early", "minutes": 6, "summary": "Signals that the problem is weak, the timing is poor or another path may fit better."}, {"title": "Your first call plan", "minutes": 6, "summary": "A simple way to open, question and position based on the persona in front of you."}], "by_role": {"AE_MM": {"say": {"format": "Talk track", "text": "I look for companies where people still move data by hand across several tools and engineering cannot keep up with integration requests. My first question is, where does work stall because systems do not talk to each other. I would not pitch hard if the account has little workflow complexity, no urgent operational pain or a buyer who only wants a simple point integration."}}, "AE_ENT": {"say": {"format": "Talk track", "text": "In enterprise, I test whether this is a platform and governance conversation, not just a single workflow request. I want to know who owns automation standards, what security review will matter and whether the CTO is deciding between buying a platform and building internally. If those concerns are absent, I keep the discussion narrower and avoid forcing an enterprise story too early."}}, "CSM": {"say": {"format": "Customer email", "text": "Subject: Which teams in your account may be good candidates for more workflows. I would share the common signs that another team could benefit, such as repeated manual handoffs, new tool sprawl or requests for better control over automations, and offer a short working session to map use cases."}}, "SE": {"say": {"format": "Talk track", "text": "Before I demo, I need to know the buyer's main use case, the systems involved and whether the concern is speed, flexibility or governance. That tells me whether to show a simple workflow, a more technical build path or the limits and prerequisites first. Good persona mapping prevents the wrong demo."}, "show": {"format": "Demo steps", "steps": ["List the likely personas in the account and write one problem statement for each.", "Map one workflow example to the operations persona and one to the engineering or platform persona.", "Choose which example to lead with based on the evaluator in the meeting.", "State one prerequisite or limit before starting the demo so the audience knows what the example does and does not prove."]}}}, "objections": [{"q": "Why do we need ICP and persona work if the product can serve many use cases?", "a": "Because broad fit does not mean every account should hear the same story. Better targeting shortens discovery and reduces mismatched demos."}, {"q": "Our prospect says everyone in the company is a buyer.", "a": "Treat that as a warning sign. Someone owns the pain, someone tests the technical fit and someone approves risk or budget, even if titles vary."}, {"q": "Can we just lead with AI to get attention?", "a": "Only if AI is tied to a real process problem. Leading with the trend instead of the workflow usually weakens qualification."}], "gotchas": ["Do not confuse a user persona with the economic buyer.", "Do not assume every company with many tools is a fit; there must also be process pain and a reason to change.", "Do not give the same talk track to an operations lead and a technical evaluator."], "practice": {"type": "Role-play", "brief": "A colleague plays either an operations leader at Meridian Logistics or a platform-minded enterprise buyer with concerns similar to Aurora Bank. In five minutes, identify the likely persona, ask one discovery question and explain why that account may or may not fit n8n.", "rubric": [{"criterion": "Identifies the account pattern", "good": "Names the signs of fit such as tool sprawl, manual work, integration backlog or governance needs."}, {"criterion": "Adapts to the persona", "good": "Changes the value story based on whether the buyer cares most about operations, technical flexibility or governance."}, {"criterion": "Uses one clear discovery question", "good": "Asks a question that reveals urgency, ownership or buying path rather than jumping into features."}, {"criterion": "Knows when not to push", "good": "States at least one reason the account may not be a strong fit yet."}]}, "check": [{"q": "What is the difference between an ICP and a persona?", "answer": "The ICP is the type of company that is most likely to buy and get value. A persona is the person inside that company whose goals, pain and role shape the conversation."}, {"q": "What is one common sign that an account may fit n8n well?", "answer": "A common sign is repeated manual work across several systems, especially when engineering does not have time to build and maintain every integration request."}, {"q": "Why should you avoid using the same pitch for every buyer?", "answer": "Different buyers care about different outcomes. An operations lead may care about manual work, while a technical or enterprise buyer may care more about flexibility, control or governance."}]}</script>
+<script id="course-data" type="application/json">{
+ "id": "GTM102",
+ "title": "ICP and personas",
+ "path": "GTM Onboarding",
+ "level": "Foundation",
+ "levelId": "L1",
+ "minutes": 45,
+ "roles": [
+  "AE_MM",
+  "AE_ENT",
+  "CSM",
+  "SE"
+ ],
+ "competencies": [
+  "Discovery",
+  "Value and ROI"
+ ],
+ "moments": [
+  "Onboarding (days 0-30)"
+ ],
+ "assessment": [
+  "Knowledge check"
+ ],
+ "status": "Example draft, for review",
+ "updated": "2026-10-15",
+ "objective": "Identify which accounts and buyers are a good fit for n8n, and adapt your first conversation to their goals and constraints.",
+ "who_its_for": "New account executives, solutions engineers and customer success managers in their first month. It assumes no prior sales framework knowledge; detailed discovery methods and technical demos are covered in later courses.",
+ "scenario": {
+  "name": "Meridian Logistics",
+  "problem": "A mid-market logistics company uses many SaaS tools for orders, support and internal operations. Teams are stuck with manual handoffs, scattered ownership and a growing backlog of automation requests."
+ },
+ "prerequisites": [],
+ "concept": "An ideal customer profile is the kind of company most likely to get value from n8n, and a persona is the specific buyer or user inside that company. This matters because the same product can sound relevant or irrelevant depending on who you speak to, what problem they own and what constraints they face. In practice, you need to spot the right account shape, find the team that feels the pain most clearly and frame n8n in their language before you go deep on product.",
+ "lessons": [
+  {
+   "title": "What ICP and personas mean here",
+   "minutes": 10,
+   "summary": "Define account fit versus person fit, and why both matter in the first customer conversation."
+  },
+  {
+   "title": "Signals of a strong fit account",
+   "minutes": 12,
+   "summary": "Review the company conditions that often create demand for workflow automation, integration and governance."
+  },
+  {
+   "title": "How each buyer sees the problem",
+   "minutes": 11,
+   "summary": "Compare how operations, engineering and platform stakeholders describe the same pain in different words."
+  },
+  {
+   "title": "When not to pitch n8n first",
+   "minutes": 6,
+   "summary": "Learn to disqualify weak-fit situations early and avoid forcing a product story where no clear problem exists."
+  },
+  {
+   "title": "Turning fit into a first message",
+   "minutes": 6,
+   "summary": "Use one short value story, one discovery question and one next step for each role you meet."
+  }
+ ],
+ "by_role": {
+  "AE_MM": {
+   "say": {
+    "format": "Talk track",
+    "text": "I look for teams with too many SaaS tools, repeated manual work and an engineering team that cannot keep up with every integration request. My first question is, where does work still move by hand between systems today. I would not pitch n8n first if the prospect has no clear cross-system process problem or if they only need a single point solution."
+   }
+  },
+  "AE_ENT": {
+   "say": {
+    "format": "Talk track",
+    "text": "In enterprise accounts, I focus on platform, governance and the cost of fragmented automation across teams. I want to know who owns standards, security review and lifecycle management for integrations and AI use cases [CHECK WITH PRODUCT]. I would not lead with feature detail until I know whether the CTO's main concern is control, risk or build-versus-buy."
+   }
+  },
+  "CSM": {
+   "say": {
+    "format": "Customer email",
+    "text": "Subject: Which teams usually expand workflow automation next. A short note that helps the customer identify the next strong-fit team, such as operations, engineering or a central platform group, and invites them to share where manual cross-system work still exists."
+   }
+  },
+  "SE": {
+   "say": {
+    "format": "Talk track",
+    "text": "Before I demo anything, I test whether the evaluator has a real workflow problem, the right systems in scope and a team that can own delivery. I also listen for limits and prerequisites, such as security review, self-hosting needs or custom logic requirements [CHECK WITH PRODUCT]. If those are unclear, I slow down and qualify before showing a build."
+   }
+  }
+ },
+ "objections": [
+  {
+   "q": "This sounds broad. Who is it actually for in our company?",
+   "a": "Start with the team that owns a repeated process across multiple systems and feels the cost of manual work now. Then confirm whether the buyer cares most about speed, control or governance."
+  },
+  {
+   "q": "We can build integrations ourselves.",
+   "a": "Many teams can. The fit question is whether they want every workflow request to compete for engineering time, and how they plan to maintain and govern those automations over time."
+  },
+  {
+   "q": "We already have different tools for automation in different teams.",
+   "a": "That can work for a while. Ask whether those teams now face duplication, limited visibility or uneven standards, because that is often where a broader workflow platform discussion starts [CHECK WITH PRODUCT]."
+  }
+ ],
+ "gotchas": [
+  "Do not treat every operations team as the same buyer; check who owns the process and who approves tooling.",
+  "Do not jump into a demo before you know whether the account is mid-market style or enterprise style in its buying process.",
+  "Do not assume AI interest means strong fit; confirm there is an underlying workflow and governance need first."
+ ],
+ "practice": {
+  "type": "Role-play",
+  "brief": "A colleague plays either an operations leader at Meridian Logistics or a platform leader at Aurora Bank. In five minutes, identify whether the account fits, name the likely persona and give a short value story with one discovery question.",
+  "rubric": [
+   {
+    "criterion": "Identifies account fit clearly",
+    "good": "Names concrete signals such as many SaaS tools, manual handoffs, backlog or governance needs."
+   },
+   {
+    "criterion": "Matches message to persona",
+    "good": "Uses language that fits the buyer's goals, such as time saved for operations or control and standards for enterprise technology leaders."
+   },
+   {
+    "criterion": "Includes one useful discovery question",
+    "good": "Asks a question that reveals process pain, ownership or constraints rather than a generic qualification question."
+   },
+   {
+    "criterion": "Knows when not to push",
+    "good": "States one condition where n8n should not be pitched first or where more qualification is needed."
+   }
+  ]
+ },
+ "check": [
+  {
+   "q": "What is the difference between an ICP and a persona?",
+   "answer": "The ICP is the kind of company that is a strong fit. The persona is the specific buyer or user inside that company whose goals and pain shape the conversation."
+  },
+  {
+   "q": "What is one strong sign that an account may be a fit for n8n?",
+   "answer": "A common sign is repeated manual work across several systems with no clear way to scale automation through engineering alone."
+  },
+  {
+   "q": "Why should you avoid leading with features before you qualify the buyer?",
+   "answer": "Because the same product story lands differently with different personas. You need to know their problem, ownership and constraints first so the message is relevant."
+  }
+ ]
+}</script>
 <script>
 (function(){
   var C=JSON.parse(document.getElementById('course-data').textContent);
